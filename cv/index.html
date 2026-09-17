@@ -1,0 +1,211 @@
+<!doctype html>
+<!-- Adapted from mnjul/html-resume (Apache-2.0), modified 2026-09-18.
+     Changes: Korean research CV, three A4 pages, responsive layout, local fonts.
+     See THIRD_PARTY.md and vendor/html-resume/LICENSE. -->
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="박소영 연구 CV - 학력, 음성·오디오 AI 연구, 논문 및 수상 경력" />
+    <meta name="theme-color" content="#205a64" />
+    <title>박소영 | Research CV</title>
+    <link rel="stylesheet" href="./vendor/html-resume/style.css" />
+    <link rel="stylesheet" href="./cv.css" />
+  </head>
+  <body class="cv-document">
+    <nav class="toolbar" aria-label="CV 메뉴">
+      <a class="back-link" href="../">← 포트폴리오</a>
+      <div class="toolbar-actions">
+        <button type="button" onclick="window.print()">인쇄</button>
+        <a class="download" href="../assets/Park_So_Yeong_CV.pdf" download>PDF 다운로드</a>
+      </div>
+    </nav>
+    <main id="main">
+      <article class="sheet" aria-label="1페이지: 학력 및 연구">
+        <div class="sheet-content">
+          <header class="identity" id="title">
+            <p class="eyebrow">RESEARCH CURRICULUM VITAE</p>
+            <h1>박소영 <span>Park So Yeong</span></h1>
+            <p class="position">Undergraduate Researcher · AINC Lab, Hanshin University</p>
+            <div class="contact">
+              <a href="mailto:kong02931@gmail.com">kong02931@gmail.com</a>
+              <a href="https://green4849.github.io/">green4849.github.io</a>
+              <a href="https://github.com/green4849">github.com/green4849</a>
+            </div>
+          </header>
+          <p class="summary">한국어 음성인식과 오디오-언어 이해를 연구합니다. 공개 모델을 여러 음성 코퍼스에서 평가하고, 추론 조건에 따른 성능 차이를 분석합니다. 학사 규정 질의응답의 학습 데이터 구축과 오류 검토·교정 학습도 수행했습니다.</p>
+
+          <section class="main-block" aria-labelledby="education">
+            <h2 id="education">학력 <span>Education</span></h2>
+            <section class="blocks">
+              <div class="date"><span>2024.03</span><span>2027 상반기<br />졸업 예정</span></div>
+              <div class="decorator" aria-hidden="true"></div>
+              <div class="details">
+                <h3>한신대학교 AI·SW학부</h3>
+                <p>학사과정 · 장애인 라이프케어 복수전공</p>
+                <p class="meta">누적 평점 <strong>4.38 / 4.50</strong> · 76학점 · 2025.12.29 기준</p>
+              </div>
+            </section>
+          </section>
+
+          <section class="main-block" aria-labelledby="research">
+            <h2 id="research">연구 경험 <span>Research Experience</span></h2>
+            <section class="blocks lab-block">
+              <div class="date"><span>2025.06</span><span>현재</span></div>
+              <div class="decorator" aria-hidden="true"></div>
+              <div class="details">
+                <h3>AINC Lab · 학부연구생</h3>
+                <p>한신대학교 · 지도교수 김선만</p>
+                <p class="meta">연구 설계, 실험 구현, 결과 분석 및 논문 작성</p>
+              </div>
+            </section>
+            <section class="blocks">
+              <div class="date"><span>2026</span></div>
+              <div class="decorator" aria-hidden="true"></div>
+              <div class="details">
+                <h3>Qwen3-ASR 한국어 음성인식 평가</h3>
+                <ul>
+                  <li>0.6B·1.7B 모델을 10종 한국어 평가셋에서 비교하고, 추론 파라미터에 따른 문자 오류율(CER) 변화를 분석</li>
+                  <li>언어 설정, 최대 생성 길이, temperature, repetition penalty를 비교해 재현 가능한 기본 추론 설정 도출</li>
+                </ul>
+              </div>
+            </section>
+            <section class="blocks">
+              <div class="date"><span>2026</span><span>현재</span></div>
+              <div class="decorator" aria-hidden="true"></div>
+              <div class="details">
+                <h3>DCASE 2026 Task 6 · Audio Moment Retrieval</h3>
+                <ul>
+                  <li>자연어 질의에 대응하는 오디오 시간 구간 탐색: 공식 베이스라인과 전체 평가 파이프라인 재현</li>
+                  <li>MS-CLAP 기반 오디오·언어 표현과 DETR 계열 탐색 모델의 결합 실험</li>
+                </ul>
+              </div>
+            </section>
+            <section class="blocks">
+              <div class="date"><span>2025</span><span>2026</span></div>
+              <div class="decorator" aria-hidden="true"></div>
+              <div class="details">
+                <h3>학사 규정 QA 데이터 구축 및 오류 교정 학습</h3>
+                <ul>
+                  <li>PASS·FAIL·OOS 구조의 합성 데이터 9,958건을 설계·검수하고, Qwen2.5-7B-Instruct와 Llama-3.1-8B를 4-bit QLoRA로 학습</li>
+                  <li>정답 검토 신호를 제공한 조건에서 FAIL 교정률 0.9897을 확인하고, 통합 추론의 오류 검토 단계 병목 분석</li>
+                </ul>
+              </div>
+            </section>
+          </section>
+        </div>
+        <footer class="page-footer"><span>PARK SO YEONG · RESEARCH CV</span><span>2026.09 · 1 / 3</span></footer>
+      </article>
+
+      <article class="sheet" aria-label="2페이지: 논문 및 발표">
+        <div class="sheet-content">
+          <header class="running-header"><span>박소영 <span class="roman-name">Park So Yeong</span></span><span>논문 및 발표</span></header>
+          <section class="main-block publications" aria-labelledby="publications">
+            <h2 id="publications">논문 및 발표 <span>Publications &amp; Presentations</span></h2>
+            <p class="section-note">본인 이름을 굵게 표시했습니다. 학술지 게재 승인과 학술대회 발표를 구분합니다.</p>
+            <section class="blocks publication">
+              <div class="date"><span>2026</span><small>학술지</small></div>
+              <div class="decorator" aria-hidden="true"></div>
+              <div class="details">
+                <p class="pub-label">제1저자 <span class="badge">게재 승인 · In press</span></p>
+                <h3>다중 한국어 음성 코퍼스에서의 Qwen3-ASR 평가 및 추론 파라미터 분석</h3>
+                <p class="authors"><strong>박소영</strong>, 김선만</p>
+                <p class="venue">한국음향학회지, 45(5) · 2026.08.25 게재 승인</p>
+              </div>
+            </section>
+            <section class="blocks publication">
+              <div class="date"><span>2026</span><small>학술대회</small></div>
+              <div class="decorator" aria-hidden="true"></div>
+              <div class="details">
+                <p class="pub-label">제1저자 <span class="badge">장려논문상</span></p>
+                <h3>학사 규정 질의응답 모델의 오류 검토·교정 학습을 위한 합성 데이터셋 구축</h3>
+                <p class="authors"><strong>박소영</strong>, 김선만</p>
+                <p class="venue">한국데이터사이언스학회 하계종합학술대회 · 2026.06.19</p>
+              </div>
+            </section>
+            <section class="blocks publication">
+              <div class="date"><span>2026</span><small>포스터</small></div>
+              <div class="decorator" aria-hidden="true"></div>
+              <div class="details">
+                <p class="pub-label">제1저자</p>
+                <h3>다중 한국어 음성 코퍼스 기반 Qwen3-ASR 범용 추론 파라미터 최적화</h3>
+                <p class="authors"><strong>박소영</strong>, 신현재, 김선만</p>
+                <p class="venue">대한전자공학회 하계종합학술대회 · Poster P4-80</p>
+              </div>
+            </section>
+            <section class="blocks publication">
+              <div class="date"><span>2026</span><small>포스터</small></div>
+              <div class="decorator" aria-hidden="true"></div>
+              <div class="details">
+                <p class="pub-label">제1저자</p>
+                <h3>공개 다국어 ASR 모델의 한국어 음성인식을 위한 모델 규모별 추론 파라미터 최적화</h3>
+                <p class="authors"><strong>박소영</strong>, 김선만</p>
+                <p class="venue">한국음성학회·한국음운론학회 봄 공동학술대회 · 2026.06.13</p>
+              </div>
+            </section>
+            <section class="blocks publication">
+              <div class="date"><span>2025</span><small>학술대회</small></div>
+              <div class="decorator" aria-hidden="true"></div>
+              <div class="details">
+                <p class="pub-label">제1저자 <span class="badge">우수논문상</span></p>
+                <h3>루브릭 기반 대학 학사규정에 대한 학습 데이터셋 설계 및 구축</h3>
+                <p class="authors"><strong>박소영</strong>, 김민준, 김선만</p>
+                <p class="venue">한국스마트미디어학회 추계학술대회 · 2025.11.15</p>
+              </div>
+            </section>
+            <section class="blocks publication">
+              <div class="date"><span>2025</span><small>국제학술대회</small></div>
+              <div class="decorator" aria-hidden="true"></div>
+              <div class="details">
+                <p class="pub-label">제3저자</p>
+                <h3 lang="en">Low-Latency Deep Learning-Based Denoising of Self-Generated Footstep Noise in Quadruped Robots for Remote Acoustic Situational Awareness</h3>
+                <p class="authors" lang="en">Hyeon Jae Shin, Jin Tae Seok, <strong>So Yeong Park</strong>, Seon Man Kim</p>
+                <p class="venue">16th International Conference on Theoretical and Computational Acoustics (ICTCA 2025) · Busan · 2025.08</p>
+              </div>
+            </section>
+          </section>
+        </div>
+        <footer class="page-footer"><span>PARK SO YEONG · RESEARCH CV</span><span>2026.09 · 2 / 3</span></footer>
+      </article>
+
+      <article class="sheet" aria-label="3페이지: 수상, 활동 및 기술">
+        <div class="sheet-content">
+          <header class="running-header"><span>박소영 <span class="roman-name">Park So Yeong</span></span><span>수상 · 활동 · 기술</span></header>
+          <section class="main-block" aria-labelledby="awards">
+            <h2 id="awards">수상 및 장학 <span>Awards &amp; Honors</span></h2>
+            <div class="award-list">
+              <div class="award"><time>2026.06</time><div><h3>장려논문상 <span>한국데이터사이언스학회</span></h3><p>학사 규정 질의응답 모델의 오류 검토·교정 학습을 위한 합성 데이터셋 구축</p></div></div>
+              <div class="award"><time>2025.11</time><div><h3>우수논문상 <span>한국스마트미디어학회</span></h3><p>루브릭 기반 대학 학사규정에 대한 학습 데이터셋 설계 및 구축</p></div></div>
+              <div class="award"><time>2025.11</time><div><h3>대상 <span>한신대학교</span></h3><p>한신대학교 AI 페스티벌 일반부</p></div></div>
+              <div class="award"><time>2025.10</time><div><h3>최우수상 <span>SW중심대학협의회</span></h3><p>2025 강촌 엘리시안 AI 해커톤</p></div></div>
+              <div class="award"><time>2025.08</time><div><h3>우수논문상 <span>대한산업경영학회</span></h3><p>AI 기반 장애인과 시니어 보조기기 및 복지용구 서비스 전달 체계 개선 방안</p></div></div>
+              <div class="award"><time>2025.05</time><div><h3>대상 <span>고려대학교 SW중심대학사업단</span></h3><p>AI/블록체인 창업경진대회</p></div></div>
+              <div class="award"><time>2024.09</time><div><h3>최우수상 <span>한신대학교</span></h3><p>U10 경기권 대학 연합 기업분석경진대회</p></div></div>
+              <div class="award"><span class="date-text">2025.07<br />- 졸업</span><div><h3>일주학술문화재단 33기 장학생</h3><p>장학 지원 및 주 1회 초등학생 대상 교육봉사</p></div></div>
+            </div>
+          </section>
+          <section class="main-block" aria-labelledby="activities">
+            <h2 id="activities">리더십·교육·활동 <span>Activities &amp; Service</span></h2>
+            <div class="activity-list">
+              <div class="activity"><span class="date-text">2026.06 - 현재</span><div><h3>AIUX Lab Leader</h3><p>학부 연구 커뮤니티의 정기 활동과 연구 교류 운영</p></div></div>
+              <div class="activity"><span class="date-text">2026 가을학기</span><div><h3>딥러닝 응용 수업 조교</h3><p>수업 운영 및 학습 활동 지원</p></div></div>
+              <div class="activity"><span class="date-text">2026 봄학기</span><div><h3>AI·SW 수학 수업 조교</h3><p>수업 운영 및 기초 학습 지원</p></div></div>
+              <div class="activity"><span class="date-text">2026.01</span><div><h3>CES 2026 참가</h3><p>교내 선발을 통해 기술 박람회 참관</p></div></div>
+            </div>
+          </section>
+          <section class="main-block" aria-labelledby="skills">
+            <h2 id="skills">연구 도구 <span>Technical Skills</span></h2>
+            <dl class="skill-list">
+              <div><dt>Programming &amp; ML</dt><dd>Python · PyTorch · Transformers · vLLM</dd></div>
+              <div><dt>Speech &amp; Audio</dt><dd>Qwen3-ASR · Whisper · MS-CLAP · QD-DETR</dd></div>
+              <div><dt>Training &amp; Evaluation</dt><dd>QLoRA · CER/WER · Dataset Validation · Experiment Tracking</dd></div>
+              <div><dt>Tools</dt><dd>Linux · Git · Reproducible Pipelines</dd></div>
+            </dl>
+          </section>
+        </div>
+        <footer class="page-footer"><span>PARK SO YEONG · RESEARCH CV</span><span>2026.09 · 3 / 3</span></footer>
+      </article>
+    </main>
+    <p class="web-credit">Adapted from <a href="https://github.com/mnjul/html-resume">mnjul/html-resume</a> · <a href="./THIRD_PARTY.md">Template &amp; font licenses</a></p>
+  </body>
+</html>

@@ -1,18 +1,15 @@
 # Park So Yeong · Research Portfolio
 
-박소영의 연구 포트폴리오 사이트입니다. 별도 설치나 빌드 없이 GitHub Pages에서 바로 실행할 수 있습니다.
+박소영의 연구 포트폴리오 사이트입니다. GitHub에 변경사항을 저장하면 CV PDF를 생성하고 GitHub Pages에 자동 배포합니다.
+
+- 포트폴리오: https://green4849.github.io/
+- 웹 CV: https://green4849.github.io/cv/
+- PDF: https://green4849.github.io/assets/Park_So_Yeong_CV.pdf
 
 ## 로컬에서 확인하기
 
-VS Code에서 폴더를 연 뒤 `index.html`을 직접 열거나 Live Server 확장 프로그램으로 실행하세요.
-
-Python이 설치되어 있다면 다음 명령도 사용할 수 있습니다.
-
-```bash
-python3 -m http.server 4173
-```
-
-브라우저에서 `http://localhost:4173`으로 접속합니다.
+`index.html` 또는 `cv/index.html`을 브라우저에서 직접 열면 됩니다.
+VS Code의 Live Server 확장 프로그램으로 확인해도 됩니다.
 
 ## 내용 수정
 
@@ -28,23 +25,36 @@ python3 -m http.server 4173
 
 소개, 학력, 이메일처럼 화면에 고정된 문장은 `index.html`에서 수정합니다.
 
-## CV PDF 연결
+## CV 수정 및 PDF 생성
 
-1. 프로젝트 안에 `assets/Park_So_Yeong_CV.pdf`를 추가합니다.
-2. `data.js`의 값을 다음처럼 변경합니다.
+CV는 [mnjul/html-resume](https://github.com/mnjul/html-resume) 템플릿의 HTML/CSS 구조를 기반으로 제작했습니다. 한글 글꼴, A4 3페이지, 모바일 레이아웃을 적용했습니다. 템플릿 원본과 라이선스는 `cv/vendor/html-resume/`, 폰트 라이선스는 `cv/fonts/OFL.txt`에 보관합니다.
 
-```js
-cvUrl: "./assets/Park_So_Yeong_CV.pdf",
+- 내용: `cv/index.html`
+- 글자 크기·여백·인쇄 디자인: `cv/cv.css`
+- 1페이지: 소개·학력·연구 경험
+- 2페이지: 논문 및 발표
+- 3페이지: 수상·활동·연구 도구
+
+CV 내용은 `cv/index.html`, 포트폴리오의 카드 내용은 `data.js`에서 각각 관리하므로 공통 정보가 바뀌면 두 파일에 반영합니다. 메인 페이지 학력·소개는 `index.html`에 있습니다.
+
+`main`에 변경사항을 저장하면 GitHub Actions가 Chromium의 인쇄 기능으로 PDF를 다시 만들고 웹 CV와 함께 배포합니다. Python은 사용하지 않습니다. 배포된 PDF가 최신 파일이며, 저장소의 PDF는 초기 검수본입니다.
+
+로컬에서도 Node.js 24 이상으로 생성할 수 있습니다.
+
+```bash
+npm ci --ignore-scripts
+npx playwright install chromium
+npm run build:cv
 ```
+
+결과는 `assets/Park_So_Yeong_CV.pdf`입니다. 글꼴 로딩, 페이지 하단 여백, 가로 넘침, 모바일 넘침을 검사하며, 내용이 페이지를 넘으면 배포 전에 실패합니다. 많은 내용을 추가할 때는 페이지 구성을 다시 검토하고 PDF를 열어 확인하세요.
+
+브라우저의 ‘인쇄’ 버튼으로도 PDF를 저장할 수 있습니다. A4, 배율 100%, 여백 없음, 머리글·바닥글 끔, 배경 그래픽 켬으로 설정합니다.
 
 ## GitHub Pages 배포
 
-1. 이 폴더의 파일을 `green4849.github.io` 저장소에 올립니다.
-2. GitHub 저장소의 **Settings → Pages**로 이동합니다.
-3. 배포 소스를 `Deploy from a branch`로 선택합니다.
-4. `main` 브랜치와 `/ (root)` 폴더를 선택해 저장합니다.
-
-배포가 완료되면 `https://green4849.github.io/`에서 확인할 수 있습니다.
+저장소의 **Settings → Pages → Source**는 **GitHub Actions**입니다.
+`.github/workflows/pages.yml`이 `main` 변경 시 PDF를 생성하고 공개 파일만 `_site/`에 모아 배포합니다. GitHub의 Actions 탭에서 완료 여부를 확인할 수 있습니다. 빌드가 실패하면 기존 배포가 유지됩니다.
 
 ## 공개 전 확인할 내용
 
