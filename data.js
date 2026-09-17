@@ -3,7 +3,7 @@
  * 영문 버전을 추가할 때 같은 구조의 `portfolioDataEn`을 만들면 됩니다.
  */
 window.portfolioData = {
-  cvUrl: "",
+  cvUrl: "./assets/Park_So_Yeong_CV.pdf",
   showDrafts: false,
 
   research: [
@@ -59,7 +59,7 @@ window.portfolioData = {
       title: "다중 한국어 음성 코퍼스에서의 Qwen3-ASR 평가 및 추론 파라미터 분석",
       venue: "한국음향학회지",
       role: "제1저자",
-      note: "게재 승인"
+      note: "Accepted 2026.08.25 · in press"
     },
     {
       year: "2026",
@@ -80,6 +80,15 @@ window.portfolioData = {
       note: "포스터 발표"
     },
     {
+      year: "2026",
+      type: "paper",
+      typeLabel: "학술대회 논문",
+      title: "학사 규정 질의응답 모델의 오류 검토·교정 학습을 위한 합성 데이터셋 구축",
+      venue: "한국데이터사이언스학회 하계종합학술대회",
+      role: "제1저자",
+      note: "장려논문상 · 2026.06.19"
+    },
+    {
       year: "2025",
       type: "paper",
       typeLabel: "학술대회 논문",
@@ -89,14 +98,13 @@ window.portfolioData = {
       note: "우수논문상"
     },
     {
-      year: "확인 필요",
+      year: "2025",
       type: "paper",
-      typeLabel: "논문",
-      title: "사족보행 로봇 발걸음 소음 제거 연구",
-      venue: "정확한 서지정보 입력 예정",
-      role: "제1저자",
-      note: "제목·학회명 확인 필요",
-      draft: true
+      typeLabel: "국제학술대회 논문",
+      title: "Low-Latency Deep Learning-Based Denoising of Self-Generated Footstep Noise in Quadruped Robots for Remote Acoustic Situational Awareness",
+      venue: "16th International Conference on Theoretical and Computational Acoustics (ICTCA 2025)",
+      role: "제3저자",
+      note: "Busan · 2025.08"
     }
   ],
 
@@ -109,9 +117,9 @@ window.portfolioData = {
       category: "research"
     },
     {
-      year: "2025",
+      year: "2026.06",
       title: "장려논문상",
-      detail: "대학 학사규정 QA 학습 데이터 연구",
+      detail: "학사 규정 질의응답 모델의 오류 검토·교정 학습을 위한 합성 데이터셋 구축",
       organization: "한국데이터사이언스학회",
       category: "research"
     },
@@ -195,7 +203,7 @@ window.portfolioData = {
   skills: [
     {
       title: "Programming & ML",
-      items: ["Python", "PyTorch", "Transformers"]
+      items: ["Python", "PyTorch", "Transformers", "vLLM"]
     },
     {
       title: "Speech & Audio",
@@ -203,11 +211,11 @@ window.portfolioData = {
     },
     {
       title: "Data & Experiment",
-      items: ["SBERT", "FAISS", "QLoRA", "Experiment Tracking"]
+      items: ["QLoRA", "CER/WER Evaluation", "Dataset Validation", "Experiment Tracking"]
     },
     {
       title: "Tools",
-      items: ["Linux", "Docker", "Git", "LaTeX"]
+      items: ["Linux", "Git", "Reproducible Pipelines"]
     }
   ]
 };
