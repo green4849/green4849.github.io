@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="ko" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="박소영의 음성·오디오 AI 연구 포트폴리오입니다."
+    />
+    <meta name="theme-color" content="#3157d5" />
+    <title>Park So Yeong | Research Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./data.js" defer></script>
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+    <header class="site-header" id="top">
+      <nav class="nav container" aria-label="주요 메뉴">
+        <a class="brand" href="#top" aria-label="첫 화면으로 이동">
+          <span class="brand-mark" aria-hidden="true">PS</span>
+          <span class="brand-name">Park So Yeong</span>
+        </a>
+
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="nav-links"
+          aria-label="메뉴 열기"
+        >
+          <span></span><span></span><span></span>
+        </button>
+
+        <div class="nav-links" id="nav-links">
+          <a href="#about">소개</a>
+          <a href="#education">학력</a>
+          <a href="#research">연구</a>
+          <a href="#publications">논문·발표</a>
+          <a href="#awards">수상</a>
+          <a href="#activities">활동</a>
+          <a href="#contact">연락처</a>
+        </div>
+
+        <button class="theme-toggle" type="button" aria-label="다크 모드로 전환">
+          <span class="theme-icon" aria-hidden="true">◐</span>
+        </button>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="hero section" aria-labelledby="hero-title">
+        <div class="hero-grid container">
+          <div class="hero-copy reveal">
+            <p class="eyebrow">UNDERGRADUATE RESEARCHER · AINC LAB</p>
+            <h1 id="hero-title">
+              소리를 이해하는 AI를<br />
+              <span>연구하는 박소영입니다.</span>
+            </h1>
+            <p class="hero-description">
+              음성·오디오와 자연어를 연결하는 모델을 탐구하고, 실제 데이터에서
+              신뢰할 수 있는 평가와 실험을 설계합니다.
+            </p>
+            <div class="interest-list" aria-label="연구 관심 분야">
+              <span>Audio-Language Understanding</span>
+              <span>Automatic Speech Recognition</span>
+              <span>Learning-Based Audio Processing</span>
+            </div>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#research">연구 보기</a>
+              <button class="button button-secondary" id="cv-button" type="button">
+                CV PDF
+              </button>
+            </div>
+          </div>
+
+          <div class="hero-visual reveal" aria-label="음성 파형을 형상화한 장식">
+            <div class="orbit orbit-one"></div>
+            <div class="orbit orbit-two"></div>
+            <div class="sound-card">
+              <div class="sound-card-top">
+                <span class="status-dot"></span>
+                <span>LISTEN · LEARN · UNDERSTAND</span>
+              </div>
+              <div class="waveform" aria-hidden="true">
+                <i style="--h: 32%"></i><i style="--h: 58%"></i><i style="--h: 86%"></i>
+                <i style="--h: 46%"></i><i style="--h: 72%"></i><i style="--h: 100%"></i>
+                <i style="--h: 62%"></i><i style="--h: 38%"></i><i style="--h: 78%"></i>
+                <i style="--h: 54%"></i><i style="--h: 92%"></i><i style="--h: 44%"></i>
+                <i style="--h: 68%"></i><i style="--h: 28%"></i><i style="--h: 56%"></i>
+              </div>
+              <div class="sound-card-bottom">
+                <span>01:26</span>
+                <span class="sound-label">audio intelligence</span>
+                <span>03:41</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="about section" id="about" aria-labelledby="about-title">
+        <div class="container two-column">
+          <div class="section-heading reveal">
+            <p class="section-index">01 / ABOUT</p>
+            <h2 id="about-title">연구 질문에서<br />실험 결과까지</h2>
+          </div>
+          <div class="about-content reveal">
+            <p class="lead">
+              한신대학교 AINC Lab에서 음성인식, 오디오-언어 이해, 신뢰 가능한 AI
+              평가를 연구하고 있습니다.
+            </p>
+            <p>
+              모델을 단순히 적용하는 데 그치지 않고, 여러 한국어 음성 코퍼스에서
+              추론 조건을 비교하고 재현 가능한 기준을 만드는 과정에 관심이 있습니다.
+              앞으로 소리와 신호를 다루는 AI 연구를 대학원에서 더욱 깊게 이어가고자
+              합니다.
+            </p>
+            <dl class="profile-facts">
+              <div>
+                <dt>소속</dt>
+                <dd>AINC Lab, Hanshin University</dd>
+              </div>
+              <div>
+                <dt>연구 시작</dt>
+                <dd>2025.06</dd>
+              </div>
+              <div>
+                <dt>관심 분야</dt>
+                <dd>Speech · Audio · Language AI</dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+      </section>
+
+      <section class="education section section-tint" id="education" aria-labelledby="education-title">
+        <div class="container">
+          <div class="section-heading horizontal reveal">
+            <div>
+              <p class="section-index">02 / EDUCATION</p>
+              <h2 id="education-title">학력</h2>
+            </div>
+            <p>배움의 방향과 연구 기반</p>
+          </div>
+          <article class="education-card reveal">
+            <div class="education-period">2027년 상반기 졸업 예정</div>
+            <div>
+              <h3>한신대학교</h3>
+              <p class="education-major">AI·SW학부 · 장애인 라이프케어 복수전공</p>
+              <p class="education-meta">전공 평점 <strong>4.40 / 4.50</strong></p>
+            </div>
+            <div class="education-note">
+              <span>Undergraduate</span>
+              <span>Double Major</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="research section" id="research" aria-labelledby="research-title">
+        <div class="container">
+          <div class="section-heading horizontal reveal">
+            <div>
+              <p class="section-index">03 / RESEARCH</p>
+              <h2 id="research-title">연구 경험</h2>
+            </div>
+            <p>모든 연구는 AINC Lab에서 김선만 교수님의 지도로 수행했습니다.</p>
+          </div>
+          <div class="research-grid" id="research-grid"></div>
+        </div>
+      </section>
+
+      <section class="publications section section-tint" id="publications" aria-labelledby="publications-title">
+        <div class="container">
+          <div class="section-heading horizontal reveal">
+            <div>
+              <p class="section-index">04 / PUBLICATIONS</p>
+              <h2 id="publications-title">논문 및 발표</h2>
+            </div>
+            <p>논문 상태와 발표 형식을 구분해 표기했습니다.</p>
+          </div>
+          <div class="filter-bar reveal" role="group" aria-label="논문 유형 필터">
+            <button class="filter-button active" type="button" data-filter="all">전체</button>
+            <button class="filter-button" type="button" data-filter="journal">학술지</button>
+            <button class="filter-button" type="button" data-filter="poster">포스터</button>
+            <button class="filter-button" type="button" data-filter="paper">학술대회 논문</button>
+          </div>
+          <div class="publication-list" id="publication-list"></div>
+        </div>
+      </section>
+
+      <section class="awards section" id="awards" aria-labelledby="awards-title">
+        <div class="container">
+          <div class="section-heading horizontal reveal">
+            <div>
+              <p class="section-index">05 / HONORS</p>
+              <h2 id="awards-title">수상 및 장학</h2>
+            </div>
+            <p>연구 성과와 주요 교외 활동을 중심으로 선별했습니다.</p>
+          </div>
+          <div class="timeline" id="award-list"></div>
+        </div>
+      </section>
+
+      <section class="activities section section-dark" id="activities" aria-labelledby="activities-title">
+        <div class="container">
+          <div class="section-heading horizontal reveal">
+            <div>
+              <p class="section-index">06 / ACTIVITIES</p>
+              <h2 id="activities-title">리더십·교육·활동</h2>
+            </div>
+            <p>협업과 교육을 통해 연구 공동체에 참여해온 경험입니다.</p>
+          </div>
+          <div class="activity-grid" id="activity-grid"></div>
+        </div>
+      </section>
+
+      <section class="skills section" id="skills" aria-labelledby="skills-title">
+        <div class="container two-column">
+          <div class="section-heading reveal">
+            <p class="section-index">07 / SKILLS</p>
+            <h2 id="skills-title">연구 도구</h2>
+          </div>
+          <div class="skill-groups reveal" id="skill-groups"></div>
+        </div>
+      </section>
+
+      <section class="contact section section-tint" id="contact" aria-labelledby="contact-title">
+        <div class="container contact-card reveal">
+          <div>
+            <p class="section-index">08 / CONTACT</p>
+            <h2 id="contact-title">연구에 관해<br />이야기 나누고 싶습니다.</h2>
+          </div>
+          <div class="contact-actions">
+            <a class="contact-link" href="mailto:kong02931@gmail.com">
+              <span>Email</span>
+              <strong>kong02931@gmail.com</strong>
+            </a>
+            <a
+              class="contact-link"
+              href="https://github.com/green4849"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <span>GitHub</span>
+              <strong>github.com/green4849</strong>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <p>© <span id="current-year"></span> Park So Yeong</p>
+        <a href="#top">맨 위로 ↑</a>
+      </div>
+    </footer>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>
