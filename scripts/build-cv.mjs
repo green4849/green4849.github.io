@@ -7,16 +7,20 @@ import { mkdir } from 'node:fs/promises';
 const require = createRequire(import.meta.url);
 const { chromium } = require('playwright');
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
-const output = resolve(root, 'assets/Park_So_Yeong_CV.pdf');
+const variants = [
+  { language: 'ko', source: 'cv/index.html', pdf: 'Park_So_Yeong_CV.pdf' },
+  { language: 'en', source: 'cv/en/index.html', pdf: 'Park_So_Yeong_CV_EN.pdf' }
+];
 const browser = await chromium.launch({ headless: true,
   executablePath: process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH || undefined });
 
-try {
+async function renderCV(variant) {
+  const output = resolve(root, 'assets', variant.pdf);
   const page = await browser.newPage({ viewport: { width: 1000, height: 1300 } });
   const errors = [];
   page.on('pageerror', error => errors.push(error.message));
   page.on('requestfailed', request => errors.push(`${request.url()}: ${request.failure()?.errorText}`));
-  await page.goto(pathToFileURL(resolve(root, 'cv/index.html')).href);
+  await page.goto(pathToFileURL(resolve(root, variant.source)).href);
   await page.emulateMedia({ media: 'print' });
   await page.evaluate(async () => {
     await Promise.all([400, 500, 600, 650, 700, 750].map(weight =>
@@ -40,7 +44,7 @@ try {
     });
   });
   if (errors.length || layout.length !== 2 || layout.some(p => p.footerGap < 12 || p.horizontalOverflow)) {
-    throw new Error(`CV layout validation failed: ${JSON.stringify({ errors, layout })}`);
+    throw new Error(`CV layout validation failed (${variant.language}): ${JSON.stringify({ errors, layout })}`);
   }
   await page.pdf({ path: output, preferCSSPageSize: true, printBackground: true,
     displayHeaderFooter: false, tagged: true, outline: true });
@@ -49,13 +53,18 @@ try {
   const mobileOverflow = await page.evaluate(() => document.documentElement.scrollWidth > innerWidth);
   if (mobileOverflow) throw new Error('CV overflows horizontally on mobile');
   if (process.env.CV_QA_DIR) {
-    const qaDir = resolve(process.env.CV_QA_DIR);
+    const qaDir = resolve(process.env.CV_QA_DIR, variant.language);
     await mkdir(qaDir, { recursive: true });
     await page.screenshot({ path: resolve(qaDir, 'cv-mobile.png'), fullPage: true });
     await page.setViewportSize({ width: 1000, height: 1300 });
     await page.screenshot({ path: resolve(qaDir, 'cv-desktop.png'), fullPage: false });
   }
-  console.log(JSON.stringify({ output, layout, mobileOverflow }, null, 2));
+  console.log(JSON.stringify({ language: variant.language, output, layout, mobileOverflow }, null, 2));
+  await page.close();
+}
+
+try {
+  for (const variant of variants) await renderCV(variant);
 } finally {
   await browser.close();
 }

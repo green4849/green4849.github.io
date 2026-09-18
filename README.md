@@ -5,6 +5,8 @@
 - 포트폴리오: https://green4849.github.io/
 - 웹 CV: https://green4849.github.io/cv/
 - PDF: https://green4849.github.io/assets/Park_So_Yeong_CV.pdf
+- 영문 웹 CV: https://green4849.github.io/cv/en/
+- 영문 PDF: https://green4849.github.io/assets/Park_So_Yeong_CV_EN.pdf
 
 ## 로컬에서 확인하기
 
@@ -29,12 +31,13 @@ VS Code의 Live Server 확장 프로그램으로 확인해도 됩니다.
 
 CV는 [mnjul/html-resume](https://github.com/mnjul/html-resume) 템플릿의 HTML/CSS 구조를 기반으로 제작했습니다. 한글 글꼴, 장식을 줄인 흑백 A4 2페이지, 모바일 레이아웃을 적용했습니다. 템플릿 원본과 라이선스는 `cv/vendor/html-resume/`, 폰트 라이선스는 `cv/fonts/OFL.txt`에 보관합니다.
 
-- 내용: `cv/index.html`
+- 한국어 내용: `cv/index.html`
+- 동일 내용의 영문판: `cv/en/index.html`
 - 글자 크기·여백·인쇄 디자인: `cv/cv.css`
 - 1페이지: 소개·학력·연구 경험·활동·장학금
 - 2페이지: 논문 및 발표·수상 실적
 
-CV 내용은 `cv/index.html`, 포트폴리오의 카드 내용은 `data.js`에서 각각 관리하므로 공통 정보가 바뀌면 두 파일에 반영합니다. 메인 페이지 학력·소개는 `index.html`에 있습니다.
+CV 내용은 한국어 `cv/index.html`과 영문 `cv/en/index.html`, 포트폴리오의 카드 내용은 `data.js`에서 각각 관리하므로 공통 정보가 바뀌면 세 파일에 반영합니다. 메인 페이지 학력·소개는 `index.html`에 있습니다. 영문판은 기존 한국어판의 사실·순서·수치를 유지하며, 영문 논문의 저자 표기에 맞춰 이름을 `So Yeong Park`으로 표시합니다. 기관명 확인 근거와 번역 메모는 `cv/TRANSLATION.md`에 있습니다.
 
 `main`에 변경사항을 저장하면 GitHub Actions가 Chromium의 인쇄 기능으로 PDF를 다시 만들고 웹 CV와 함께 배포합니다. Python은 사용하지 않습니다. 배포된 PDF가 최신 파일이며, 저장소의 PDF는 초기 검수본입니다.
 
@@ -46,7 +49,7 @@ npx playwright install chromium
 npm run build:cv
 ```
 
-결과는 `assets/Park_So_Yeong_CV.pdf`입니다. 글꼴 로딩, 페이지 하단 여백, 가로 넘침, 모바일 넘침을 검사하며, 내용이 페이지를 넘으면 배포 전에 실패합니다. 많은 내용을 추가할 때는 페이지 구성을 다시 검토하고 PDF를 열어 확인하세요.
+한국어 결과는 `assets/Park_So_Yeong_CV.pdf`, 영문 결과는 `assets/Park_So_Yeong_CV_EN.pdf`입니다. 두 언어 모두 2페이지를 생성하고 글꼴 로딩, 페이지 하단 여백, 가로 넘침, 모바일 넘침을 검사하며, 내용이 페이지를 넘으면 배포 전에 실패합니다. `CV_QA_DIR`를 지정하면 해당 폴더의 `ko/`, `en/`에 검수용 스크린샷을 저장합니다. 많은 내용을 추가할 때는 페이지 구성을 다시 검토하고 PDF를 열어 확인하세요.
 
 브라우저의 ‘인쇄’ 버튼으로도 PDF를 저장할 수 있습니다. A4, 배율 100%, 여백 없음, 머리글·바닥글 끔, 배경 그래픽 켬으로 설정합니다.
 
