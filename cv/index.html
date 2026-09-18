@@ -1,13 +1,13 @@
 <!doctype html>
 <!-- Adapted from mnjul/html-resume (Apache-2.0), modified 2026-09-18.
-     Changes: Korean research CV, three A4 pages, responsive layout, local fonts.
+     Changes: Korean research CV, two A4 pages, responsive layout, local fonts.
      See THIRD_PARTY.md and vendor/html-resume/LICENSE. -->
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="박소영 연구 CV - 학력, 음성·오디오 AI 연구, 논문 및 수상 경력" />
-    <meta name="theme-color" content="#205a64" />
+    <meta name="theme-color" content="#222222" />
     <title>박소영 | Research CV</title>
     <link rel="stylesheet" href="./vendor/html-resume/style.css" />
     <link rel="stylesheet" href="./cv.css" />
@@ -21,7 +21,7 @@
       </div>
     </nav>
     <main id="main">
-      <article class="sheet" aria-label="1페이지: 학력 및 연구">
+      <article class="sheet" aria-label="1페이지: 학력, 연구, 활동 및 기술">
         <div class="sheet-content">
           <header class="identity" id="title">
             <p class="eyebrow">RESEARCH CURRICULUM VITAE</p>
@@ -38,7 +38,7 @@
           <section class="main-block" aria-labelledby="education">
             <h2 id="education">학력 <span>Education</span></h2>
             <section class="blocks">
-              <div class="date"><span>2024.03</span><span>2027 상반기<br />졸업 예정</span></div>
+              <div class="date"><span>2024.03</span><span>2027 상반기 <br />졸업 예정</span></div>
               <div class="decorator" aria-hidden="true"></div>
               <div class="details">
                 <h3>한신대학교 AI·SW학부</h3>
@@ -93,13 +93,31 @@
               </div>
             </section>
           </section>
+          <section class="main-block" aria-labelledby="activities">
+            <h2 id="activities">리더십·교육·활동 <span>Activities &amp; Service</span></h2>
+            <div class="activity-list">
+              <div class="activity"><span class="date-text">2026.06 - 현재</span><div><h3>AIUX Lab Leader</h3><p>학부 연구 커뮤니티의 정기 활동과 연구 교류 운영</p></div></div>
+              <div class="activity"><span class="date-text">2026 가을학기</span><div><h3>딥러닝 응용 수업 조교</h3><p>수업 운영 및 학습 활동 지원</p></div></div>
+              <div class="activity"><span class="date-text">2026 봄학기</span><div><h3>AI·SW 수학 수업 조교</h3><p>수업 운영 및 기초 학습 지원</p></div></div>
+              <div class="activity"><span class="date-text">2026.01</span><div><h3>CES 2026 참가</h3><p>교내 선발을 통해 기술 박람회 참관</p></div></div>
+            </div>
+          </section>
+          <section class="main-block" aria-labelledby="skills">
+            <h2 id="skills">연구 도구 <span>Technical Skills</span></h2>
+            <dl class="skill-list">
+              <div><dt>Programming &amp; ML</dt><dd>Python · PyTorch · Transformers · vLLM</dd></div>
+              <div><dt>Speech &amp; Audio</dt><dd>Qwen3-ASR · Whisper · MS-CLAP · QD-DETR</dd></div>
+              <div><dt>Training &amp; Evaluation</dt><dd>QLoRA · CER/WER · Dataset Validation · Experiment Tracking</dd></div>
+              <div><dt>Tools</dt><dd>Linux · Git · Reproducible Pipelines</dd></div>
+            </dl>
+          </section>
         </div>
-        <footer class="page-footer"><span>PARK SO YEONG · RESEARCH CV</span><span>2026.09 · 1 / 3</span></footer>
+        <footer class="page-footer"><span>PARK SO YEONG · RESEARCH CV</span><span>2026.09 · 1 / 2</span></footer>
       </article>
 
-      <article class="sheet" aria-label="2페이지: 논문 및 발표">
+      <article class="sheet" aria-label="2페이지: 논문, 발표 및 수상">
         <div class="sheet-content">
-          <header class="running-header"><span>박소영 <span class="roman-name">Park So Yeong</span></span><span>논문 및 발표</span></header>
+          <header class="running-header"><span>박소영 <span class="roman-name">Park So Yeong</span></span><span>논문 · 발표 · 수상</span></header>
           <section class="main-block publications" aria-labelledby="publications">
             <h2 id="publications">논문 및 발표 <span>Publications &amp; Presentations</span></h2>
             <p class="section-note">본인 이름을 굵게 표시했습니다. 학술지 게재 승인과 학술대회 발표를 구분합니다.</p>
@@ -164,13 +182,6 @@
               </div>
             </section>
           </section>
-        </div>
-        <footer class="page-footer"><span>PARK SO YEONG · RESEARCH CV</span><span>2026.09 · 2 / 3</span></footer>
-      </article>
-
-      <article class="sheet" aria-label="3페이지: 수상, 활동 및 기술">
-        <div class="sheet-content">
-          <header class="running-header"><span>박소영 <span class="roman-name">Park So Yeong</span></span><span>수상 · 활동 · 기술</span></header>
           <section class="main-block" aria-labelledby="awards">
             <h2 id="awards">수상 및 장학 <span>Awards &amp; Honors</span></h2>
             <div class="award-list">
@@ -184,27 +195,10 @@
               <div class="award"><span class="date-text">2025.07<br />- 졸업</span><div><h3>일주학술문화재단 33기 장학생</h3><p>장학 지원 및 주 1회 초등학생 대상 교육봉사</p></div></div>
             </div>
           </section>
-          <section class="main-block" aria-labelledby="activities">
-            <h2 id="activities">리더십·교육·활동 <span>Activities &amp; Service</span></h2>
-            <div class="activity-list">
-              <div class="activity"><span class="date-text">2026.06 - 현재</span><div><h3>AIUX Lab Leader</h3><p>학부 연구 커뮤니티의 정기 활동과 연구 교류 운영</p></div></div>
-              <div class="activity"><span class="date-text">2026 가을학기</span><div><h3>딥러닝 응용 수업 조교</h3><p>수업 운영 및 학습 활동 지원</p></div></div>
-              <div class="activity"><span class="date-text">2026 봄학기</span><div><h3>AI·SW 수학 수업 조교</h3><p>수업 운영 및 기초 학습 지원</p></div></div>
-              <div class="activity"><span class="date-text">2026.01</span><div><h3>CES 2026 참가</h3><p>교내 선발을 통해 기술 박람회 참관</p></div></div>
-            </div>
-          </section>
-          <section class="main-block" aria-labelledby="skills">
-            <h2 id="skills">연구 도구 <span>Technical Skills</span></h2>
-            <dl class="skill-list">
-              <div><dt>Programming &amp; ML</dt><dd>Python · PyTorch · Transformers · vLLM</dd></div>
-              <div><dt>Speech &amp; Audio</dt><dd>Qwen3-ASR · Whisper · MS-CLAP · QD-DETR</dd></div>
-              <div><dt>Training &amp; Evaluation</dt><dd>QLoRA · CER/WER · Dataset Validation · Experiment Tracking</dd></div>
-              <div><dt>Tools</dt><dd>Linux · Git · Reproducible Pipelines</dd></div>
-            </dl>
-          </section>
         </div>
-        <footer class="page-footer"><span>PARK SO YEONG · RESEARCH CV</span><span>2026.09 · 3 / 3</span></footer>
+        <footer class="page-footer"><span>PARK SO YEONG · RESEARCH CV</span><span>2026.09 · 2 / 2</span></footer>
       </article>
+
     </main>
     <p class="web-credit">Adapted from <a href="https://github.com/mnjul/html-resume">mnjul/html-resume</a> · <a href="./THIRD_PARTY.md">Template &amp; font licenses</a></p>
   </body>

@@ -1,5 +1,5 @@
 /* mnjul/html-resume adaptation, modified 2026-09-18.
- * A4 research CV with larger Korean type, three pages and mobile reflow.
+ * Two-page A4 research CV with restrained typography and mobile reflow.
  * Original timeline structure and base styles: vendor/html-resume (Apache-2.0). */
 @font-face {
   font-family: "CV Noto Sans KR";
@@ -9,24 +9,24 @@
   font-display: swap;
 }
 :root {
-  --ink: #202e33;
-  --muted: #56666c;
-  --accent: #205a64;
-  --line: #ccd7da;
+  --ink: #222;
+  --muted: #555;
+  --accent: #222;
+  --line: #b9b9b9;
   --date-block-width: 26mm;
   --decorator-horizontal-margin: 4.5mm;
   --decorator-border: 1px solid var(--line);
   --row-blocks-padding-top: 0;
 }
-html { background: #e9eef0; }
+html { background: #f3f3f3; }
 body.cv-document {
   width: auto;
   height: auto;
   margin: 0;
   font-family: "CV Noto Sans KR", sans-serif;
-  font-size: 10.5pt;
+  font-size: 10.25pt;
   font-weight: 400;
-  line-height: 1.58;
+  line-height: 1.45;
   color: var(--ink);
   hyphens: none;
   word-break: keep-all;
@@ -54,22 +54,21 @@ strong { font-weight: 700; }
 .toolbar button, .toolbar .download {
   display: inline-block;
   border: 1px solid #c2cdd0;
-  border-radius: 7px;
+  border-radius: 2px;
   background: white;
   padding: 9px 15px;
   color: var(--ink);
   cursor: pointer;
 }
-.toolbar .download { background: var(--accent); border-color: var(--accent); color: white; }
+.toolbar .download { background: white; border-color: #bbb; color: var(--ink); }
 .cv-document #main { float: none; width: auto; padding: 0; font-size: inherit; }
 .sheet {
   position: relative;
   width: 210mm;
   height: 297mm;
   margin: 0 auto 24px;
-  padding: 15mm 17mm 17mm;
+  padding: 12mm 16mm 15mm;
   background: #fff;
-  box-shadow: 0 5px 25px #273f4710;
   break-after: page;
 }
 .sheet:last-child { break-after: auto; }
@@ -77,48 +76,50 @@ strong { font-weight: 700; }
 .cv-document h1, .cv-document h2, .cv-document h3 { color: var(--ink); text-transform: none; }
 .cv-document #title {
   position: static;
-  margin: 0 0 6mm;
-  padding-bottom: 5mm;
-  border-bottom: 1.5px solid var(--accent);
+  margin: 0 0 3mm;
+  padding-bottom: 0;
+  border-bottom: none;
   line-height: inherit;
   text-transform: none;
 }
-.eyebrow { font-size: 8.5pt; font-weight: 600; letter-spacing: 1.7px; color: var(--accent); margin-bottom: 2mm; }
-.cv-document #title h1 { font-size: 29pt; line-height: 1.35; font-weight: 750; letter-spacing: -.6px; }
-#title h1 span { font-size: 17pt; font-weight: 450; letter-spacing: -.25px; margin-left: 3mm; }
-.position { font-size: 10.5pt; margin-top: 2mm; }
-.contact { display: flex; flex-wrap: wrap; gap: 2mm 5mm; margin-top: 3mm; font-size: 9pt; }
-.summary { font-size: 11pt; line-height: 1.7; margin: 0 0 6mm; }
-.cv-document .main-block { margin-top: 6mm; }
+.eyebrow { font-size: 8pt; font-weight: 500; letter-spacing: .8px; color: var(--muted); margin-bottom: .8mm; }
+.cv-document #title h1 { font-size: 24pt; line-height: 1.25; font-weight: 700; letter-spacing: -.4px; }
+#title h1 span { font-size: 15pt; font-weight: 400; letter-spacing: 0; margin-left: 3mm; }
+.position { font-size: 9.5pt; margin-top: 1.2mm; }
+.contact { display: flex; flex-wrap: wrap; gap: 1mm 5mm; margin-top: 1.5mm; font-size: 9pt; }
+.summary { font-size: 10.25pt; line-height: 1.5; margin: 0 0 3mm; }
+.cv-document .main-block { margin-top: 3.5mm; }
 .cv-document #main h2 {
   position: static;
   display: flex;
   align-items: baseline;
   gap: 3mm;
-  margin: 0 0 4mm;
-  padding-bottom: 2mm;
-  border-bottom: 1px solid var(--line);
-  font-size: 14pt;
+  margin: 0 0 2.2mm;
+  padding-bottom: 1.1mm;
+  border-bottom: .5pt solid var(--line);
+  font-size: 12pt;
   font-weight: 700;
-  line-height: 1.4;
+  line-height: 1.3;
   color: var(--accent);
 }
 .cv-document #main h2::after { display: none; }
-h2 span { font-size: 9pt; font-weight: 450; letter-spacing: .15px; color: var(--muted); }
-.cv-document .blocks { margin: 0; break-inside: avoid; }
+h2 span { font-size: 8.5pt; font-weight: 400; color: var(--muted); }
+.cv-document .blocks { display: flow-root; margin: 0 0 2.3mm; break-inside: avoid; }
 .cv-document .blocks > div { padding-top: 0; }
 .cv-document .date {
-  padding-top: 1.4mm !important;
-  padding-right: 4mm;
-  font-size: 9.5pt;
+  float: right;
+  padding: .5mm 0 0 4mm !important;
+  font-size: 9pt;
   color: var(--muted);
-  line-height: 1.5;
-  text-align: left;
-  font-weight: 500;
+  line-height: 1.4;
+  text-align: right;
+  font-weight: 400;
 }
-.cv-document .date span:nth-child(2)::before { content: "-"; position: static; display: inline; height: auto; margin-right: 1mm; }
-.date small { display: block; font-size: 8pt; margin-top: 1mm; font-weight: 400; }
-.cv-document .decorator { width: 1px; min-height: 0; }
+.cv-document .date span, .date small { display: inline; }
+.cv-document .date span:nth-child(2)::before { content: "-"; position: static; display: inline; height: auto; margin: 0 1mm; }
+.date br { display: none; }
+.date small { font-size: 8.5pt; margin-left: 1mm; font-weight: 400; }
+.cv-document .decorator { display: none; }
 .cv-document .decorator::before { display: none; }
 .cv-document .decorator::after {
   width: 5px; height: 5px; top: 9px; left: -3px; border-radius: 50%; background: var(--accent);
@@ -126,46 +127,45 @@ h2 span { font-size: 9pt; font-weight: 450; letter-spacing: .15px; color: var(--
 .cv-document .blocks:last-child .decorator { margin-bottom: 4mm; }
 .cv-document .details {
   min-width: 0;
-  padding-top: 0 !important;
-  padding-bottom: 4mm;
-  padding-left: 4.5mm;
+  display: block;
+  padding: 0 !important;
 }
-.cv-document .details h3 { font-size: 11.2pt; font-weight: 650; line-height: 1.55; margin-bottom: .6mm; }
-.cv-document .details p { margin-top: .5mm; }
-.meta { color: var(--muted); font-size: 9.5pt; }
-.cv-document #main ul { margin: 1.2mm 0 0; padding-left: 4mm; }
-.cv-document #main li { list-style-type: disc; margin: 0 0 1mm; padding-left: .5mm; }
+.cv-document .details h3 { font-size: 10.5pt; font-weight: 650; line-height: 1.45; margin: 0 0 .4mm; }
+.cv-document .details p { margin-top: .3mm; }
+.meta { color: var(--muted); font-size: 9.25pt; }
+.cv-document #main ul { margin: .6mm 0 0; padding-left: 4mm; }
+.cv-document #main li { list-style-type: disc; margin: 0 0 .5mm; padding-left: 0; }
 .cv-document #main li::before { content: none; }
 li::marker { color: var(--muted); font-size: .75em; }
-.running-header { display: flex; justify-content: space-between; color: var(--muted); font-size: 9pt; padding-bottom: 4mm; border-bottom: 1.5px solid var(--accent); }
+.running-header { display: flex; justify-content: space-between; color: var(--muted); font-size: 8.5pt; margin-bottom: 3mm; }
 .running-header > span:first-child { color: var(--ink); font-weight: 600; }
 .roman-name { padding-left: 2mm; font-weight: 400; }
-.section-note { color: var(--muted); font-size: 9.5pt; margin-bottom: 5mm; }
-.publications .details { padding-bottom: 6mm; }
-.cv-document .publication .details h3 { font-size: 11.5pt; margin: 1mm 0 1.2mm; line-height: 1.55; }
-.pub-label { color: var(--accent); font-size: 9pt; font-weight: 500; }
-.badge { display: inline-block; border-radius: 3px; background: #edf3f4; padding: .25mm 1.6mm; margin-left: 2mm; font-size: 8.5pt; font-weight: 600; }
-.authors { font-size: 10pt; }
-.venue { font-size: 9.5pt; color: var(--muted); line-height: 1.5; }
-.award, .activity { display: grid; grid-template-columns: 26mm minmax(0, 1fr); gap: 4.5mm; break-inside: avoid; }
-.award { margin-bottom: 2.5mm; }
-.award time, .date-text { color: var(--muted); font-size: 9pt; padding-top: .5mm; }
-.award h3, .activity h3 { font-size: 10.5pt; font-weight: 650; line-height: 1.55; }
+.running-header + .main-block { margin-top: 0; }
+.section-note { color: var(--muted); font-size: 9pt; margin-bottom: 2.5mm; }
+.cv-document .publication { margin-bottom: 2.3mm; }
+.cv-document .publication .details h3 { font-size: 10.5pt; margin: .6mm 0 .4mm; line-height: 1.42; }
+.pub-label { color: var(--muted); font-size: 8.5pt; font-weight: 400; }
+.badge { display: inline; margin-left: 2mm; font-size: inherit; font-weight: 500; }
+.authors { font-size: 9.25pt; }
+.venue { font-size: 9pt; color: var(--muted); line-height: 1.4; }
+.award, .activity { display: grid; grid-template-columns: 27mm minmax(0, 1fr); gap: 3mm; break-inside: avoid; }
+.award { margin-bottom: 1.5mm; }
+.award time, .date-text { color: var(--muted); font-size: 9pt; padding-top: .3mm; }
+.award h3, .activity h3 { font-size: 10pt; font-weight: 650; line-height: 1.4; }
 .award h3 span { margin-left: 2mm; font-size: 9pt; font-weight: 400; color: var(--muted); }
-.award p, .activity p { font-size: 10pt; margin-top: .3mm; line-height: 1.55; }
-.activity { margin-bottom: 2.5mm; }
-.skill-list > div { display: grid; grid-template-columns: 40mm minmax(0, 1fr); gap: 3mm; margin-top: 1.7mm; }
+.award p, .activity p { font-size: 9.5pt; margin-top: .3mm; line-height: 1.4; }
+.activity { margin-bottom: 1.5mm; }
+.skill-list > div { display: grid; grid-template-columns: 39mm minmax(0, 1fr); gap: 3mm; margin-top: 1mm; }
 .skill-list dt { font-size: 9pt; font-weight: 600; color: var(--muted); }
-.skill-list dd { margin: 0; font-size: 9.5pt; line-height: 1.5; }
+.skill-list dd { margin: 0; font-size: 9.5pt; line-height: 1.4; }
 .page-footer {
   position: absolute;
-  bottom: 9mm;
-  left: 17mm;
-  right: 17mm;
+  bottom: 8mm;
+  left: 16mm;
+  right: 16mm;
   display: flex;
   justify-content: space-between;
-  padding-top: 2.5mm;
-  border-top: 1px solid var(--line);
+  padding-top: 0;
   font-size: 8pt;
   letter-spacing: .35px;
   color: var(--muted);
@@ -194,10 +194,11 @@ li::marker { color: var(--muted); font-size: .75em; }
   .position { font-size: 13px; }
   .contact { flex-direction: column; gap: 4px; font-size: 12px; }
   .summary { font-size: 14px; }
-  .cv-document #main h2 { display: block; font-size: 19px; }
+  .cv-document .main-block { margin-top: 22px; }
+  .cv-document #main h2 { display: block; font-size: 18px; margin-bottom: 12px; }
   h2 span { display: block; margin-top: 3px; font-size: 12px; }
   .cv-document .blocks { display: block; margin-bottom: 17px; }
-  .cv-document .date { padding: 0 0 5px !important; font-size: 12px; }
+  .cv-document .date { float: none; padding: 0 0 5px !important; font-size: 12px; text-align: left; }
   .date span, .date small { display: inline; margin-right: 4px; }
   .date br { display: none; }
   .decorator { display: none; }

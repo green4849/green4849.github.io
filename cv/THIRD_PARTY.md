@@ -8,8 +8,8 @@ The unmodified upstream HTML, CSS, and Apache License 2.0 are retained in
 `vendor/html-resume/` (see [LICENSE](./vendor/html-resume/LICENSE)). The CV loads the original CSS
 and extends its date/decorator/details timeline layout with `cv.css`.
 
-Modifications dated 2026-09-18: Korean content, three A4 pages, larger type,
-single-column content, local font embedding, mobile layout, print controls,
+Modifications dated 2026-09-18: Korean content, two A4 pages, restrained monochrome type,
+single-column content, hidden timeline decorations, local font embedding, mobile layout, print controls,
 accessible section labels, and browser PDF generation.
 
 The locally hosted Noto Sans KR font comes from

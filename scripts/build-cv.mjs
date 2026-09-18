@@ -39,7 +39,7 @@ try {
       return { page: index + 1, footerGap: Math.round(footer.top - content.bottom), horizontalOverflow };
     });
   });
-  if (errors.length || layout.length !== 3 || layout.some(p => p.footerGap < 12 || p.horizontalOverflow)) {
+  if (errors.length || layout.length !== 2 || layout.some(p => p.footerGap < 12 || p.horizontalOverflow)) {
     throw new Error(`CV layout validation failed: ${JSON.stringify({ errors, layout })}`);
   }
   await page.pdf({ path: output, preferCSSPageSize: true, printBackground: true,

@@ -27,13 +27,12 @@ VS Code의 Live Server 확장 프로그램으로 확인해도 됩니다.
 
 ## CV 수정 및 PDF 생성
 
-CV는 [mnjul/html-resume](https://github.com/mnjul/html-resume) 템플릿의 HTML/CSS 구조를 기반으로 제작했습니다. 한글 글꼴, A4 3페이지, 모바일 레이아웃을 적용했습니다. 템플릿 원본과 라이선스는 `cv/vendor/html-resume/`, 폰트 라이선스는 `cv/fonts/OFL.txt`에 보관합니다.
+CV는 [mnjul/html-resume](https://github.com/mnjul/html-resume) 템플릿의 HTML/CSS 구조를 기반으로 제작했습니다. 한글 글꼴, 장식을 줄인 흑백 A4 2페이지, 모바일 레이아웃을 적용했습니다. 템플릿 원본과 라이선스는 `cv/vendor/html-resume/`, 폰트 라이선스는 `cv/fonts/OFL.txt`에 보관합니다.
 
 - 내용: `cv/index.html`
 - 글자 크기·여백·인쇄 디자인: `cv/cv.css`
-- 1페이지: 소개·학력·연구 경험
-- 2페이지: 논문 및 발표
-- 3페이지: 수상·활동·연구 도구
+- 1페이지: 소개·학력·연구 경험·활동·연구 도구
+- 2페이지: 논문 및 발표·수상 및 장학
 
 CV 내용은 `cv/index.html`, 포트폴리오의 카드 내용은 `data.js`에서 각각 관리하므로 공통 정보가 바뀌면 두 파일에 반영합니다. 메인 페이지 학력·소개는 `index.html`에 있습니다.
 
