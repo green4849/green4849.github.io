@@ -152,13 +152,6 @@ window.portfolioData = {
       category: "competition"
     },
     {
-      year: "2024.09",
-      title: "최우수상",
-      detail: "U10 경기권 대학 연합 기업분석경진대회",
-      organization: "한신대학교",
-      category: "competition"
-    },
-    {
       year: "2025.07 — 졸업",
       title: "일주학술문화재단 33기 장학생",
       detail: "장학 지원과 주 1회 초등학생 대상 교육봉사",
@@ -204,18 +197,6 @@ window.portfolioData = {
     {
       title: "Programming & ML",
       items: ["Python", "PyTorch", "Transformers", "vLLM"]
-    },
-    {
-      title: "Speech & Audio",
-      items: ["Qwen3-ASR", "Whisper", "MS-CLAP", "QD-DETR"]
-    },
-    {
-      title: "Data & Experiment",
-      items: ["QLoRA", "CER/WER Evaluation", "Dataset Validation", "Experiment Tracking"]
-    },
-    {
-      title: "Tools",
-      items: ["Linux", "Git", "Reproducible Pipelines"]
     }
   ]
 };

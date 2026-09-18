@@ -141,7 +141,6 @@ li::marker { color: var(--muted); font-size: .75em; }
 .running-header > span:first-child { color: var(--ink); font-weight: 600; }
 .roman-name { padding-left: 2mm; font-weight: 400; }
 .running-header + .main-block { margin-top: 0; }
-.section-note { color: var(--muted); font-size: 9pt; margin-bottom: 2.5mm; }
 .cv-document .publication { margin-bottom: 2.3mm; }
 .cv-document .publication .details h3 { font-size: 10.5pt; margin: .6mm 0 .4mm; line-height: 1.42; }
 .pub-label { color: var(--muted); font-size: 8.5pt; font-weight: 400; }
@@ -155,6 +154,9 @@ li::marker { color: var(--muted); font-size: .75em; }
 .award h3 span { margin-left: 2mm; font-size: 9pt; font-weight: 400; color: var(--muted); }
 .award p, .activity p { font-size: 9.5pt; margin-top: .3mm; line-height: 1.4; }
 .activity { margin-bottom: 1.5mm; }
+.activity > div { display: flex; align-items: baseline; gap: 3mm; min-width: 0; }
+.activity h3 { flex: 0 0 40mm; }
+.activity p { flex: 1; min-width: 0; margin-top: 0; }
 .skill-list > div { display: grid; grid-template-columns: 39mm minmax(0, 1fr); gap: 3mm; margin-top: 1mm; }
 .skill-list dt { font-size: 9pt; font-weight: 600; color: var(--muted); }
 .skill-list dd { margin: 0; font-size: 9.5pt; line-height: 1.4; }
@@ -205,6 +207,9 @@ li::marker { color: var(--muted); font-size: .75em; }
   .cv-document .details { padding: 0; }
   .cv-document .details h3, .cv-document .publication .details h3 { font-size: 15px; }
   .award, .activity { grid-template-columns: minmax(0, 1fr); gap: 2px; margin-bottom: 14px; }
+  .activity > div { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.3fr); gap: 10px; }
+  .activity h3 { font-size: 13px; }
+  .activity p { font-size: 12px; }
   .award h3 span { display: block; margin-left: 0; }
   .date-text br { display: none; }
   .skill-list > div { display: block; margin-top: 12px; }
