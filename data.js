@@ -150,13 +150,6 @@ window.portfolioData = {
       detail: "고려대학교 AI/블록체인 창업경진대회",
       organization: "고려대학교 SW중심대학사업단",
       category: "competition"
-    },
-    {
-      year: "2025.07 — 졸업",
-      title: "일주학술문화재단 33기 장학생",
-      detail: "장학 지원과 주 1회 초등학생 대상 교육봉사",
-      organization: "일주학술문화재단 · 태광그룹",
-      category: "scholarship"
     }
   ],
 
@@ -184,19 +177,23 @@ window.portfolioData = {
       title: "CES 2026 참가",
       text: "교내 선발을 통해 세계 최대 규모의 기술 박람회인 CES 2026을 참관했습니다.",
       label: "Selected Activity"
-    },
-    {
-      period: "Weekly",
-      title: "초등학생 대상 교육봉사",
-      text: "일주학술문화재단 장학생 활동으로 주 1회 교육봉사에 참여하고 있습니다.",
-      label: "Service"
     }
   ],
 
-  skills: [
+  scholarships: [
     {
-      title: "Programming & ML",
-      items: ["Python", "PyTorch", "Transformers", "vLLM"]
+      year: "재학 중",
+      title: "Academic Excellence Scholarship",
+      detail: "매학기 성적우수 장학금 수혜",
+      organization: "한신대학교",
+      category: "scholarship"
+    },
+    {
+      year: "2025.07 — 졸업",
+      title: "태광그룹 일주학술문화재단",
+      detail: "33기 장학생 선발 · 주 1회 초등학생 대상 교육봉사",
+      organization: "일주학술문화재단 · 태광그룹",
+      category: "scholarship"
     }
   ]
 };

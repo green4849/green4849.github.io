@@ -66,9 +66,9 @@ const renderPublications = (filter = "all") => {
   observeReveals(target);
 };
 
-const renderAwards = () => {
-  const target = document.querySelector("#award-list");
-  target.innerHTML = data.awards
+const renderHonors = (selector, items) => {
+  const target = document.querySelector(selector);
+  target.innerHTML = items
     .map(
       (item, index) => `
         <article class="timeline-item reveal" style="--delay: ${Math.min(index * 50, 250)}ms">
@@ -99,22 +99,6 @@ const renderActivities = () => {
           <p>${escapeHtml(item.text)}</p>
           <time>${escapeHtml(item.period)}</time>
         </article>
-      `
-    )
-    .join("");
-};
-
-const renderSkills = () => {
-  const target = document.querySelector("#skill-groups");
-  target.innerHTML = data.skills
-    .map(
-      (group) => `
-        <div class="skill-group">
-          <h3>${escapeHtml(group.title)}</h3>
-          <div>
-            ${group.items.map((item) => `<span>${escapeHtml(item)}</span>`).join("")}
-          </div>
-        </div>
       `
     )
     .join("");
@@ -232,9 +216,9 @@ const setupCvButton = () => {
 
 renderResearch();
 renderPublications();
-renderAwards();
+renderHonors("#award-list", data.awards);
 renderActivities();
-renderSkills();
+renderHonors("#scholarship-list", data.scholarships);
 setupPublicationFilters();
 setupNavigation();
 setupTheme();

@@ -13,13 +13,13 @@ VS Code의 Live Server 확장 프로그램으로 확인해도 됩니다.
 
 ## 내용 수정
 
-대부분의 연구·논문·수상·활동·기술 정보는 `data.js`에서 수정할 수 있습니다.
+대부분의 연구·논문·수상·활동·장학 정보는 `data.js`에서 수정할 수 있습니다.
 
 - 연구: `research`
 - 논문 및 발표: `publications`
-- 수상 및 장학: `awards`
+- 수상 실적: `awards`
 - 리더십·교육·활동: `activities`
-- 연구 도구: `skills`
+- 장학금: `scholarships`
 
 `draft: true`인 미확정 논문은 기본적으로 공개 화면에 나타나지 않습니다. 검토 중인 항목까지 확인하려면 `showDrafts`를 `true`로 변경하세요.
 
@@ -31,8 +31,8 @@ CV는 [mnjul/html-resume](https://github.com/mnjul/html-resume) 템플릿의 HTM
 
 - 내용: `cv/index.html`
 - 글자 크기·여백·인쇄 디자인: `cv/cv.css`
-- 1페이지: 소개·학력·연구 경험·활동·연구 도구
-- 2페이지: 논문 및 발표·수상 및 장학
+- 1페이지: 소개·학력·연구 경험·활동·장학금
+- 2페이지: 논문 및 발표·수상 실적
 
 CV 내용은 `cv/index.html`, 포트폴리오의 카드 내용은 `data.js`에서 각각 관리하므로 공통 정보가 바뀌면 두 파일에 반영합니다. 메인 페이지 학력·소개는 `index.html`에 있습니다.
 

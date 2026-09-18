@@ -157,9 +157,9 @@ li::marker { color: var(--muted); font-size: .75em; }
 .activity > div { display: flex; align-items: baseline; gap: 3mm; min-width: 0; }
 .activity h3 { flex: 0 0 40mm; }
 .activity p { flex: 1; min-width: 0; margin-top: 0; }
-.skill-list > div { display: grid; grid-template-columns: 39mm minmax(0, 1fr); gap: 3mm; margin-top: 1mm; }
-.skill-list dt { font-size: 9pt; font-weight: 600; color: var(--muted); }
-.skill-list dd { margin: 0; font-size: 9.5pt; line-height: 1.4; }
+.scholarship { display: grid; grid-template-columns: 27mm minmax(0, 1fr); gap: 3mm; margin-bottom: 2mm; break-inside: avoid; }
+.scholarship h3 { font-size: 10pt; font-weight: 650; line-height: 1.4; }
+.scholarship p { font-size: 9.5pt; margin-top: .4mm; line-height: 1.4; }
 .page-footer {
   position: absolute;
   bottom: 8mm;
@@ -212,8 +212,7 @@ li::marker { color: var(--muted); font-size: .75em; }
   .activity p { font-size: 12px; }
   .award h3 span { display: block; margin-left: 0; }
   .date-text br { display: none; }
-  .skill-list > div { display: block; margin-top: 12px; }
-  .skill-list dd { margin-top: 3px; }
+  .scholarship { grid-template-columns: minmax(0, 1fr); gap: 2px; margin-bottom: 14px; }
   .running-header { font-size: 11px; gap: 10px; }
   .roman-name { display: none; }
   .page-footer { font-size: 9px; letter-spacing: 0; }
