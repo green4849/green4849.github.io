@@ -75,8 +75,11 @@ strong { font-weight: 700; }
 .sheet-content { position: relative; }
 .cv-document h1, .cv-document h2, .cv-document h3 { color: var(--ink); text-transform: none; }
 .cv-document #title {
-  position: static;
+  position: relative;
+  left: 0;
   margin: 0 0 3mm;
+  min-height: 29mm;
+  padding-right: 30mm;
   padding-bottom: 0;
   border-bottom: none;
   line-height: inherit;
@@ -87,6 +90,20 @@ strong { font-weight: 700; }
 #title h1 span { font-size: 15pt; font-weight: 400; letter-spacing: 0; margin-left: 3mm; }
 .position { font-size: 9.5pt; margin-top: 1.2mm; }
 .contact { display: flex; flex-wrap: wrap; gap: 1mm 5mm; margin-top: 1.5mm; font-size: 9pt; }
+.portfolio-qr {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 24mm;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1mm;
+  color: var(--muted);
+  font-size: 7.5pt;
+  line-height: 1.2;
+}
+.portfolio-qr img { display: block; width: 24mm; height: 24mm; background: white; }
 .summary { font-size: 10.25pt; line-height: 1.5; margin: 0 0 3mm; }
 .cv-document .main-block { margin-top: 3.5mm; }
 .cv-document #main h2 {
@@ -208,6 +225,9 @@ body.cv-english { font-size: 10pt; line-height: 1.38; word-break: normal; }
   .toolbar-actions { gap: 6px; }
   .sheet { padding: 26px 20px 22px; }
   .cv-document #title h1 { font-size: 28px; }
+  .cv-document #title { padding-right: 0; }
+  .portfolio-qr { position: static; width: auto; flex-direction: row; gap: 10px; margin-top: 12px; font-size: 12px; }
+  .portfolio-qr img { width: 90px; height: 90px; }
   #title h1 span { display: block; margin-left: 0; font-size: 20px; }
   .position { font-size: 13px; }
   .contact { flex-direction: column; gap: 4px; font-size: 12px; }

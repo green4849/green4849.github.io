@@ -37,6 +37,8 @@ CV는 [mnjul/html-resume](https://github.com/mnjul/html-resume) 템플릿의 HTM
 - 1페이지: 소개·학력·연구 경험·활동·장학금
 - 2페이지: 논문 및 발표·수상 실적
 
+두 언어의 1페이지 오른쪽 상단에는 동일한 포트폴리오 QR이 있습니다. QR은 외부 단축 주소나 추적 서비스 없이 `https://green4849.github.io/`를 직접 담습니다. 이 주소를 유지하면 사이트 내용을 업데이트해도 기존 PDF·인쇄물의 QR을 그대로 사용할 수 있습니다. SVG 원본은 `assets/portfolio-qr.svg`이며 PDF 빌드 시 같은 주소로 생성됩니다. 인쇄 크기는 24mm, 여백은 4모듈, 오류 복원 수준은 Q이고, 빌드 시 실제 표시 크기의 QR을 디코딩해 목적지를 검사합니다.
+
 CV 내용은 한국어 `cv/index.html`과 영문 `cv/en/index.html`, 포트폴리오의 카드 내용은 `data.js`에서 각각 관리하므로 공통 정보가 바뀌면 세 파일에 반영합니다. 메인 페이지 학력·소개는 `index.html`에 있습니다. 영문판은 기존 한국어판의 사실·순서·수치를 유지하며, 영문 논문의 저자 표기에 맞춰 이름을 `So Yeong Park`으로 표시합니다. 기관명 확인 근거와 번역 메모는 `cv/TRANSLATION.md`에 있습니다.
 
 `main`에 변경사항을 저장하면 GitHub Actions가 Chromium의 인쇄 기능으로 PDF를 다시 만들고 웹 CV와 함께 배포합니다. Python은 사용하지 않습니다. 배포된 PDF가 최신 파일이며, 저장소의 PDF는 초기 검수본입니다.

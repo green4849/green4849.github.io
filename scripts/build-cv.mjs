@@ -1,12 +1,21 @@
 import { createRequire } from 'node:module';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { resolve, dirname } from 'node:path';
-import { mkdir } from 'node:fs/promises';
+import { mkdir, writeFile } from 'node:fs/promises';
 
 // NODE_PATH also permits using an already-installed local Playwright runtime.
 const require = createRequire(import.meta.url);
 const { chromium } = require('playwright');
+const QRCode = require('qrcode');
+const jsQR = require('jsqr');
+const { PNG } = require('pngjs');
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
+const portfolioUrl = 'https://green4849.github.io/';
+// Store the destination directly in a vector QR: no redirect or tracking service.
+await writeFile(resolve(root, 'assets/portfolio-qr.svg'), await QRCode.toString(portfolioUrl, {
+  type: 'svg', errorCorrectionLevel: 'Q', margin: 4,
+  color: { dark: '#000000', light: '#ffffff' }
+}));
 const variants = [
   { language: 'ko', source: 'cv/index.html', pdf: 'Park_So_Yeong_CV.pdf' },
   { language: 'en', source: 'cv/en/index.html', pdf: 'Park_So_Yeong_CV_EN.pdf' }
@@ -26,7 +35,17 @@ async function renderCV(variant) {
     await Promise.all([400, 500, 600, 650, 700, 750].map(weight =>
       document.fonts.load(`${weight} 14px "CV Noto Sans KR"`)));
     await document.fonts.ready;
+    await Promise.all([...document.images].map(image => image.decode()));
   });
+  const qrLink = page.locator('.portfolio-qr');
+  if (await qrLink.count() !== 1 || await qrLink.getAttribute('href') !== portfolioUrl) {
+    throw new Error(`CV QR link is missing or incorrect (${variant.language})`);
+  }
+  const qrImage = PNG.sync.read(await qrLink.locator('img').screenshot());
+  const decodedQR = jsQR(new Uint8ClampedArray(qrImage.data), qrImage.width, qrImage.height);
+  if (decodedQR?.data !== portfolioUrl) {
+    throw new Error(`Printed-size QR cannot be decoded (${variant.language})`);
+  }
   const layout = await page.evaluate(() => {
     if (!document.fonts.check('400 14px "CV Noto Sans KR"') ||
         !document.fonts.check('700 14px "CV Noto Sans KR"')) {
@@ -59,7 +78,8 @@ async function renderCV(variant) {
     await page.setViewportSize({ width: 1000, height: 1300 });
     await page.screenshot({ path: resolve(qaDir, 'cv-desktop.png'), fullPage: false });
   }
-  console.log(JSON.stringify({ language: variant.language, output, layout, mobileOverflow }, null, 2));
+  console.log(JSON.stringify({ language: variant.language, output, layout, mobileOverflow,
+    qrDestination: decodedQR.data }, null, 2));
   await page.close();
 }
 
