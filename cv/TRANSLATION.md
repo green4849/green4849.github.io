@@ -1,6 +1,6 @@
 # English CV translation notes
 
-The English CV is a translation of `cv/index.html` as of September 18, 2026. It does not add publications, results, award rankings, or scholarship amounts. The Korean version remains available unchanged in substance.
+The English CV is a translation of `cv/index.html` as of September 19, 2026. It does not add publications, results, award rankings, or scholarship amounts. Both versions reflect the same research experience.
 
 - Use `So Yeong Park`, matching the existing English-language ICTCA author list and the author's local conference manuscript.
 - Keep the expected graduation date as the first half of 2027 (`H1 2027`), without inventing a graduation month or degree designation such as B.S.
@@ -8,6 +8,7 @@ The English CV is a translation of `cv/index.html` as of September 18, 2026. It 
 - `Outstanding Paper Award`, `Paper Encouragement Award`, and `Top Excellence Award` are descriptive translations of 우수논문상, 장려논문상, and 최우수상. No numerical ranks are inferred.
 - Korean-language paper titles are translated for this CV unless an English title is available in the corresponding source. The ICTCA title is retained verbatim. The two 2026 poster titles use the English titles printed in the author's final conference PDFs. The other three Korean-language publication titles are descriptive translations, not verified bibliographic titles.
 - English name spellings for So Yeong Park, Hyeon Jae Shin, Jin Tae Seok, and Seon Man Kim follow the existing English publication. Min Jun Kim is a transliteration of 김민준.
+- The author-approved introduction emphasizes speech recognition and audio-language research. Its English wording uses natural academic phrasing rather than a sentence-by-sentence literal translation; `audio retrieval` and matching segments to `natural-language descriptions` describe the existing audio moment retrieval work. Academic-regulation QA remains in Research Experience, not the introduction.
 
 ## Official organization terminology
 
