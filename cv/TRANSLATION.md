@@ -22,3 +22,8 @@ The English CV is a translation of `cv/index.html` as of September 18, 2026. It 
 - [The Phonology-Morphology Circle of Korea](https://phonology.jams.or.kr/co/com/EgovMenu.kci?s_MenuId=MENU-000000000011000&s_tabId=2&s_url=%2Fsr%2FinsiBasicInfo%2FinsiGeneInfo%2FsrSoceGeneInfoView.kci)
 
 Sources checked September 18, 2026. This note is for maintenance, not part of the printed CV.
+
+## Publication classifications (September 19, 2026)
+
+- The author confirmed the 2026 academic-regulation QA dataset paper and the 2025 rubric-based dataset paper as poster presentations. Together with the two existing 2026 posters, all four use `포스터 발표` / `Poster presentation` in the CV and the website's poster filter.
+- The journal entry uses `SCOPUS 등재지` / `SCOPUS-indexed journal`, based on the [KCI journal record for The Journal of the Acoustical Society of Korea](https://www.kci.go.kr/kciportal/po/search/poCitaView.kci?from=sereDetail&sereId=000215). This describes the journal's indexing, not the individual paper's current indexing status. The existing accepted/in-press status is unchanged.

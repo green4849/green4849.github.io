@@ -55,7 +55,7 @@ window.portfolioData = {
     {
       year: "2026",
       type: "journal",
-      typeLabel: "학술지 · Accepted",
+      typeLabel: "SCOPUS 등재지 · Accepted",
       title: "다중 한국어 음성 코퍼스에서의 Qwen3-ASR 평가 및 추론 파라미터 분석",
       venue: "한국음향학회지",
       role: "제1저자",
@@ -64,7 +64,7 @@ window.portfolioData = {
     {
       year: "2026",
       type: "poster",
-      typeLabel: "학술대회 · Poster",
+      typeLabel: "포스터 발표",
       title: "다중 한국어 음성 코퍼스 기반 Qwen3-ASR 범용 추론 파라미터 최적화",
       venue: "대한전자공학회",
       role: "제1저자",
@@ -73,7 +73,7 @@ window.portfolioData = {
     {
       year: "2026",
       type: "poster",
-      typeLabel: "학술대회 · Poster",
+      typeLabel: "포스터 발표",
       title: "공개 다국어 ASR 모델의 한국어 음성인식을 위한 모델 규모별 추론 파라미터 최적화",
       venue: "한국음성학회",
       role: "제1저자",
@@ -81,8 +81,8 @@ window.portfolioData = {
     },
     {
       year: "2026",
-      type: "paper",
-      typeLabel: "학술대회 논문",
+      type: "poster",
+      typeLabel: "포스터 발표",
       title: "학사 규정 질의응답 모델의 오류 검토·교정 학습을 위한 합성 데이터셋 구축",
       venue: "한국데이터사이언스학회 하계종합학술대회",
       role: "제1저자",
@@ -90,8 +90,8 @@ window.portfolioData = {
     },
     {
       year: "2025",
-      type: "paper",
-      typeLabel: "학술대회 논문",
+      type: "poster",
+      typeLabel: "포스터 발표",
       title: "루브릭 기반 대학 학사규정에 대한 학습 데이터셋 설계 및 구축",
       venue: "스마트미디어학회 학술대회",
       role: "제1저자",
