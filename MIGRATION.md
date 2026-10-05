@@ -16,3 +16,5 @@ Design revision: restored the template's typography, colors, layout, navigation,
 Validation: Jekyll production build and the 15-page internal-link/content audit passed locally. English and Korean source PDF checksums match. Browser visual QA was unavailable because the browser security policy check could not complete.
 
 Typography revision: after further user feedback, compared the reference site's actual HTML and stylesheet against Academic Pages and the local draft. Applied locally hosted Roboto at 16px, weight 320, line-height 1.5; 1000px container; compact paper metadata and underlined self-authorship. Kept Academic Pages navigation, sidebar, and separate pages. Details and limitations are in DESIGN_NOTES.md.
+
+Profile update: added the portrait supplied by the user, unchanged, above the sidebar name. The original 1080×1370 aspect ratio is preserved at 160px wide on desktop and 120px on mobile. Replaced the purple heart favicon with the requested 🌿 emoji.

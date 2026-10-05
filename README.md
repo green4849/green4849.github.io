@@ -31,7 +31,7 @@ Pull requests build without deploying. Merging to main publishes through GitHub 
 - `sort_order` controls ordering without inventing an exact publication date.
 - English and Korean PDF files are existing static snapshots. Website edits do **not** regenerate them.
 - Korean HTML CV: `/cv/ko/`. Former English address `/cv/en/` redirects to `/cv/`.
-- The sidebar omits a photograph. To add one, place an authorized photograph in `images/` and set `author.avatar` in `_config.yml` to its filename.
+- The sidebar uses the user-supplied portrait in `images/so-yeong-park.jpg`, preserving its original aspect ratio. To replace it, update `author.avatar` in `_config.yml` and the image dimensions in `_includes/author-profile.html`.
 
 ## Design
 Uses Academic Pages for the page structure, sidebar, navigation, colors, and theme switcher. Typography in `assets/css/profile.css` follows the supplied Han Zhang reference: locally hosted Roboto, a light body weight, a 1000px container, and compact publication entries. Contact links form a horizontal icon row with accessible labels and hover titles. See `DESIGN_NOTES.md` for the source measurements and adaptations.

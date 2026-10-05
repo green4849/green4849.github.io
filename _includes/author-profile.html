@@ -2,7 +2,7 @@
 <div itemscope itemtype="https://schema.org/Person">
   {% if author.avatar %}
   <div class="author__avatar">
-    <img src="{{ author.avatar | prepend: '/images/' | relative_url }}" alt="{{ author.name }}" fetchpriority="high">
+    <img src="{{ author.avatar | prepend: '/images/' | relative_url }}" alt="{{ author.name }}" width="1080" height="1370" fetchpriority="high">
   </div>
   {% endif %}
   <div class="author__content{% unless author.avatar %} author__content--no-avatar{% endunless %}">

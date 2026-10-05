@@ -37,6 +37,9 @@ h1, h2, h3, h4, h5, h6,
 .sidebar .author__name { margin: 0 0 0.5rem; font-size: 1.125rem; font-weight: 500; line-height: 1.5; }
 .sidebar .author__bio { margin: 0; font-size: 0.875rem; font-weight: 320; line-height: 1.5; }
 .author__content--no-avatar { padding-left: 0; }
+.author__avatar { display: block; width: 160px; max-width: 100%; margin-bottom: 1rem; }
+.author__avatar img { display: block; width: 100%; max-width: 100%; height: auto; padding: 0; border: 0; border-radius: 0; }
+.author__content { display: block; padding: 0; }
 @media screen and (min-width: 1024px) {
   .sidebar { width: 160px; padding-top: 0; }
 }
@@ -79,6 +82,7 @@ h1, h2, h3, h4, h5, h6,
 section[id] { scroll-margin-top: 90px; }
 @media screen and (max-width: 924px) {
   .sidebar { margin-top: 0; margin-bottom: 2rem; }
+  .author__avatar { width: 120px; }
 }
 a:focus-visible, button:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
 .skip-link { position: absolute; left: 1em; top: -100px; z-index: 100; padding: 0.5em; background: var(--global-bg-color); }
