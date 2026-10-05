@@ -79,6 +79,7 @@ h1, h2, h3, h4, h5, h6,
 .archive .research-period { margin: 0 0 0.5rem; font-size: 0.875rem; }
 .archive .research-period em { font-style: normal; }
 .publication-description { margin-top: 1.5rem; }
+.publication-description table { font-family: inherit; font-size: 0.875rem; }
 section[id] { scroll-margin-top: 90px; }
 @media screen and (max-width: 924px) {
   .sidebar { margin-top: 0; margin-bottom: 2rem; }

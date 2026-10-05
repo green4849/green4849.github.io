@@ -1,0 +1,47 @@
+---
+title: "Awards & honors"
+permalink: /awards/
+excerpt: "Research awards, competition results, and scholarships received by So Yeong Park."
+---
+{% assign profile = site.data.profile %}
+{% assign categories = 'Research,Competition' | split: ',' %}
+{% for category in categories %}
+<section id="{{ category | downcase }}">
+  <h2>{% if category == 'Research' %}Research awards{% else %}Competitions{% endif %}</h2>
+  <hr>
+  <ul class="publication-list">
+  {% for award in profile.awards %}{% if award.category == category %}
+    {% assign related = false %}
+    {% for entry in site.data.award_publications %}
+      {% if entry.title == award.title and entry.organization == award.organization and entry.year == award.year %}
+        {% assign related = entry %}{% break %}
+      {% endif %}
+    {% endfor %}
+    <li{% if related %} id="{{ related.anchor }}"{% endif %}>
+      <article class="publication-entry">
+        <h3 class="archive__item-title">{{ award.title }}</h3>
+        <p>{{ award.organization }} · {{ award.year }}</p>
+        <p>{{ award.detail }}</p>
+        {% if related %}<p><a href="{{ related.publication | relative_url }}">Related publication</a></p>{% endif %}
+      </article>
+    </li>
+  {% endif %}{% endfor %}
+  </ul>
+</section>
+{% endfor %}
+
+<section id="scholarships">
+  <h2>Scholarships</h2>
+  <hr>
+  <ul class="publication-list">
+  {% for scholarship in profile.scholarships %}
+    <li>
+      <article class="publication-entry">
+        <h3 class="archive__item-title">{{ scholarship.title }}</h3>
+        <p>{{ scholarship.organization }} · {{ scholarship.year }}</p>
+        <p>{{ scholarship.detail }}</p>
+      </article>
+    </li>
+  {% endfor %}
+  </ul>
+</section>

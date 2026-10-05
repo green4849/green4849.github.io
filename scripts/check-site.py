@@ -42,14 +42,16 @@ for path, page in pages.items():
         elif parsed.fragment and target in pages and unquote(parsed.fragment) not in pages[target].ids:
             errors.append(f'{path}: missing anchor {link}')
 
-for route in ('index.html', 'research/index.html', 'publications/index.html', 'cv/index.html', 'cv/en/index.html', 'cv/ko/index.html'):
+for route in ('index.html', 'research/index.html', 'publications/index.html', 'awards/index.html', 'cv/index.html', 'cv/en/index.html', 'cv/ko/index.html'):
     if not (ROOT / route).is_file():
         errors.append(f'Missing route: {route}')
 
 cv_path = ROOT / 'cv/index.html'
 if cv_path in pages:
     cv = ' '.join(pages[cv_path].text)
-    for term in ('4.38 / 4.50', '96 credits', 'H1 2027', '9,958', '0.9897', 'ground-truth review signals', 'Accepted', 'In press', 'Third author'):
+    profile = json.loads(Path('_data/profile.json').read_text())
+    education = profile['education']
+    for term in (education['gpa'], f"{education['credits']} credits", education['period'], '9,958', '0.9897', 'ground-truth review signals', 'Accepted', 'Third author'):
         if term not in cv:
             errors.append(f'Missing CV fact or qualifier: {term}')
     for source in Path('_publications').glob('*.md'):
@@ -69,6 +71,23 @@ if cv_path in pages:
     for term in (profile['name_ko'], profile['email'], 'Teaching experience', 'Leadership & service'):
         if term not in cv:
             errors.append(f'Missing CV profile field or section: {term}')
+
+awards_path = ROOT / 'awards/index.html'
+if awards_path in pages:
+    awards_text = ' '.join(pages[awards_path].text)
+    profile = json.loads(Path('_data/profile.json').read_text())
+    for item in profile['awards'] + profile['scholarships']:
+        for field in ('title', 'organization', 'detail'):
+            if item[field] not in awards_text:
+                errors.append(f'Awards page omitted {field}: {item[field]}')
+
+paper_path = ROOT / 'publications/qwen3-asr-evaluation/index.html'
+if paper_path in pages:
+    paper_text = ' '.join(pages[paper_path].text)
+    for term in ('nine Korean speech corpora', 'eight evaluation sets', 'NumPattern and Welfare',
+                 '12.76', '12.79%', '13.89', '15.19', 'run once', 'not across all Korean speech domains'):
+        if term not in paper_text:
+            errors.append(f'Paper summary omitted result or scope qualifier: {term}')
 
 for path, page in pages.items():
     text = ' '.join(page.text)

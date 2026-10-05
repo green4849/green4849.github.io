@@ -6,6 +6,7 @@ Academic website based on [Academic Pages](https://github.com/academicpages/acad
 - About: `_pages/about.md`
 - Research: `_pages/research.html`
 - Publications: `_pages/publications.html`
+- Awards & honors: `_pages/awards.html` (research awards, competitions, scholarships)
 - CV: `_pages/cv.html`
 
 Shared profile data: `_data/profile.json`.
@@ -31,6 +32,7 @@ Pull requests build without deploying. Merging to main publishes through GitHub 
 - `sort_order` controls ordering without inventing an exact publication date.
 - `citation_date` contains the date shown in references; `citation_note` contains awards or acceptance status. Keep unknown dates at year precision.
 - Introduction, research interests, CV identity, and sidebar affiliation draw from `_data/profile.json`.
+- `_data/award_publications.yml` connects verified awards to their related publications in both directions.
 - English and Korean PDF files are existing static snapshots. Website edits do **not** regenerate them.
 - Korean HTML CV: `/cv/ko/`. Former English address `/cv/en/` redirects to `/cv/`.
 - The sidebar uses the user-supplied portrait in `images/so-yeong-park.jpg`, preserving its original aspect ratio. To replace it, update `author.avatar` in `_config.yml` and the image dimensions in `_includes/author-profile.html`.
