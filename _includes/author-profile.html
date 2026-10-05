@@ -1,11 +1,17 @@
-<div itemscope itemtype="https://schema.org/Person" class="profile-card">
-<img class="profile-avatar" src="{{ '/images/monogram.svg' | relative_url }}" alt="" width="140" height="140">
-<div class="profile-details">
-<h2 class="profile-name" itemprop="name">{{ site.author.name }}</h2>
-<p class="profile-korean" lang="ko">박소영</p>
-<p class="profile-role">Undergraduate Researcher<br>AINC Lab<br>Hanshin University</p>
-<ul class="profile-links">
-<li><a href="mailto:{{ site.author.email }}"><i class="fas fa-envelope" aria-hidden="true"></i> Email</a></li>
-<li><a href="https://github.com/{{ site.author.github }}"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a></li>
-<li><a href="{{ '/assets/Park_So_Yeong_CV_EN.pdf' | relative_url }}"><i class="far fa-file-pdf" aria-hidden="true"></i> CV · PDF</a></li>
-</ul></div></div>
+{% assign author = site.author %}
+<div itemscope itemtype="https://schema.org/Person">
+  {% if author.avatar %}
+  <div class="author__avatar">
+    <img src="{{ author.avatar | prepend: '/images/' | relative_url }}" alt="{{ author.name }}" fetchpriority="high">
+  </div>
+  {% endif %}
+  <div class="author__content{% unless author.avatar %} author__content--no-avatar{% endunless %}">
+    <h3 class="author__name">{{ author.name }}</h3>
+    <p class="author__bio">Undergraduate Researcher<br>AINC Lab<br>Hanshin University</p>
+    <ul class="profile-links" aria-label="Contact and profiles">
+      <li><a href="mailto:{{ author.email }}" aria-label="Email So Yeong Park" title="Email"><i class="fas fa-envelope" aria-hidden="true"></i></a></li>
+      <li><a href="https://github.com/{{ author.github }}" aria-label="GitHub profile" title="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a></li>
+      <li><a href="{{ '/assets/Park_So_Yeong_CV_EN.pdf' | relative_url }}" aria-label="Download English CV PDF" title="CV (PDF)"><i class="far fa-file-pdf" aria-hidden="true"></i></a></li>
+    </ul>
+  </div>
+</div>

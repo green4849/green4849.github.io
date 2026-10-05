@@ -1,17 +1,13 @@
 ---
-title: "Publications & presentations"
+title: "Publications"
 permalink: /publications/
 excerpt: "Journal articles, conference posters, and conference papers by So Yeong Park."
 ---
-<p class="page-intro">Journal articles, conference posters, and conference papers.</p>
-<nav class="section-jump" aria-label="Publication categories">
-{% for category in site.publication_category %}<a href="#{{ category[0] }}">{{ category[1].title }}</a>{% endfor %}
-</nav>
 {% assign publications = site.publications | sort: 'sort_order' | reverse %}
 {% for category in site.publication_category %}
-<section class="publication-group" id="{{ category[0] }}">
+<section id="{{ category[0] }}">
   <h2>{{ category[1].title }}</h2>
+  <hr>
   {% for pub in publications %}{% if pub.type == category[0] %}{% include publication-entry.html pub=pub %}{% endif %}{% endfor %}
 </section>
 {% endfor %}
-

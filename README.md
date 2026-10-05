@@ -31,7 +31,10 @@ Pull requests build without deploying. Merging to main publishes through GitHub 
 - `sort_order` controls ordering without inventing an exact publication date.
 - English and Korean PDF files are existing static snapshots. Website edits do **not** regenerate them.
 - Korean HTML CV: `/cv/ko/`. Former English address `/cv/en/` redirects to `/cv/`.
-- Replace the SP monogram in `images/` with an authorized photograph if desired.
+- The sidebar omits a photograph. To add one, place an authorized photograph in `images/` and set `author.avatar` in `_config.yml` to its filename.
+
+## Design
+Uses the original Academic Pages typography, colors, responsive layout, navigation, and theme switcher. Small additions in `assets/css/profile.css` handle the horizontal icon-only contact links, publication/CV spacing, and printing. Contact icons retain accessible labels and hover titles.
 
 Academic Pages / Minimal Mistakes: MIT license in `LICENSE`.
 Printable CV and font credits: `cv/THIRD_PARTY.md`.
