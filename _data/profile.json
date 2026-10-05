@@ -158,5 +158,12 @@
     "institution": "Hanshin University",
     "advisor": "Prof. Seon Man Kim",
     "period": "Jun 2025 – Present"
-  }
+  },
+  "research_interests": [
+    "Korean speech recognition",
+    "Audio-language understanding and retrieval",
+    "Reliable evaluation of language models"
+  ],
+  "research_summary": "My research focuses on Korean speech recognition and audio-language understanding. I evaluate models across diverse Korean speech datasets and examine how inference settings affect accuracy. My recent work explores audio retrieval to locate segments that match natural-language descriptions.",
+  "updated": "October 2026"
 }

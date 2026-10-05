@@ -8,6 +8,8 @@ role: "First author"
 note: "2026"
 authors: ["So Yeong Park","Hyeon Jae Shin","Seon Man Kim"]
 display_date: "2026 · Poster P4-80"
+citation_date: "2026"
+citation_note: ""
 sort_order: 40
 permalink: "/publications/qwen3-asr-inference/"
 layout: "publication"

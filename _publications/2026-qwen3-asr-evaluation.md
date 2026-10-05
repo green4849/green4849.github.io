@@ -8,6 +8,8 @@ role: "First author"
 note: "Accepted Aug 25, 2026 · In press"
 authors: ["So Yeong Park","Seon Man Kim"]
 display_date: "Accepted Aug 25, 2026"
+citation_date: "2026"
+citation_note: "Accepted Aug 25, 2026 · In press"
 sort_order: 60
 permalink: "/publications/qwen3-asr-evaluation/"
 layout: "publication"

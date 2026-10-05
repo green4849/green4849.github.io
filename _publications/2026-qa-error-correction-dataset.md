@@ -8,6 +8,8 @@ role: "First author"
 note: "Paper Encouragement Award"
 authors: ["So Yeong Park","Seon Man Kim"]
 display_date: "Jun 19, 2026"
+citation_date: "Jun 19, 2026"
+citation_note: "Paper Encouragement Award"
 sort_order: 50
 permalink: "/publications/qa-error-correction-dataset/"
 layout: "publication"

@@ -1,15 +1,16 @@
 {% assign author = site.author %}
+{% assign profile = site.data.profile %}
 <div itemscope itemtype="https://schema.org/Person">
   {% if author.avatar %}
   <div class="author__avatar">
-    <img src="{{ author.avatar | prepend: '/images/' | relative_url }}" alt="{{ author.name }}" width="1080" height="1370" fetchpriority="high">
+    <img src="{{ author.avatar | prepend: '/images/' | relative_url }}" alt="{{ profile.name }}" width="1080" height="1370" fetchpriority="high">
   </div>
   {% endif %}
   <div class="author__content{% unless author.avatar %} author__content--no-avatar{% endunless %}">
-    <h3 class="author__name">{{ author.name }}</h3>
-    <p class="author__bio">Undergraduate Researcher<br>AINC Lab<br>Hanshin University</p>
+    <h3 class="author__name">{{ profile.name }}</h3>
+    <p class="author__bio">{{ profile.lab.role }}<br>{{ profile.lab.name }}<br>{{ profile.lab.institution }}</p>
     <ul class="profile-links" aria-label="Contact and profiles">
-      <li><a href="mailto:{{ author.email }}" aria-label="Email So Yeong Park" title="Email"><i class="fas fa-envelope" aria-hidden="true"></i></a></li>
+      <li><a href="mailto:{{ profile.email }}" aria-label="Email So Yeong Park" title="Email"><i class="fas fa-envelope" aria-hidden="true"></i></a></li>
       <li><a href="https://github.com/{{ author.github }}" aria-label="GitHub profile" title="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a></li>
       <li><a href="{{ '/assets/Park_So_Yeong_CV_EN.pdf' | relative_url }}" aria-label="Download English CV PDF" title="CV (PDF)"><i class="far fa-file-pdf" aria-hidden="true"></i></a></li>
     </ul>

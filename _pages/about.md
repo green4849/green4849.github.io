@@ -5,27 +5,28 @@ excerpt: "So Yeong Park — Korean speech recognition, audio-language understand
 redirect_from:
   - /about/
 ---
+{% assign profile = site.data.profile %}
 
-I am an undergraduate researcher at AINC Lab, Hanshin University, advised by Prof. Seon Man Kim. I work on Korean speech recognition, audio-language retrieval, and evaluation of language models for academic-regulation question answering.
+I am an undergraduate researcher at {{ profile.lab.name }}, {{ profile.lab.institution }}, advised by {{ profile.lab.advisor }}.
 
-My research focuses on how models behave across datasets and experimental settings. I design experiments, analyze results, and work toward reproducible evaluations.
+{{ profile.research_summary }}
 
-I am pursuing a bachelor's degree in the School of AI & Software, with a double major in AI-Integrated Disability Life Care. I expect to graduate in the first half of 2027.
+I am pursuing a bachelor's degree in the {{ profile.education.school }}, with a double major in AI-Integrated Disability Life Care. I expect to graduate in the first half of 2027.
 
-You can find more about my work on the [Research]({{ '/research/' | relative_url }}) and [Publications]({{ '/publications/' | relative_url }}) pages, or download my [CV (PDF)]({{ '/assets/Park_So_Yeong_CV_EN.pdf' | relative_url }}).
+You can find more about my work on the [Research]({{ '/research/' | relative_url }}) and [Publications]({{ '/publications/' | relative_url }}) pages, or see my [CV]({{ '/cv/' | relative_url }}).
 
 ## Research interests
 
-- Automatic speech recognition
-- Audio-language understanding
-- Reliable model evaluation
+{% for interest in profile.research_interests %}
+- {{ interest }}
+{% endfor %}
 
 ## Current work
 
-{% for project in site.data.profile.research %}
+{% for project in profile.research %}
 - [{{ project.title }}]({{ '/research/' | relative_url }}#{{ project.slug }}). {{ project.summary }}
 {% endfor %}
 
 ## Contact
 
-[kong02931@gmail.com](mailto:kong02931@gmail.com)
+[{{ profile.email }}](mailto:{{ profile.email }})

@@ -8,6 +8,8 @@ role: "Third author"
 note: "Busan · Aug 2025"
 authors: ["Hyeon Jae Shin","Jin Tae Seok","So Yeong Park","Seon Man Kim"]
 display_date: "Aug 2025 · Busan"
+citation_date: "Aug 2025 · Busan"
+citation_note: ""
 sort_order: 10
 permalink: "/publications/quadruped-footstep-denoising/"
 layout: "publication"

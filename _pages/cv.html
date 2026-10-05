@@ -7,17 +7,27 @@ redirect_from:
   - /resume/
 ---
 {% assign profile = site.data.profile %}
+<div class="cv-identity">
+  <p><strong>{{ profile.name }}</strong> · <span lang="ko">{{ profile.name_ko }}</span><br>
+  {{ profile.lab.role }}, {{ profile.lab.name }}, {{ profile.lab.institution }}<br>
+  <a href="mailto:{{ profile.email }}">{{ profile.email }}</a> · <a href="https://github.com/{{ site.author.github }}">GitHub</a></p>
+</div>
 <p class="cv-downloads">Download CV (PDF):
   <a href="{{ '/assets/Park_So_Yeong_CV_EN.pdf' | relative_url }}" download>English</a> /
   <a href="{{ '/assets/Park_So_Yeong_CV.pdf' | relative_url }}" download lang="ko">한국어</a>.
   <a href="{{ '/cv/ko/' | relative_url }}" lang="ko">한국어 CV 보기</a>
 </p>
 
+<section id="research-interests">
+  <h2>Research interests</h2>
+  <p>{{ profile.research_interests | join: '; ' }}.</p>
+</section>
+
 <section id="education">
   <h2>Education</h2>
   <ul class="cv-items"><li>
-    <strong>{{ profile.education.institution }}, {{ profile.education.school }}</strong><br>
-    {{ profile.education.period }}<br>
+    <strong>{{ profile.education.institution }}</strong><br>
+    {{ profile.education.school }} · {{ profile.education.period }}<br>
     {{ profile.education.degree }}. {{ profile.education.major }}.<br>
     Cumulative GPA: {{ profile.education.gpa }} · {{ profile.education.credits }} credits completed.
   </li></ul>
@@ -41,15 +51,19 @@ redirect_from:
 <section id="publications">
   <h2>Publications & presentations</h2>
   {% assign publications = site.publications | sort: 'sort_order' | reverse %}
+  {% assign categories = 'journal,paper,poster' | split: ',' %}
+  {% for category in categories %}
+  <h3>{{ site.publication_category[category].title }}</h3>
   <ol class="cv-publication-list">
-  {% for pub in publications %}
+  {% for pub in publications %}{% if pub.type == category %}
     <li>{% for author in pub.authors %}{% if author == site.name %}<span class="publication-self">{{ author }}</span>{% else %}{{ author }}{% endif %}{% unless forloop.last %}, {% endunless %}{% endfor %}.
       <a href="{{ pub.url | relative_url }}">{{ pub.title }}</a>.
-      <em>{{ pub.venue }}</em>, {{ pub.year }}.<br>
-      {{ pub.typeLabel }} · {{ pub.role }} · {{ pub.note }}.
+      <em>{{ pub.venue }}</em>, {{ pub.citation_date }}.<br>
+      <span class="publication-note">{{ pub.role }}{% if pub.citation_note != empty %} · {{ pub.citation_note }}{% endif %}.</span>
     </li>
-  {% endfor %}
+  {% endif %}{% endfor %}
   </ol>
+  {% endfor %}
 </section>
 
 <section id="awards">
@@ -70,12 +84,30 @@ redirect_from:
   </ul>
 </section>
 
-<section id="service">
-  <h2>Leadership, teaching & service</h2>
+<section id="teaching">
+  <h2>Teaching experience</h2>
   <ul class="cv-items">
-  {% for item in profile.activities %}
+  {% for item in profile.activities %}{% if item.label == 'Teaching' %}
     <li><strong>{{ item.title }}</strong> ({{ item.period }}).<br>{{ item.text }}</li>
-  {% endfor %}
+  {% endif %}{% endfor %}
   </ul>
 </section>
-<p><small>Updated October 2026</small></p>
+
+<section id="service">
+  <h2>Leadership & service</h2>
+  <ul class="cv-items">
+  {% for item in profile.activities %}{% if item.label == 'Leadership' or item.label == 'Service' %}
+    <li><strong>{{ item.title }}</strong> ({{ item.period }}).<br>{{ item.text }}</li>
+  {% endif %}{% endfor %}
+  </ul>
+</section>
+
+<section id="activities">
+  <h2>Selected activities</h2>
+  <ul class="cv-items">
+  {% for item in profile.activities %}{% if item.label == 'Selected activity' %}
+    <li><strong>{{ item.title }}</strong> ({{ item.period }}).<br>{{ item.text }}</li>
+  {% endif %}{% endfor %}
+  </ul>
+</section>
+<p><small>Updated {{ profile.updated }}</small></p>

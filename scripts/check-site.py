@@ -1,5 +1,6 @@
 """Check rendered routes, assets, anchor links, and core migrated CV content."""
 from html.parser import HTMLParser
+import json
 from pathlib import Path
 from urllib.parse import unquote, urljoin, urlsplit
 
@@ -52,11 +53,22 @@ if cv_path in pages:
         if term not in cv:
             errors.append(f'Missing CV fact or qualifier: {term}')
     for source in Path('_publications').glob('*.md'):
-        import json
         title_line = next(line for line in source.read_text().splitlines() if line.startswith('title: '))
         title = json.loads(title_line.split(': ', 1)[1])
         if title not in cv:
             errors.append(f'CV omitted publication: {title}')
+        date_line = next(line for line in source.read_text().splitlines() if line.startswith('citation_date: '))
+        citation_date = json.loads(date_line.split(': ', 1)[1])
+        if citation_date not in cv:
+            errors.append(f'CV omitted citation date: {citation_date}')
+    profile = json.loads(Path('_data/profile.json').read_text())
+    for category in ('awards', 'scholarships', 'activities'):
+        for item in profile[category]:
+            if item['title'] not in cv:
+                errors.append(f'CV omitted {category} item: {item["title"]}')
+    for term in (profile['name_ko'], profile['email'], 'Teaching experience', 'Leadership & service'):
+        if term not in cv:
+            errors.append(f'Missing CV profile field or section: {term}')
 
 for path, page in pages.items():
     text = ' '.join(page.text)

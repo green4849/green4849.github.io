@@ -8,6 +8,8 @@ role: "First author"
 note: "Jun 13, 2026"
 authors: ["So Yeong Park","Seon Man Kim"]
 display_date: "Jun 13, 2026"
+citation_date: "Jun 13, 2026"
+citation_note: ""
 sort_order: 30
 permalink: "/publications/multilingual-asr-korean/"
 layout: "publication"
