@@ -30,6 +30,7 @@ Pull requests build without deploying. Merging to main publishes through GitHub 
 ## Updating content
 - Copy a file in `_publications/` to add an entry; preserve its status and presentation type.
 - `sort_order` controls ordering without inventing an exact publication date.
+- Use optional `resources` entries (`label`, `url`) for the plain Paper / Code / Poster / Slides link row. Include only available artifacts; local publication assets live in `assets/publications/`. Keep detail bodies brief: one source figure, a short overview, and relevant links.
 - `citation_date` contains the date shown in references; `citation_note` contains awards or acceptance status. Keep unknown dates at year precision.
 - Introduction, research interests, CV identity, and sidebar affiliation draw from `_data/profile.json`.
 - `_data/award_publications.yml` connects verified awards to their related publications in both directions.

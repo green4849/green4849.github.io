@@ -17,64 +17,23 @@ sort_order: 60
 permalink: "/publications/qwen3-asr-evaluation/"
 layout: "publication"
 excerpt: "Evaluated how model size and inference settings affect recognition accuracy across Korean speech datasets."
+resources:
+  - label: "Paper (PDF)"
+    url: "/assets/publications/qwen3-asr-korean-2026.pdf"
+  - label: "Publication record"
+    url: "https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART003386913"
 ---
 
-## Overview
+<figure class="publication-figure">
+  <a href="{{ '/assets/publications/qwen3-asr-korean-2026.pdf' | relative_url }}#page=7" aria-label="Read Figure 3 in the paper">
+    <img src="{{ '/assets/publications/qwen3-asr-whisper-comparison.png' | relative_url }}" width="875" height="475" alt="Figure 3: Qwen3-ASR 0.6B and 1.7B have lower character error rates than Whisper medium and large-v3, respectively, on KsponSpeech eval_clean and eval_other.">
+  </a>
+  <figcaption>Fig. 3 from the paper. Character error rate with spaces removed (CER<sub>NS</sub>) on KsponSpeech eval_clean and eval_other; each model uses its best tested decoding setting on these two sets. Lower is better.</figcaption>
+</figure>
 
-How well does Qwen3-ASR recognize Korean speech across different recording conditions, and which decoding settings offer a practical starting point when tuning each corpus is infeasible?
+We evaluate Qwen3-ASR 0.6B and 1.7B without fine-tuning on ten evaluation sets from nine Korean speech corpora. The study examines the effects of inference settings and identifies a practical default for the tested Korean speech conditions.
 
-We evaluated the 0.6B and 1.7B models without additional fine-tuning. The study covers **10 evaluation sets from nine Korean speech corpora**, including spontaneous conversation, meetings, lectures, non-native speech, and low-quality telephone audio.
+### Related presentations
 
-## Evaluation
-
-- **Metric:** character error rate after removing spaces (CER<sub>NS</sub>), with the same corpus-specific normalization applied to references and predictions.
-- **Search:** 72 decoding configurations per model and evaluation set, crossing language selection, generation length, temperature, and repetition penalty.
-- **Selection:** settings were compared by their average CER gap from each evaluation set's observed minimum. Large corpora were sampled at approximately 3,000 utterances for tuning.
-- **Validation:** the recommended setting was evaluated on the full sets for eight evaluation sets. NumPattern and Welfare were excluded from this full-set validation.
-
-## Recommended decoding settings
-
-| Parameter | Value |
-| --- | --- |
-| `language` | `korean` |
-| `max_new_tokens` | `512` |
-| `temperature` | `0.0` |
-| `repetition_penalty` | `1.0` |
-
-This is a default for the evaluated Korean speech conditions when corpus-specific tuning is impractical. It is not the best setting for every evaluation set. Temperature 0.0 was selected to avoid stochastic sampling because average losses between 0.0 and 0.2 were small.
-
-## Main findings
-
-- The 1.7B model achieved a lower minimum CER<sub>NS</sub> than the 0.6B model on all ten evaluation sets in the search.
-- Stronger repetition penalties increased average loss, particularly for the smaller model. Raising the generation limit above 512 produced little change within the tested range.
-- The recommended setting's mean gap from the observed per-set minimum was **0.03 percentage points for 1.7B** and **0.07 for 0.6B** on the tuning sets (Fig. 2).
-
-### Comparison with Whisper
-
-The table below reports CER<sub>NS</sub> (%) on KsponSpeech. **Each model uses its best tested decoding setting on these sets**, rather than the single recommended setting above. Lower is better.
-
-| Model | eval_clean | eval_other |
-| --- | ---: | ---: |
-| Qwen3-ASR 1.7B | 12.76 | 12.60 |
-| Whisper large-v3 | 13.89 | 13.62 |
-| Qwen3-ASR 0.6B | 15.15 | 15.01 |
-| Whisper medium | 16.16 | 15.19 |
-
-Source: Section 5.4 and Fig. 3. The 1.7B recommended setting gives **12.79%** on eval_clean (Table 4); the **12.76%** result above is from the tuned comparison. These results establish a difference on the two KsponSpeech sets, not across all Korean speech domains.
-
-## My contribution
-
-First author. Research design, experiment implementation, results analysis, and manuscript writing.
-
-## Scope and limitations
-
-Each configuration with a nonzero temperature was run once, so variability across repeated sampling runs was not measured. Transfer to other ASR models, languages, and unseen Korean datasets was not established. Beam search and contextual prompting were outside the Qwen3-ASR search space studied here.
-
-## Related presentations
-
-- [Inference parameter optimization of Qwen3-ASR across multiple Korean speech corpora]({{ '/publications/qwen3-asr-inference/' | relative_url }}) — IEIE Summer Conference poster.
-- [Inference parameter optimization of a public multilingual ASR model for Korean speech recognition]({{ '/publications/multilingual-asr-korean/' | relative_url }}) — joint spring-conference poster.
-
-## Citation
-
-So Yeong Park and Seon Man Kim. “Evaluation and inference parameter analysis of Qwen3-ASR on multiple Korean speech corpora.” *The Journal of the Acoustical Society of Korea*, 45(5), 582–590, 2026. DOI: 10.7776/ASK.2026.45.5.582.
+- [IEIE Summer Conference poster]({{ '/publications/qwen3-asr-inference/' | relative_url }}) · 2026
+- [Joint spring-conference poster]({{ '/publications/multilingual-asr-korean/' | relative_url }}) · 2026

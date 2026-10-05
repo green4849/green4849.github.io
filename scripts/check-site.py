@@ -84,8 +84,9 @@ if awards_path in pages:
 paper_path = ROOT / 'publications/qwen3-asr-evaluation/index.html'
 if paper_path in pages:
     paper_text = ' '.join(pages[paper_path].text)
-    for term in ('nine Korean speech corpora', 'eight evaluation sets', 'NumPattern and Welfare',
-                 '12.76', '12.79%', '13.89', '15.19', 'run once', 'not across all Korean speech domains'):
+    for term in ('nine Korean speech corpora', 'ten evaluation sets', 'without fine-tuning',
+                 'eval_clean and eval_other', 'each model uses its best tested decoding setting on these two sets',
+                 'Paper (PDF)', 'Publication record'):
         if term not in paper_text:
             errors.append(f'Paper summary omitted result or scope qualifier: {term}')
 

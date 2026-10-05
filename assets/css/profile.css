@@ -80,6 +80,13 @@ h1, h2, h3, h4, h5, h6,
 .archive .research-period em { font-style: normal; }
 .publication-description { margin-top: 1.5rem; }
 .publication-description table { font-family: inherit; font-size: 0.875rem; }
+.publication-meta .publication-title-ko { margin-bottom: 0.75rem; font-size: 0.875rem; }
+.publication-meta .publication-resources { margin-top: 0.75rem; }
+.publication-resources a { display: inline-block; padding: 0.125rem 0; }
+.publication-description .publication-figure { display: block; margin: 0 0 1.5rem; }
+.publication-figure > a { display: block; width: 100%; max-width: 520px; margin: 0 auto; }
+.publication-figure img { display: block; width: 100%; height: auto; }
+.publication-figure figcaption { margin-top: 0.75rem; font-size: 0.8125rem; line-height: 1.5; }
 section[id] { scroll-margin-top: 90px; }
 @media screen and (max-width: 924px) {
   .sidebar { margin-top: 0; margin-bottom: 2rem; }
