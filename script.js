@@ -22,7 +22,7 @@ const renderResearch = () => {
           <h3>${escapeHtml(item.title)}</h3>
           <p class="research-summary">${escapeHtml(item.summary)}</p>
           <details>
-            <summary>연구 내용 자세히 보기</summary>
+            <summary>Research details</summary>
             <ul>
               ${item.points.map((point) => `<li>${escapeHtml(point)}</li>`).join("")}
             </ul>
@@ -63,7 +63,6 @@ const renderPublications = (filter = "all") => {
       (filter === "all" || item.type === filter)
   );
   target.innerHTML = filtered.map(publicationMarkup).join("");
-  observeReveals(target);
 };
 
 const renderHonors = (selector, items) => {
@@ -104,24 +103,6 @@ const renderActivities = () => {
     .join("");
 };
 
-const revealObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("is-visible");
-        revealObserver.unobserve(entry.target);
-      }
-    });
-  },
-  { threshold: 0.12 }
-);
-
-function observeReveals(root = document) {
-  root.querySelectorAll(".reveal:not(.is-visible)").forEach((element) => {
-    revealObserver.observe(element);
-  });
-}
-
 const setupPublicationFilters = () => {
   document.querySelectorAll(".filter-button").forEach((button) => {
     button.addEventListener("click", () => {
@@ -140,7 +121,7 @@ const setupNavigation = () => {
   toggle.addEventListener("click", () => {
     const isOpen = toggle.getAttribute("aria-expanded") === "true";
     toggle.setAttribute("aria-expanded", String(!isOpen));
-    toggle.setAttribute("aria-label", isOpen ? "메뉴 열기" : "메뉴 닫기");
+    toggle.setAttribute("aria-label", isOpen ? "Open menu" : "Close menu");
     links.classList.toggle("is-open", !isOpen);
   });
 
@@ -148,7 +129,7 @@ const setupNavigation = () => {
     link.addEventListener("click", () => {
       links.classList.remove("is-open");
       toggle.setAttribute("aria-expanded", "false");
-      toggle.setAttribute("aria-label", "메뉴 열기");
+      toggle.setAttribute("aria-label", "Open menu");
     });
   });
 
@@ -160,10 +141,12 @@ const setupNavigation = () => {
         .filter((entry) => entry.isIntersecting)
         .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
       if (!current) return;
+      const currentHref = ["education", "awards", "scholarships", "activities", "contact"]
+        .includes(current.target.id) ? "#about" : `#${current.target.id}`;
       navLinks.forEach((link) => {
         link.classList.toggle(
           "active",
-          link.getAttribute("href") === `#${current.target.id}`
+          link.getAttribute("href") === currentHref
         );
       });
     },
@@ -183,7 +166,7 @@ const setupTheme = () => {
     root.dataset.theme = theme;
     button.setAttribute(
       "aria-label",
-      theme === "dark" ? "라이트 모드로 전환" : "다크 모드로 전환"
+      theme === "dark" ? "Switch to light mode" : "Switch to dark mode"
     );
   };
 
@@ -195,25 +178,6 @@ const setupTheme = () => {
   });
 };
 
-const showToast = (message) => {
-  const toast = document.querySelector("#toast");
-  toast.textContent = message;
-  toast.classList.add("is-visible");
-  window.clearTimeout(showToast.timeout);
-  showToast.timeout = window.setTimeout(() => toast.classList.remove("is-visible"), 2600);
-};
-
-const setupCvButton = () => {
-  const button = document.querySelector("#cv-button");
-  button.addEventListener("click", () => {
-    if (data.cvUrl) {
-      window.open(data.cvUrl, "_blank", "noopener,noreferrer");
-      return;
-    }
-    showToast("CV PDF가 완성되면 data.js의 cvUrl에 경로를 연결해 주세요.");
-  });
-};
-
 renderResearch();
 renderPublications();
 renderHonors("#award-list", data.awards);
@@ -222,6 +186,4 @@ renderHonors("#scholarship-list", data.scholarships);
 setupPublicationFilters();
 setupNavigation();
 setupTheme();
-setupCvButton();
-observeReveals();
 document.querySelector("#current-year").textContent = new Date().getFullYear();
