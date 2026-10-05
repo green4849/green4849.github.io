@@ -8,6 +8,8 @@ excerpt: "Journal articles, conference posters, and conference papers by So Yeon
 <section id="{{ category[0] }}">
   <h2>{{ category[1].title }}</h2>
   <hr>
+  <ol class="publication-list">
   {% for pub in publications %}{% if pub.type == category[0] %}{% include publication-entry.html pub=pub %}{% endif %}{% endfor %}
+  </ol>
 </section>
 {% endfor %}

@@ -6,7 +6,7 @@ redirect_from:
   - /about/
 ---
 
-I am an undergraduate researcher at **AINC Lab, Hanshin University**, advised by **Prof. Seon Man Kim**. I work on Korean speech recognition, audio-language retrieval, and evaluation of language models for academic-regulation question answering.
+I am an undergraduate researcher at AINC Lab, Hanshin University, advised by Prof. Seon Man Kim. I work on Korean speech recognition, audio-language retrieval, and evaluation of language models for academic-regulation question answering.
 
 My research focuses on how models behave across datasets and experimental settings. I design experiments, analyze results, and work toward reproducible evaluations.
 

@@ -33,7 +33,7 @@ redirect_from:
   </li></ul>
   {% for project in profile.research %}
   <h3><a href="{{ '/research/' | relative_url }}#{{ project.slug }}">{{ project.title }}</a></h3>
-  <p><em>{{ project.period }}</em></p>
+  <p class="research-period">{{ project.period }}</p>
   <ul>{% for point in project.points %}<li>{{ point }}</li>{% endfor %}</ul>
   {% endfor %}
 </section>
@@ -43,7 +43,7 @@ redirect_from:
   {% assign publications = site.publications | sort: 'sort_order' | reverse %}
   <ol class="cv-publication-list">
   {% for pub in publications %}
-    <li>{% for author in pub.authors %}{% if author == site.name %}<strong>{{ author }}</strong>{% else %}{{ author }}{% endif %}{% unless forloop.last %}, {% endunless %}{% endfor %}.
+    <li>{% for author in pub.authors %}{% if author == site.name %}<span class="publication-self">{{ author }}</span>{% else %}{{ author }}{% endif %}{% unless forloop.last %}, {% endunless %}{% endfor %}.
       <a href="{{ pub.url | relative_url }}">{{ pub.title }}</a>.
       <em>{{ pub.venue }}</em>, {{ pub.year }}.<br>
       {{ pub.typeLabel }} · {{ pub.role }} · {{ pub.note }}.

@@ -14,3 +14,5 @@ Template source commit: 1629ef8af8756d964ca75d0928291ce28aef16d0
 Design revision: restored the template's typography, colors, layout, navigation, and theme behavior. Removed the custom monogram, serif headings, green palette, tag badges, and button styling. Email, GitHub, and CV PDF links use a horizontal icon row with accessible labels.
 
 Validation: Jekyll production build and the 15-page internal-link/content audit passed locally. English and Korean source PDF checksums match. Browser visual QA was unavailable because the browser security policy check could not complete.
+
+Typography revision: after further user feedback, compared the reference site's actual HTML and stylesheet against Academic Pages and the local draft. Applied locally hosted Roboto at 16px, weight 320, line-height 1.5; 1000px container; compact paper metadata and underlined self-authorship. Kept Academic Pages navigation, sidebar, and separate pages. Details and limitations are in DESIGN_NOTES.md.

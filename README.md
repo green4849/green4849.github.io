@@ -34,7 +34,8 @@ Pull requests build without deploying. Merging to main publishes through GitHub 
 - The sidebar omits a photograph. To add one, place an authorized photograph in `images/` and set `author.avatar` in `_config.yml` to its filename.
 
 ## Design
-Uses the original Academic Pages typography, colors, responsive layout, navigation, and theme switcher. Small additions in `assets/css/profile.css` handle the horizontal icon-only contact links, publication/CV spacing, and printing. Contact icons retain accessible labels and hover titles.
+Uses Academic Pages for the page structure, sidebar, navigation, colors, and theme switcher. Typography in `assets/css/profile.css` follows the supplied Han Zhang reference: locally hosted Roboto, a light body weight, a 1000px container, and compact publication entries. Contact links form a horizontal icon row with accessible labels and hover titles. See `DESIGN_NOTES.md` for the source measurements and adaptations.
 
 Academic Pages / Minimal Mistakes: MIT license in `LICENSE`.
 Printable CV and font credits: `cv/THIRD_PARTY.md`.
+Roboto: SIL Open Font License in `assets/fonts/roboto/OFL.txt`.

@@ -34,6 +34,7 @@ exclude:
   - AGENTS.md
   - README.md
   - MIGRATION.md
+  - DESIGN_NOTES.md
   - LICENSE
   - Gemfile
   - Gemfile.lock
@@ -81,4 +82,3 @@ compress_html:
   clippings: all
   ignore:
     envs: development
-
