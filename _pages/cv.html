@@ -1,0 +1,75 @@
+---
+title: "Curriculum vitae"
+permalink: /cv/
+excerpt: "So Yeong Park — education, research, publications, awards, scholarships, teaching, and service."
+redirect_from:
+  - /cv/en/
+  - /resume/
+---
+{% assign profile = site.data.profile %}
+<p class="cv-name">{{ profile.name }} <span lang="ko">{{ profile.name_ko }}</span></p>
+<p class="page-intro">{{ profile.lab.role }} · {{ profile.lab.name }}, {{ profile.lab.institution }}</p>
+<div class="page-actions">
+  <a class="btn btn--primary" href="{{ '/assets/Park_So_Yeong_CV_EN.pdf' | relative_url }}" download>Download CV · English PDF</a>
+  <a class="btn btn--inverse" href="{{ '/assets/Park_So_Yeong_CV.pdf' | relative_url }}" download>한국어 PDF</a>
+  <a class="text-link" href="{{ '/cv/ko/' | relative_url }}" lang="ko">한국어 보기</a>
+</div>
+<nav class="section-jump" aria-label="CV sections">
+  <a href="#education">Education</a><a href="#research-experience">Research</a><a href="#publications">Publications</a><a href="#awards">Awards</a><a href="#scholarships">Scholarships</a><a href="#service">Teaching & service</a>
+</nav>
+
+<section class="cv-section" id="education">
+  <h2>Education</h2>
+  <div class="cv-entry">
+    <p class="entry-meta">{{ profile.education.period }}</p>
+    <h3>{{ profile.education.institution }} · {{ profile.education.school }}</h3>
+    <p>{{ profile.education.degree }}<br>{{ profile.education.major }}</p>
+    <p>Cumulative GPA <strong>{{ profile.education.gpa }}</strong> · {{ profile.education.credits }} credits completed</p>
+  </div>
+</section>
+
+<section class="cv-section" id="research-experience">
+  <h2>Research experience</h2>
+  <div class="cv-entry">
+    <p class="entry-meta">{{ profile.lab.period }}</p>
+    <h3>{{ profile.lab.role }} · {{ profile.lab.name }}</h3>
+    <p>{{ profile.lab.institution }} · Advisor: {{ profile.lab.advisor }}</p>
+    <p>Research design, experiment implementation, results analysis, and paper writing.</p>
+  </div>
+  {% for project in profile.research %}
+  <div class="cv-project">
+    <h3><a href="{{ '/research/' | relative_url }}#{{ project.slug }}">{{ project.title }}</a></h3>
+    <p class="entry-meta">{{ project.period }}</p>
+    <ul>{% for point in project.points %}<li>{{ point }}</li>{% endfor %}</ul>
+  </div>
+  {% endfor %}
+</section>
+
+<section class="cv-section" id="publications">
+  <h2>Publications & presentations</h2>
+  {% assign publications = site.publications | sort: 'sort_order' | reverse %}
+  {% for pub in publications %}{% include publication-entry.html pub=pub %}{% endfor %}
+</section>
+
+<section class="cv-section" id="awards">
+  <h2>Awards & honors</h2>
+  {% for award in profile.awards %}
+  <div class="cv-entry"><p class="entry-meta">{{ award.year }}</p><h3>{{ award.title }}</h3><p>{{ award.organization }}<br>{{ award.detail }}</p></div>
+  {% endfor %}
+</section>
+
+<section class="cv-section" id="scholarships">
+  <h2>Scholarships</h2>
+  {% for item in profile.scholarships %}
+  <div class="cv-entry"><p class="entry-meta">{{ item.year }}</p><h3>{{ item.title }}</h3><p>{{ item.organization }} · {{ item.detail }}</p></div>
+  {% endfor %}
+</section>
+
+<section class="cv-section" id="service">
+  <h2>Leadership, teaching & service</h2>
+  {% for item in profile.activities %}
+  <div class="cv-entry"><p class="entry-meta">{{ item.period }}</p><h3>{{ item.title }}</h3><p>{{ item.text }}</p></div>
+  {% endfor %}
+</section>
+<p class="cv-updated">Updated October 2026</p>
+

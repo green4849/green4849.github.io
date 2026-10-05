@@ -1,0 +1,21 @@
+---
+title: "Research"
+permalink: /research/
+excerpt: "Research on Korean speech recognition, audio moment retrieval, and academic-regulation question answering."
+---
+<p class="page-intro">Research at AINC Lab, Hanshin University, advised by Prof. Seon Man Kim.</p>
+{% for project in site.data.profile.research %}
+<section class="research-entry" id="{{ project.slug }}">
+  <p class="entry-meta">{{ project.period }} · {{ project.status }}</p>
+  <h2>{{ project.title }}</h2>
+  <p>{{ project.summary }}</p>
+  <ul>{% for point in project.points %}<li>{{ point }}</li>{% endfor %}</ul>
+  <div class="interest-topics">{% for tag in project.tags %}<span>{{ tag }}</span>{% endfor %}</div>
+  {% if project.slug == 'korean-asr' %}
+  <a class="text-link" href="{{ '/publications/qwen3-asr-evaluation/' | relative_url }}">Journal article · accepted / in press →</a>
+  {% elsif project.slug == 'academic-regulation-qa' %}
+  <a class="text-link" href="{{ '/publications/qa-error-correction-dataset/' | relative_url }}">2026 conference poster →</a>
+  {% endif %}
+</section>
+{% endfor %}
+

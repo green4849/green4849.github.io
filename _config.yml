@@ -1,0 +1,84 @@
+locale: en-US
+site_theme: default
+title: "So Yeong Park"
+title_separator: "·"
+name: "So Yeong Park"
+description: "Undergraduate researcher at AINC Lab, Hanshin University. Korean speech recognition, audio-language understanding, and reliable evaluation."
+url: "https://green4849.github.io"
+baseurl: ""
+repository: "green4849/green4849.github.io"
+author:
+  avatar: "monogram.svg"
+  name: "So Yeong Park"
+  bio: "Undergraduate Researcher<br>AINC Lab"
+  employer: "Hanshin University"
+  email: "kong02931@gmail.com"
+  github: "green4849"
+publication_category:
+  journal:
+    title: "Journal articles"
+  poster:
+    title: "Conference posters"
+  paper:
+    title: "Conference papers"
+breadcrumbs: false
+future: true
+read_more: disabled
+atom_feed:
+  hide: true
+analytics:
+  provider: false
+include:
+  - _pages
+exclude:
+  - AGENTS.md
+  - README.md
+  - MIGRATION.md
+  - LICENSE
+  - Gemfile
+  - Gemfile.lock
+  - .github
+  - .bundle
+  - vendor
+  - node_modules
+  - scripts
+  - cv/TRANSLATION.md
+  - cv/vendor/html-resume/resume.html
+  - assets/js/_main.js
+  - assets/js/plugins
+encoding: utf-8
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  auto_ids: true
+  hard_wrap: false
+collections:
+  publications:
+    output: true
+    permalink: /publications/:path/
+defaults:
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: archive
+      author_profile: true
+  - scope:
+      path: ""
+      type: publications
+    values:
+      layout: publication
+      author_profile: true
+sass:
+  sass_dir: _sass
+  style: compressed
+timezone: Asia/Seoul
+plugins:
+  - jekyll-sitemap
+  - jekyll-redirect-from
+compress_html:
+  clippings: all
+  ignore:
+    envs: development
+
