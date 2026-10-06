@@ -1,0 +1,196 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-10-06",
+  "description": "포트폴리오 항목과 외부 기사·공개 산출물 매칭 기록. url은 다른 포트폴리오에서도 사용할 수 있는 절대 주소. verified_event는 개인 수상 증빙이 아님.",
+  "entries": [
+    {
+      "id": "ilju-scholarship-2025",
+      "category": "scholarships",
+      "match": {
+        "title": "ILJU Academy and Culture Foundation",
+        "organization": "Taekwang Group",
+        "year": "Jul 2025 — Graduation"
+      },
+      "url": "https://www.startuptoday.co.kr/news/articleView.html?idxno=480311",
+      "placement": "title",
+      "link_label": "",
+      "publisher": "스타트업투데이",
+      "source_title": "",
+      "source_date": "",
+      "checked_at": "2026-10-06",
+      "status": "user_provided_unreadable",
+      "evidence": "",
+      "notes": "사용자가 직접 지정한 연결 주소. 자동 열람은 403/내부 오류로 본문·발행일을 검증하지 못함. 개인 선발 확인 기사로 단정하지 않음."
+    },
+    {
+      "id": "academic-excellence-scholarship",
+      "category": "scholarships",
+      "match": {
+        "title": "Academic Excellence Scholarship",
+        "organization": "Hanshin University",
+        "year": "During studies"
+      },
+      "url": null,
+      "placement": "none",
+      "link_label": "",
+      "publisher": "",
+      "source_title": "",
+      "source_date": "",
+      "checked_at": "2026-10-06",
+      "status": "not_searched",
+      "evidence": "",
+      "notes": "이번 기사 매칭 요청 대상은 일주 장학금. 성적우수 장학금은 기존 내용 유지."
+    },
+    {
+      "id": "volunteer-service-certificate",
+      "category": "activities",
+      "match": {
+        "title": "Volunteer Service",
+        "period": "400+ hours in total"
+      },
+      "url": "https://green4849.github.io/assets/documents/volunteer-service-public.pdf",
+      "placement": "title",
+      "link_label": "Volunteer service certificate (PDF)",
+      "publisher": "한국중앙자원봉사센터",
+      "source_title": "자원봉사활동 확인서",
+      "source_date": "2026-10-06",
+      "checked_at": "2026-10-06",
+      "status": "verified_document",
+      "evidence": "박소영, 428시간 10분, 174회, 활동 기간 2013-01-19~2026-09-17.",
+      "notes": "사용자 제공 Report.pdf의 공개용 사본. 주민등록번호·주소·발급번호를 실제 삭제하고 공개 사본임을 표시. 원본은 공개하지 않음."
+    },
+    {
+      "id": "ces-2026",
+      "category": "activities",
+      "match": {
+        "title": "CES 2026 Participant",
+        "period": "Jan 2026"
+      },
+      "url": "https://www.ces.tech/articles/ces-2026-innovators-showed-up-big-time/",
+      "placement": "title",
+      "link_label": "CES 2026 official recap",
+      "publisher": "Consumer Technology Association",
+      "source_title": "CES 2026: Innovators Showed Up, Big Time",
+      "source_date": "2026-01-12",
+      "checked_at": "2026-10-06",
+      "status": "verified_event",
+      "evidence": "CES 2026 주최 측 공식 행사 회고.",
+      "notes": "행사 소개 링크이며 개인 선발·참가 증명은 아님. 다음 연도 행사로 바뀌는 메인 홈페이지 대신 2026 고정 기사 사용."
+    },
+    {
+      "id": "data-science-award-2026",
+      "category": "awards",
+      "match": {
+        "title": "Paper Encouragement Award",
+        "organization": "Korean Association of Data Science",
+        "year": "Jun 2026"
+      },
+      "url": "https://green4849.github.io/assets/publications/qa-error-correction-award-2026.pdf",
+      "placement": "title",
+      "link_label": "Award certificate (PDF)",
+      "publisher": "한국데이터사이언스학회",
+      "source_title": "장려논문상",
+      "source_date": "2026-06-19",
+      "checked_at": "2026-10-06",
+      "status": "verified_document",
+      "evidence": "상장에 논문 제목, 박소영·김선만, 장려논문상 명시.",
+      "notes": "개인 수상 기사를 찾지 못해 이미 공개 승인된 상장 PDF 연결."
+    },
+    {
+      "id": "smart-media-award-2025",
+      "category": "awards",
+      "match": {
+        "title": "Outstanding Paper Award",
+        "organization": "Korean Institute of Smart Media",
+        "year": "Nov 2025"
+      },
+      "url": null,
+      "placement": "none",
+      "link_label": "",
+      "publisher": "",
+      "source_title": "",
+      "source_date": "",
+      "checked_at": "2026-10-06",
+      "status": "article_not_found",
+      "evidence": "기존 프로필에 기록된 루브릭 기반 대학 학사규정 데이터셋 논문상.",
+      "notes": "이름·논문·수상이 일치하는 기사 미확인. 학회 추계 CFP는 수상 증빙으로 사용하지 않음. 기존 Related publication 링크 유지."
+    },
+    {
+      "id": "hanshin-ai-festival-2025",
+      "category": "awards",
+      "match": {
+        "title": "Grand Prize",
+        "organization": "Hanshin University",
+        "year": "Nov 2025"
+      },
+      "url": "https://swuniv.hs.ac.kr/07_02/58",
+      "placement": "context",
+      "link_label": "Event coverage",
+      "publisher": "한신대학교 SW중심대학사업단",
+      "source_title": "2025 한신 AI·SW 페스티벌 성황리 폐막",
+      "source_date": "2025-11-26",
+      "checked_at": "2026-10-06",
+      "status": "verified_event",
+      "evidence": "2025-11-18~19 개최, 일반 경진대회 포함.",
+      "notes": "본문에 박소영 또는 일반부문 대상 개인 수상 내역은 없음. 수상 제목 링크 대신 Event coverage로 표시. 추가 공식 수상작 페이지는 Hanshin Now!와 일반부문 대상을 명시하나 팀원 명단은 이미지라 이번 열람에서 개인 일치를 확인하지 못함. 후보로만 보관.",
+      "candidate_url": "https://swuniv.hs.ac.kr/07_04/9?page=2"
+    },
+    {
+      "id": "gangchon-hackathon-2025",
+      "category": "awards",
+      "match": {
+        "title": "Top Excellence Award",
+        "organization": "SW-Centered University Council",
+        "year": "Oct 2025"
+      },
+      "url": "https://portal.hs.ac.kr/kor/4954/subview.do?enc=Zm5jdDF8QEB8JTJGYmJzJTJGa29yJTJGMjc3JTJGMTUxODY2JTJGYXJ0Y2xWaWV3LmRvJTNG",
+      "placement": "context",
+      "link_label": "Event coverage",
+      "publisher": "한신대학교",
+      "source_title": "한신대, 2025년 캡스톤 디자인 및 AI해커톤 대회 대상 수상",
+      "source_date": "2025-10-29",
+      "checked_at": "2026-10-06",
+      "status": "verified_event",
+      "evidence": "2025-10-24~26 엘리시안 강촌 개최, 참여 대학 확인.",
+      "notes": "기사의 대상 수상자는 다른 학생들. 박소영의 최우수상 증빙으로 사용하지 않고 Event coverage로 표시."
+    },
+    {
+      "id": "industrial-management-award-2025",
+      "category": "awards",
+      "match": {
+        "title": "Outstanding Paper Award",
+        "organization": "DAEHAN Society of Industrial Management",
+        "year": "Aug 2025"
+      },
+      "url": null,
+      "placement": "none",
+      "link_label": "",
+      "publisher": "",
+      "source_title": "",
+      "source_date": "",
+      "checked_at": "2026-10-06",
+      "status": "article_not_found",
+      "evidence": "",
+      "notes": "장애인·고령자 보조기기 및 복지용구 서비스 전달 개선 논문과 개인 수상이 일치하는 기사 미확인."
+    },
+    {
+      "id": "ai-blockchain-grand-prize-2025",
+      "category": "awards",
+      "match": {
+        "title": "Grand Prize",
+        "organization": "Korea University SW-Centered University Program",
+        "year": "May 2025"
+      },
+      "url": "https://www.hs.ac.kr/kor/4954/subview.do?enc=Zm5jdDF8QEB8JTJGYmJzJTJGa29yJTJGMjc3JTJGMTQ5MjY2JTJGYXJ0Y2xWaWV3LmRvJTNG",
+      "placement": "title",
+      "link_label": "Award news",
+      "publisher": "한신대학교",
+      "source_title": "한신대, 2025 AI·블록체인 창업 아이디어 경진대회에서 대상 수상",
+      "source_date": "2025-05-20",
+      "checked_at": "2026-10-06",
+      "status": "verified_personal_award",
+      "evidence": "박소영(AI·SW학 24학번)·류찬, Safe-Link, 대상 수상 명시.",
+      "notes": "행사 개최일 2025-05-16. 기사는 고려대 개최와 한신대 SW중심대학사업단장상을 명시. 기존 프로필 기관명은 이 작업에서 변경하지 않음."
+    }
+  ]
+}

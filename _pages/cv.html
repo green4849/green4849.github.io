@@ -70,7 +70,7 @@ redirect_from:
   <h2>Awards & honors</h2>
   <ul class="cv-items">
   {% for award in profile.awards %}
-    <li><strong>{{ award.title }}</strong>, {{ award.organization }} ({{ award.year }}).<br>{{ award.detail }}</li>
+    <li><strong>{% include portfolio-link.html category="awards" item=award %}</strong>, {{ award.organization }} ({{ award.year }}).<br>{{ award.detail }}{% capture coverage %}{% include portfolio-link.html category="awards" item=award mode="context" %}{% endcapture %}{% if coverage != empty %} · {{ coverage }}{% endif %}</li>
   {% endfor %}
   </ul>
 </section>
@@ -79,7 +79,7 @@ redirect_from:
   <h2>Scholarships</h2>
   <ul class="cv-items">
   {% for item in profile.scholarships %}
-    <li><strong>{{ item.title }}</strong>, {{ item.organization }} ({{ item.year }}).<br>{{ item.detail }}</li>
+    <li><strong>{% include portfolio-link.html category="scholarships" item=item %}</strong>, {{ item.organization }} ({{ item.year }}).<br>{{ item.detail }}</li>
   {% endfor %}
   </ul>
 </section>
@@ -88,7 +88,7 @@ redirect_from:
   <h2>Teaching experience</h2>
   <ul class="cv-items">
   {% for item in profile.activities %}{% if item.label == 'Teaching' %}
-    <li><strong>{{ item.title }}</strong> ({{ item.period }}).<br>{{ item.text }}</li>
+    <li><strong>{% include portfolio-link.html category="activities" item=item %}</strong> ({{ item.period }}).<br>{{ item.text }}</li>
   {% endif %}{% endfor %}
   </ul>
 </section>
@@ -97,7 +97,7 @@ redirect_from:
   <h2>Leadership & service</h2>
   <ul class="cv-items">
   {% for item in profile.activities %}{% if item.label == 'Leadership' or item.label == 'Service' %}
-    <li><strong>{{ item.title }}</strong> ({{ item.period }}).<br>{{ item.text }}</li>
+    <li><strong>{% include portfolio-link.html category="activities" item=item %}</strong> ({{ item.period }}).<br>{{ item.text }}</li>
   {% endif %}{% endfor %}
   </ul>
 </section>
@@ -106,7 +106,7 @@ redirect_from:
   <h2>Selected activities</h2>
   <ul class="cv-items">
   {% for item in profile.activities %}{% if item.label == 'Selected activity' %}
-    <li><strong>{{ item.title }}</strong> ({{ item.period }}).<br>{{ item.text }}</li>
+    <li><strong>{% include portfolio-link.html category="activities" item=item %}</strong> ({{ item.period }}).<br>{{ item.text }}</li>
   {% endif %}{% endfor %}
   </ul>
 </section>

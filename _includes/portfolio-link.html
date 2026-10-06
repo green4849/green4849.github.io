@@ -1,0 +1,15 @@
+{%- assign matched_link = false -%}
+{%- for entry in site.data.portfolio_links.entries -%}
+  {%- if entry.category == include.category and entry.match.title == include.item.title and entry.match.organization == include.item.organization and entry.match.year == include.item.year and entry.match.period == include.item.period -%}
+    {%- assign matched_link = entry -%}{%- break -%}
+  {%- endif -%}
+{%- endfor -%}
+{%- if include.mode == 'context' -%}
+  {%- if matched_link.url and matched_link.placement == 'context' -%}
+    <a href="{{ matched_link.url | escape }}" target="_blank" rel="noopener noreferrer">{{ matched_link.link_label | escape }}</a>
+  {%- endif -%}
+{%- elsif matched_link.url and matched_link.placement == 'title' -%}
+  <a href="{{ matched_link.url | escape }}"{% if matched_link.link_label != empty %} title="{{ matched_link.link_label | escape }}"{% endif %} target="_blank" rel="noopener noreferrer">{{ include.item.title | escape }}</a>
+{%- else -%}
+  {{- include.item.title | escape -}}
+{%- endif -%}

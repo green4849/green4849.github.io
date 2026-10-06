@@ -19,9 +19,9 @@ excerpt: "Research awards, competition results, and scholarships received by So 
     {% endfor %}
     <li{% if related %} id="{{ related.anchor }}"{% endif %}>
       <article class="publication-entry">
-        <h3 class="archive__item-title">{{ award.title }}</h3>
+        <h3 class="archive__item-title">{% include portfolio-link.html category="awards" item=award %}</h3>
         <p>{{ award.organization }} · {{ award.year }}</p>
-        <p>{{ award.detail }}</p>
+        <p>{{ award.detail }}{% capture coverage %}{% include portfolio-link.html category="awards" item=award mode="context" %}{% endcapture %}{% if coverage != empty %} · {{ coverage }}{% endif %}</p>
         {% if related %}<p><a href="{{ related.publication | relative_url }}">Related publication</a></p>{% endif %}
       </article>
     </li>
@@ -37,7 +37,7 @@ excerpt: "Research awards, competition results, and scholarships received by So 
   {% for scholarship in profile.scholarships %}
     <li>
       <article class="publication-entry">
-        <h3 class="archive__item-title">{{ scholarship.title }}</h3>
+        <h3 class="archive__item-title">{% include portfolio-link.html category="scholarships" item=scholarship %}</h3>
         <p>{{ scholarship.organization }} · {{ scholarship.year }}</p>
         <p>{{ scholarship.detail }}</p>
       </article>
