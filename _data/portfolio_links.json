@@ -94,7 +94,12 @@
       "checked_at": "2026-10-06",
       "status": "verified_document",
       "evidence": "상장에 논문 제목, 박소영·김선만, 장려논문상 명시.",
-      "notes": "개인 수상 기사를 찾지 못해 이미 공개 승인된 상장 PDF 연결."
+      "notes": "개인 수상 기사를 찾지 못해 이미 공개 승인된 상장 PDF 연결.",
+      "external_press_search": {
+        "checked_at": "2026-10-06",
+        "status": "not_found",
+        "notes": "학교명·성명·학회명·논문 주제를 조합하여 외부 언론 재검색. 본인 수상과 일치하는 기사 확인 못함. 기존 연결 상태 유지."
+      }
     },
     {
       "id": "smart-media-award-2025",
@@ -113,7 +118,12 @@
       "checked_at": "2026-10-06",
       "status": "article_not_found",
       "evidence": "기존 프로필에 기록된 루브릭 기반 대학 학사규정 데이터셋 논문상.",
-      "notes": "이름·논문·수상이 일치하는 기사 미확인. 학회 추계 CFP는 수상 증빙으로 사용하지 않음. 기존 Related publication 링크 유지."
+      "notes": "이름·논문·수상이 일치하는 기사 미확인. 학회 추계 CFP는 수상 증빙으로 사용하지 않음. 기존 Related publication 링크 유지.",
+      "external_press_search": {
+        "checked_at": "2026-10-06",
+        "status": "not_found",
+        "notes": "학교명·성명·학회명·논문 주제를 조합하여 외부 언론 재검색. 본인 수상과 일치하는 기사 확인 못함. 기존 연결 상태 유지."
+      }
     },
     {
       "id": "hanshin-ai-festival-2025",
@@ -123,17 +133,30 @@
         "organization": "Hanshin University",
         "year": "Nov 2025"
       },
-      "url": "https://swuniv.hs.ac.kr/07_02/58",
+      "url": "https://dhnews.co.kr/news/view/1065597167505652",
       "placement": "context",
       "link_label": "Event coverage",
-      "publisher": "한신대학교 SW중심대학사업단",
-      "source_title": "2025 한신 AI·SW 페스티벌 성황리 폐막",
-      "source_date": "2025-11-26",
+      "publisher": "대학저널",
+      "source_title": "한신대 SW중심대학사업단, ‘2025 한신 AI·SW 페스티벌’ 성료",
+      "source_date": "2025-11-21",
       "checked_at": "2026-10-06",
       "status": "verified_event",
       "evidence": "2025-11-18~19 개최, 일반 경진대회 포함.",
-      "notes": "본문에 박소영 또는 일반부문 대상 개인 수상 내역은 없음. 수상 제목 링크 대신 Event coverage로 표시. 추가 공식 수상작 페이지는 Hanshin Now!와 일반부문 대상을 명시하나 팀원 명단은 이미지라 이번 열람에서 개인 일치를 확인하지 못함. 후보로만 보관.",
-      "candidate_url": "https://swuniv.hs.ac.kr/07_04/9?page=2"
+      "notes": "2025-11-18~19 행사 및 일반 경진대회 관련 외부 보도. 박소영 개인 수상은 본문에 없으므로 Event coverage로 연결. candidate_url은 공식 수상작 페이지이나 개인 일치 검증은 보류.",
+      "candidate_url": "https://swuniv.hs.ac.kr/07_04/9?page=2",
+      "previous_sources": [
+        {
+          "url": "https://swuniv.hs.ac.kr/07_02/58",
+          "publisher": "한신대학교 SW중심대학사업단",
+          "source_title": "2025 한신 AI·SW 페스티벌 성황리 폐막",
+          "source_date": "2025-11-26",
+          "checked_at": "2026-10-06",
+          "status": "verified_event",
+          "evidence": "2025-11-18~19 개최, 일반 경진대회 포함.",
+          "notes": "본문에 박소영 또는 일반부문 대상 개인 수상 내역은 없음. 수상 제목 링크 대신 Event coverage로 표시. 추가 공식 수상작 페이지는 Hanshin Now!와 일반부문 대상을 명시하나 팀원 명단은 이미지라 이번 열람에서 개인 일치를 확인하지 못함. 후보로만 보관."
+        }
+      ],
+      "replacement_reason": "사용자 요청: 교내 기사 대신 내용이 일치하는 외부 언론 기사 우선."
     },
     {
       "id": "gangchon-hackathon-2025",
@@ -143,16 +166,29 @@
         "organization": "SW-Centered University Council",
         "year": "Oct 2025"
       },
-      "url": "https://portal.hs.ac.kr/kor/4954/subview.do?enc=Zm5jdDF8QEB8JTJGYmJzJTJGa29yJTJGMjc3JTJGMTUxODY2JTJGYXJ0Y2xWaWV3LmRvJTNG",
+      "url": "https://www.christiandaily.co.kr/news/152861",
       "placement": "context",
       "link_label": "Event coverage",
-      "publisher": "한신대학교",
-      "source_title": "한신대, 2025년 캡스톤 디자인 및 AI해커톤 대회 대상 수상",
-      "source_date": "2025-10-29",
+      "publisher": "기독일보",
+      "source_title": "한신대, ‘2025 캡스톤 디자인 및 AI 해커톤’ 대상 수상",
+      "source_date": "2025-10-30",
       "checked_at": "2026-10-06",
       "status": "verified_event",
       "evidence": "2025-10-24~26 엘리시안 강촌 개최, 참여 대학 확인.",
-      "notes": "기사의 대상 수상자는 다른 학생들. 박소영의 최우수상 증빙으로 사용하지 않고 Event coverage로 표시."
+      "notes": "사용자가 제시한 외부 언론 기사. 다른 학생들의 대상 수상을 보도하며 박소영의 최우수상은 본문에 없음. Event coverage로 연결.",
+      "previous_sources": [
+        {
+          "url": "https://portal.hs.ac.kr/kor/4954/subview.do?enc=Zm5jdDF8QEB8JTJGYmJzJTJGa29yJTJGMjc3JTJGMTUxODY2JTJGYXJ0Y2xWaWV3LmRvJTNG",
+          "publisher": "한신대학교",
+          "source_title": "한신대, 2025년 캡스톤 디자인 및 AI해커톤 대회 대상 수상",
+          "source_date": "2025-10-29",
+          "checked_at": "2026-10-06",
+          "status": "verified_event",
+          "evidence": "2025-10-24~26 엘리시안 강촌 개최, 참여 대학 확인.",
+          "notes": "기사의 대상 수상자는 다른 학생들. 박소영의 최우수상 증빙으로 사용하지 않고 Event coverage로 표시."
+        }
+      ],
+      "replacement_reason": "사용자 요청: 교내 기사 대신 내용이 일치하는 외부 언론 기사 우선."
     },
     {
       "id": "industrial-management-award-2025",
@@ -171,7 +207,12 @@
       "checked_at": "2026-10-06",
       "status": "article_not_found",
       "evidence": "",
-      "notes": "장애인·고령자 보조기기 및 복지용구 서비스 전달 개선 논문과 개인 수상이 일치하는 기사 미확인."
+      "notes": "장애인·고령자 보조기기 및 복지용구 서비스 전달 개선 논문과 개인 수상이 일치하는 기사 미확인.",
+      "external_press_search": {
+        "checked_at": "2026-10-06",
+        "status": "not_found",
+        "notes": "학교명·성명·학회명·논문 주제를 조합하여 외부 언론 재검색. 본인 수상과 일치하는 기사 확인 못함. 기존 연결 상태 유지."
+      }
     },
     {
       "id": "ai-blockchain-grand-prize-2025",
@@ -181,16 +222,40 @@
         "organization": "Korea University SW-Centered University Program",
         "year": "May 2025"
       },
-      "url": "https://www.hs.ac.kr/kor/4954/subview.do?enc=Zm5jdDF8QEB8JTJGYmJzJTJGa29yJTJGMjc3JTJGMTQ5MjY2JTJGYXJ0Y2xWaWV3LmRvJTNG",
+      "url": "https://www.christiandaily.co.kr/news/147400",
       "placement": "title",
       "link_label": "Award news",
-      "publisher": "한신대학교",
-      "source_title": "한신대, 2025 AI·블록체인 창업 아이디어 경진대회에서 대상 수상",
-      "source_date": "2025-05-20",
+      "publisher": "기독일보",
+      "source_title": "한신대, ‘2025 AI·블록체인 창업 아이디어 경진대회’서 대상 수상",
+      "source_date": "2025-05-21",
       "checked_at": "2026-10-06",
       "status": "verified_personal_award",
       "evidence": "박소영(AI·SW학 24학번)·류찬, Safe-Link, 대상 수상 명시.",
-      "notes": "행사 개최일 2025-05-16. 기사는 고려대 개최와 한신대 SW중심대학사업단장상을 명시. 기존 프로필 기관명은 이 작업에서 변경하지 않음."
+      "notes": "외부 언론 본문에서 박소영·류찬 팀의 Safe-Link 대상 수상과 소감 확인. 기존 프로필 기관명은 이 작업에서 변경하지 않음.",
+      "previous_sources": [
+        {
+          "url": "https://www.hs.ac.kr/kor/4954/subview.do?enc=Zm5jdDF8QEB8JTJGYmJzJTJGa29yJTJGMjc3JTJGMTQ5MjY2JTJGYXJ0Y2xWaWV3LmRvJTNG",
+          "publisher": "한신대학교",
+          "source_title": "한신대, 2025 AI·블록체인 창업 아이디어 경진대회에서 대상 수상",
+          "source_date": "2025-05-20",
+          "checked_at": "2026-10-06",
+          "status": "verified_personal_award",
+          "evidence": "박소영(AI·SW학 24학번)·류찬, Safe-Link, 대상 수상 명시.",
+          "notes": "행사 개최일 2025-05-16. 기사는 고려대 개최와 한신대 SW중심대학사업단장상을 명시. 기존 프로필 기관명은 이 작업에서 변경하지 않음."
+        }
+      ],
+      "replacement_reason": "사용자 요청: 교내 기사 대신 내용이 일치하는 외부 언론 기사 우선.",
+      "additional_sources": [
+        {
+          "url": "https://www.tokenpost.kr/news/insights/248533",
+          "publisher": "토큰포스트",
+          "source_title": "[AI·블록체인경진] “사회 문제, 기술로 푼다”…청년 창업 아이디어 결실",
+          "status": "verified_personal_award",
+          "checked_at": "2026-10-06",
+          "evidence": "복지한번잡솨봐(박소영), Safe-Link, 한신대 SW중심대학사업단장상 대상 명시."
+        }
+      ]
     }
-  ]
+  ],
+  "source_preference": "기사 링크는 내용이 일치하는 외부 언론 보도를 우선한다. 교내 사이트는 보조 출처로 보관한다. 개인 수상 기사와 행사 일반 보도를 구분하고, 확인되지 않은 연결은 추가하지 않는다."
 }
