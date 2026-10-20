@@ -1,0 +1,7 @@
+{
+  "name": "so-yeong-park-academic-site",
+  "private": true,
+  "scripts": {"assets:media": "node scripts/optimize-media.cjs"},
+  "devDependencies": {"sharp": "0.35.5"},
+  "engines": {"node": ">=22"}
+}

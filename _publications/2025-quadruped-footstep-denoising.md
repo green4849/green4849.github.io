@@ -1,4 +1,5 @@
 ---
+id: "quadruped-footstep-denoising"
 year: "2025"
 type: "paper"
 typeLabel: "International conference"

@@ -1,6 +1,6 @@
 {
-  "schema_version": 1,
-  "updated_at": "2026-10-06",
+  "schema_version": 2,
+  "updated_at": "2026-10-20",
   "description": "포트폴리오 항목과 외부 기사·공개 산출물 매칭 기록. url은 다른 포트폴리오에서도 사용할 수 있는 절대 주소. verified_event는 개인 수상 증빙이 아님.",
   "entries": [
     {
@@ -20,7 +20,13 @@
       "checked_at": "2026-10-06",
       "status": "user_provided_unreadable",
       "evidence": "",
-      "notes": "사용자가 직접 지정한 연결 주소. 자동 열람은 403/내부 오류로 본문·발행일을 검증하지 못함. 개인 선발 확인 기사로 단정하지 않음."
+      "notes": "사용자가 직접 지정한 연결 주소. 자동 열람은 403/내부 오류로 본문·발행일을 검증하지 못함. 개인 선발 확인 기사로 단정하지 않음.",
+      "item_id": "ilju-scholarship-2025",
+      "access_check": {
+        "checked_at": "2026-10-20T14:26:10+00:00",
+        "status": "reachable",
+        "http_status": 200
+      }
     },
     {
       "id": "academic-excellence-scholarship",
@@ -39,7 +45,8 @@
       "checked_at": "2026-10-06",
       "status": "not_searched",
       "evidence": "",
-      "notes": "이번 기사 매칭 요청 대상은 일주 장학금. 성적우수 장학금은 기존 내용 유지."
+      "notes": "이번 기사 매칭 요청 대상은 일주 장학금. 성적우수 장학금은 기존 내용 유지.",
+      "item_id": "academic-excellence-scholarship"
     },
     {
       "id": "volunteer-service-certificate",
@@ -57,7 +64,13 @@
       "checked_at": "2026-10-06",
       "status": "verified_document",
       "evidence": "박소영, 428시간 10분, 174회, 활동 기간 2013-01-19~2026-09-17.",
-      "notes": "사용자 제공 Report.pdf의 공개용 사본. 주민등록번호·주소·발급번호를 실제 삭제하고 공개 사본임을 표시. 원본은 공개하지 않음."
+      "notes": "사용자 제공 Report.pdf의 공개용 사본. 주민등록번호·주소·발급번호를 실제 삭제하고 공개 사본임을 표시. 원본은 공개하지 않음.",
+      "item_id": "volunteer-service-certificate",
+      "access_check": {
+        "checked_at": "2026-10-20T14:26:09+00:00",
+        "status": "reachable",
+        "http_status": 200
+      }
     },
     {
       "id": "ces-2026",
@@ -75,7 +88,13 @@
       "checked_at": "2026-10-06",
       "status": "verified_event",
       "evidence": "CES 2026 주최 측 공식 행사 회고.",
-      "notes": "행사 소개 링크이며 개인 선발·참가 증명은 아님. 다음 연도 행사로 바뀌는 메인 홈페이지 대신 2026 고정 기사 사용."
+      "notes": "행사 소개 링크이며 개인 선발·참가 증명은 아님. 다음 연도 행사로 바뀌는 메인 홈페이지 대신 2026 고정 기사 사용.",
+      "item_id": "ces-2026",
+      "access_check": {
+        "checked_at": "2026-10-20T14:26:09+00:00",
+        "status": "reachable",
+        "http_status": 200
+      }
     },
     {
       "id": "data-science-award-2026",
@@ -99,6 +118,12 @@
         "checked_at": "2026-10-06",
         "status": "not_found",
         "notes": "학교명·성명·학회명·논문 주제를 조합하여 외부 언론 재검색. 본인 수상과 일치하는 기사 확인 못함. 기존 연결 상태 유지."
+      },
+      "item_id": "data-science-award-2026",
+      "access_check": {
+        "checked_at": "2026-10-20T14:26:09+00:00",
+        "status": "reachable",
+        "http_status": 200
       }
     },
     {
@@ -123,7 +148,8 @@
         "checked_at": "2026-10-06",
         "status": "not_found",
         "notes": "학교명·성명·학회명·논문 주제를 조합하여 외부 언론 재검색. 본인 수상과 일치하는 기사 확인 못함. 기존 연결 상태 유지."
-      }
+      },
+      "item_id": "smart-media-award-2025"
     },
     {
       "id": "hanshin-ai-festival-2025",
@@ -156,7 +182,13 @@
           "notes": "본문에 박소영 또는 일반부문 대상 개인 수상 내역은 없음. 수상 제목 링크 대신 Event coverage로 표시. 추가 공식 수상작 페이지는 Hanshin Now!와 일반부문 대상을 명시하나 팀원 명단은 이미지라 이번 열람에서 개인 일치를 확인하지 못함. 후보로만 보관."
         }
       ],
-      "replacement_reason": "사용자 요청: 교내 기사 대신 내용이 일치하는 외부 언론 기사 우선."
+      "replacement_reason": "사용자 요청: 교내 기사 대신 내용이 일치하는 외부 언론 기사 우선.",
+      "item_id": "hanshin-ai-festival-2025",
+      "access_check": {
+        "checked_at": "2026-10-20T14:26:09+00:00",
+        "status": "reachable",
+        "http_status": 200
+      }
     },
     {
       "id": "gangchon-hackathon-2025",
@@ -188,7 +220,13 @@
           "notes": "기사의 대상 수상자는 다른 학생들. 박소영의 최우수상 증빙으로 사용하지 않고 Event coverage로 표시."
         }
       ],
-      "replacement_reason": "사용자 요청: 교내 기사 대신 내용이 일치하는 외부 언론 기사 우선."
+      "replacement_reason": "사용자 요청: 교내 기사 대신 내용이 일치하는 외부 언론 기사 우선.",
+      "item_id": "gangchon-hackathon-2025",
+      "access_check": {
+        "checked_at": "2026-10-20T14:26:10+00:00",
+        "status": "reachable",
+        "http_status": 200
+      }
     },
     {
       "id": "industrial-management-award-2025",
@@ -212,7 +250,8 @@
         "checked_at": "2026-10-06",
         "status": "not_found",
         "notes": "학교명·성명·학회명·논문 주제를 조합하여 외부 언론 재검색. 본인 수상과 일치하는 기사 확인 못함. 기존 연결 상태 유지."
-      }
+      },
+      "item_id": "industrial-management-award-2025"
     },
     {
       "id": "ai-blockchain-grand-prize-2025",
@@ -254,7 +293,13 @@
           "checked_at": "2026-10-06",
           "evidence": "복지한번잡솨봐(박소영), Safe-Link, 한신대 SW중심대학사업단장상 대상 명시."
         }
-      ]
+      ],
+      "item_id": "ai-blockchain-grand-prize-2025",
+      "access_check": {
+        "checked_at": "2026-10-20T14:26:10+00:00",
+        "status": "reachable",
+        "http_status": 200
+      }
     }
   ],
   "source_preference": "기사 링크는 내용이 일치하는 외부 언론 보도를 우선한다. 교내 사이트는 보조 출처로 보관한다. 개인 수상 기사와 행사 일반 보도를 구분하고, 확인되지 않은 연결은 추가하지 않는다."

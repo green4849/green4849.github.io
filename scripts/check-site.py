@@ -12,10 +12,14 @@ class Page(HTMLParser):
     def __init__(self, text):
         super().__init__()
         self.ids, self.links, self.text = set(), [], []
+        self.elements = []
         self.feed(text)
 
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
+        self.elements.append((tag, attrs))
+        if tag == 'source' and 'srcset' in attrs:
+            self.links.extend(item.strip().split()[0] for item in attrs['srcset'].split(','))
         if 'id' in attrs:
             self.ids.add(attrs['id'])
         for key in ('href', 'src'):
@@ -94,6 +98,35 @@ for path, page in pages.items():
     text = ' '.join(page.text)
     if any(token in text for token in ('Lorem ipsum', 'Your Name', 'GitHub University', 'Professor Git')):
         errors.append(f'Template placeholder leaked: {path}')
+
+# Check the shared UI contract and resource mapping, without relying on display text.
+registry = json.loads(Path('_data/portfolio_links.json').read_text())
+for path, page in pages.items():
+    if not any(tag == 'nav' and attrs.get('class') == 'site-nav' for tag, attrs in page.elements):
+        continue  # Static Korean CV and redirects have independent layouts.
+    for required_id in ('main', 'primary-navigation', 'theme-toggle'):
+        if required_id not in page.ids:
+            errors.append(f'{path}: missing shared UI landmark {required_id}')
+    controls = [a for tag, a in page.elements if tag == 'button' and a.get('id') == 'theme-toggle']
+    if len(controls) != 1 or 'aria-pressed' not in controls[0]:
+        errors.append(f'{path}: theme control needs native button semantics')
+    meta = {a.get('property', a.get('name')): a.get('content') for tag, a in page.elements if tag == 'meta'}
+    for key in ('description', 'og:image', 'og:url', 'twitter:card'):
+        if not meta.get(key):
+            errors.append(f'{path}: missing {key} metadata')
+    if any('main.min.js' in link or 'fontawesome.css' in link for link in page.links):
+        errors.append(f'{path}: legacy browser bundle or icon font still loaded')
+    for tag, attrs in page.elements:
+        if tag == 'img' and ('width' not in attrs or 'height' not in attrs):
+            errors.append(f'{path}: image dimensions must reserve layout space')
+for route in ('cv/index.html', 'awards/index.html'):
+    path = ROOT / route
+    if path not in pages:
+        continue
+    for entry in registry['entries']:
+        if entry.get('url') and (route.startswith('cv/') or entry['category'] != 'activities'):
+            if entry['url'] not in pages[path].links:
+                errors.append(f'{path}: omitted evidence link {entry["id"]}')
 
 if errors:
     raise SystemExit('\n'.join(errors))

@@ -1,0 +1,19 @@
+name: Check external resource links
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  links:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check public links (404/410 fail; restrictions are reported)
+        run: python3 scripts/check-links.py --strict
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: public-link-report
+          path: .local/link-report.json
+          retention-days: 30

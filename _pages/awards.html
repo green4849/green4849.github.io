@@ -13,7 +13,7 @@ excerpt: "Research awards, competition results, and scholarships received by So 
   {% for award in profile.awards %}{% if award.category == category %}
     {% assign related = false %}
     {% for entry in site.data.award_publications %}
-      {% if entry.title == award.title and entry.organization == award.organization and entry.year == award.year %}
+      {% if entry.award_id == award.id %}
         {% assign related = entry %}{% break %}
       {% endif %}
     {% endfor %}

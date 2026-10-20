@@ -33,6 +33,14 @@ include:
 exclude:
   - AGENTS.md
   - README.md
+  - package.json
+  - package-lock.json
+  - docs
+  - .local
+  - assets/js/main.min.js
+  - assets/js/profile.js
+  - assets/js/theme.js
+  - assets/fonts/roboto/Roboto-Variable.ttf
   - MIGRATION.md
   - DESIGN_NOTES.md
   - LICENSE

@@ -16,7 +16,8 @@
         "Korean speech",
         "Evaluation"
       ],
-      "slug": "korean-asr"
+      "slug": "korean-asr",
+      "id": "korean-asr"
     },
     {
       "number": "02",
@@ -33,7 +34,8 @@
         "Audio-language",
         "Temporal localization"
       ],
-      "slug": "audio-moment-retrieval"
+      "slug": "audio-moment-retrieval",
+      "id": "audio-moment-retrieval"
     },
     {
       "number": "03",
@@ -51,7 +53,8 @@
         "Dataset",
         "Reliable AI"
       ],
-      "slug": "academic-regulation-qa"
+      "slug": "academic-regulation-qa",
+      "id": "academic-regulation-qa"
     }
   ],
   "awards": [
@@ -60,42 +63,48 @@
       "title": "Paper Encouragement Award",
       "detail": "Synthetic dataset for error review and correction training in academic-regulation QA",
       "organization": "Korean Association of Data Science",
-      "category": "Research"
+      "category": "Research",
+      "id": "data-science-award-2026"
     },
     {
       "year": "Nov 2025",
       "title": "Outstanding Paper Award",
       "detail": "Rubric-based training dataset for university academic regulations",
       "organization": "Korean Institute of Smart Media",
-      "category": "Research"
+      "category": "Research",
+      "id": "smart-media-award-2025"
     },
     {
       "year": "Nov 2025",
       "title": "Grand Prize",
       "detail": "Hanshin University AI Festival, General Division",
       "organization": "Hanshin University",
-      "category": "Competition"
+      "category": "Competition",
+      "id": "hanshin-ai-festival-2025"
     },
     {
       "year": "Oct 2025",
       "title": "Top Excellence Award",
       "detail": "2025 Elysian Gangchon AI Hackathon",
       "organization": "SW-Centered University Council",
-      "category": "Competition"
+      "category": "Competition",
+      "id": "gangchon-hackathon-2025"
     },
     {
       "year": "Aug 2025",
       "title": "Outstanding Paper Award",
       "detail": "Improving service delivery for AI-based assistive devices and welfare equipment for people with disabilities and older adults",
       "organization": "DAEHAN Society of Industrial Management",
-      "category": "Research"
+      "category": "Research",
+      "id": "industrial-management-award-2025"
     },
     {
       "year": "May 2025",
       "title": "Grand Prize",
       "detail": "AI/Blockchain Startup Competition",
       "organization": "Korea University SW-Centered University Program",
-      "category": "Competition"
+      "category": "Competition",
+      "id": "ai-blockchain-grand-prize-2025"
     }
   ],
   "scholarships": [
@@ -104,14 +113,16 @@
       "title": "Academic Excellence Scholarship",
       "detail": "Awarded every semester for academic excellence.",
       "organization": "Hanshin University",
-      "category": "Scholarship"
+      "category": "Scholarship",
+      "id": "academic-excellence-scholarship"
     },
     {
       "year": "Jul 2025 — Graduation",
       "title": "ILJU Academy and Culture Foundation",
       "detail": "Selected for the 33rd cohort of scholars.",
       "organization": "Taekwang Group",
-      "category": "Scholarship"
+      "category": "Scholarship",
+      "id": "ilju-scholarship-2025"
     }
   ],
   "activities": [
@@ -119,25 +130,29 @@
       "period": "Jun 2026 — Present",
       "title": "AIUX Lab Leader",
       "text": "Organize regular activities and research exchange for an undergraduate research community.",
-      "label": "Leadership"
+      "label": "Leadership",
+      "id": "aiux-lab-leader"
     },
     {
       "period": "400+ hours in total",
       "title": "Volunteer Service",
       "text": "More than 400 cumulative volunteer hours across activities. I tutor elementary school students weekly as an ILJU scholar.",
-      "label": "Service"
+      "label": "Service",
+      "id": "volunteer-service-certificate"
     },
     {
       "period": "Spring & Fall 2026",
       "title": "Teaching Assistant",
       "text": "Supported Mathematics for AI & SW and Applied Deep Learning courses.",
-      "label": "Teaching"
+      "label": "Teaching",
+      "id": "teaching-assistant"
     },
     {
       "period": "Jan 2026",
       "title": "CES 2026 Participant",
       "text": "Selected by Hanshin University to attend CES 2026.",
-      "label": "Selected activity"
+      "label": "Selected activity",
+      "id": "ces-2026"
     }
   ],
   "name": "So Yeong Park",

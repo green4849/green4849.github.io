@@ -1,6 +1,6 @@
 {%- assign matched_link = false -%}
 {%- for entry in site.data.portfolio_links.entries -%}
-  {%- if entry.category == include.category and entry.match.title == include.item.title and entry.match.organization == include.item.organization and entry.match.year == include.item.year and entry.match.period == include.item.period -%}
+  {%- if entry.category == include.category and entry.item_id == include.item.id -%}
     {%- assign matched_link = entry -%}{%- break -%}
   {%- endif -%}
 {%- endfor -%}

@@ -1,4 +1,5 @@
 ---
+id: "multilingual-asr-korean"
 year: "2026"
 type: "poster"
 typeLabel: "Poster presentation"

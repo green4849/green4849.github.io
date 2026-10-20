@@ -1,0 +1,2 @@
+{%- assign asset_path = include.path -%}
+{{- asset_path | relative_url -}}{%- if site.data.build.version -%}?v={{ site.data.build.version }}{%- endif -%}
