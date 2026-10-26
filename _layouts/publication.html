@@ -15,6 +15,6 @@ layout: archive
 </div>
 <div class="publication-description">{{ content }}</div>
 {% for award in site.data.award_publications %}{% if award.publication == page.url %}
-<p><a href="{{ '/awards/' | relative_url }}#{{ award.anchor }}">Award details</a></p>
+<p><a href="{{ '/' | relative_url }}#{{ award.anchor }}">Award details</a></p>
 {% endif %}{% endfor %}
-<p><a href="{{ '/publications/' | relative_url }}">All publications</a></p>
+<p><a href="{{ '/' | relative_url }}#publications">All publications</a></p>

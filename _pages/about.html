@@ -1,0 +1,116 @@
+---
+title: "About me"
+permalink: /
+excerpt: "So Yeong Park — Korean speech recognition, audio-language understanding, and reliable evaluation."
+redirect_from:
+  - /about/
+---
+{% assign profile = site.data.profile %}
+{% assign visuals = site.data.visuals %}
+{% comment %}
+  One-page home. Research and publications carry the visual weight; awards and
+  scholarships are a quiet chronological list. /research/, /publications/ and
+  /awards/ redirect to the anchors below. Images come from _data/visuals.yml.
+{% endcomment %}
+<section id="about" class="home-section home-section--intro">
+  <p>I am an undergraduate researcher at {{ profile.lab.name }}, {{ profile.lab.institution }}, advised by {{ profile.lab.advisor }}.</p>
+  <p>{{ profile.research_summary }}</p>
+  <p>I am pursuing a bachelor's degree in the {{ profile.education.school }}, with a double major in AI-Integrated Disability Life Care, and expect to graduate in the first half of 2027. Studying both has shaped what I care about most: technology means something only when it reaches the people who actually need it.</p>
+  <p class="home-aside">More detail is in my <a href="{{ '/cv/' | relative_url }}">CV</a>.</p>
+</section>
+
+<section id="research" class="home-section">
+  <h2>Research</h2>
+  <p class="home-lead">At AINC Lab, Hanshin University, advised by Prof. Seon Man Kim.</p>
+  <div class="card-stack">
+  {% for project in profile.research %}
+    {% assign v = visuals.research[project.slug] %}
+    <article id="{{ project.slug }}" class="card research-project{% if v %} has-visual{% endif %}">
+      <div class="research-project__body">
+        <h3>{{ project.title }}</h3>
+        <p class="meta">{{ project.period }} · {{ project.status }}</p>
+        <p>{{ project.summary }}</p>
+        <ul>{% for point in project.points %}<li>{{ point }}</li>{% endfor %}</ul>
+        {% if project.slug == 'korean-asr' %}
+        <p><a href="{{ '/publications/qwen3-asr-evaluation/' | relative_url }}">Related journal article (accepted / in press)</a></p>
+        {% elsif project.slug == 'academic-regulation-qa' %}
+        <p><a href="{{ '/publications/qa-error-correction-dataset/' | relative_url }}">Related conference poster (2026)</a></p>
+        {% endif %}
+      </div>
+      {% if v %}<figure class="research-project__visual">{% include visual.html v=v class="visual" %}</figure>{% endif %}
+    </article>
+  {% endfor %}
+  </div>
+</section>
+
+<section id="publications" class="home-section">
+  <h2>Publications</h2>
+  {% assign publications = site.publications | sort: 'sort_order' | reverse %}
+  {% assign years = publications | map: 'year' | uniq %}
+  {% for year in years %}
+  <div id="publications-{{ year }}" class="home-group">
+    <h3 class="home-subhead">{{ year }}</h3>
+    <ol class="pub-cards">
+    {% for pub in publications %}{% if pub.year == year %}
+      {% assign v = visuals.publications[pub.id] %}
+      <li>
+        <article class="card pub-card">
+          <a class="pub-card__thumb" href="{{ pub.url | relative_url }}" tabindex="-1" aria-hidden="true">
+            {% if v %}{% include visual.html v=v class="visual" %}{% else %}<span class="pub-card__tile">{% case pub.type %}{% when 'journal' %}Journal{% when 'poster' %}Poster{% else %}Conference{% endcase %}</span>{% endif %}
+          </a>
+          <div>
+            <h4 class="archive__item-title"><a href="{{ pub.url | relative_url }}" rel="permalink">{{ pub.title }}</a></h4>
+            <p>{% for author in pub.authors %}{% if author == profile.name %}<span class="publication-self">{{ author }}</span>{% else %}{{ author }}{% endif %}{% unless forloop.last %}, {% endunless %}{% endfor %}</p>
+            <p class="meta"><em>{{ pub.venue }}</em> · {{ pub.citation_date }}</p>
+            <p class="meta">{{ pub.typeLabel }} · {{ pub.role }}{% if pub.citation_note != empty %} · {{ pub.citation_note }}{% endif %}</p>
+          </div>
+        </article>
+      </li>
+    {% endif %}{% endfor %}
+    </ol>
+  </div>
+  {% endfor %}
+</section>
+
+<section id="awards" class="home-section">
+  <h2>Awards &amp; scholarships</h2>
+  <ul class="quiet-list">
+  {% for award in profile.awards %}
+    {% assign related = false %}
+    {% for entry in site.data.award_publications %}
+      {% if entry.award_id == award.id %}{% assign related = entry %}{% break %}{% endif %}
+    {% endfor %}
+    {% assign v = visuals.awards[award.id] %}
+    <li{% if related %} id="{{ related.anchor }}"{% endif %} class="quiet-row{% if v %} has-visual{% endif %}">
+      <span class="quiet-row__date">{{ award.year }}</span>
+      <div class="quiet-row__body">
+        <p class="quiet-row__title">{% include portfolio-link.html category="awards" item=award %} <span class="quiet-row__org">· {{ award.organization }}</span></p>
+        <p class="meta">{{ award.detail }}{% capture coverage %}{% include portfolio-link.html category="awards" item=award mode="context" %}{% endcapture %}{% if coverage != empty %} · {{ coverage }}{% endif %}{% if related %} · <a href="{{ related.publication | relative_url }}">Related publication</a>{% endif %}</p>
+      </div>
+      {% if v %}{% include visual.html v=v class="quiet-row__visual" %}{% endif %}
+    </li>
+  {% endfor %}
+  </ul>
+
+  <div id="scholarships" class="home-group">
+    <h3 class="home-subhead">Scholarships</h3>
+    <ul class="quiet-list">
+    {% for scholarship in profile.scholarships %}
+      {% assign v = visuals.scholarships[scholarship.id] %}
+      <li class="quiet-row{% if v %} has-visual{% endif %}">
+        <span class="quiet-row__date">{{ scholarship.year }}</span>
+        <div class="quiet-row__body">
+          <p class="quiet-row__title">{% include portfolio-link.html category="scholarships" item=scholarship %} <span class="quiet-row__org">· {{ scholarship.organization }}</span></p>
+          <p class="meta">{{ scholarship.detail }}</p>
+        </div>
+        {% if v %}{% include visual.html v=v class="quiet-row__visual" %}{% endif %}
+      </li>
+    {% endfor %}
+    </ul>
+  </div>
+</section>
+
+<section id="contact" class="home-section">
+  <h2>Contact</h2>
+  <p>I'm happy to hear about research, collaboration, or anything above: <a href="mailto:{{ profile.email }}">{{ profile.email }}</a></p>
+</section>

@@ -15,5 +15,13 @@
       <li><a href="https://github.com/{{ author.github }}" aria-label="GitHub profile" title="GitHub" itemprop="sameAs">{% include icon.html name="github" %}</a></li>
       <li><a href="{% include asset-url.html path='/assets/Park_So_Yeong_CV_EN.pdf' %}" aria-label="Open English CV PDF" title="CV (PDF)">{% include icon.html name="file" %}</a></li>
     </ul>
+    {% if profile.research_interests %}
+    <div class="interest-card">
+      <p class="interest-card__label">Interests</p>
+      <ul class="interest-tags" aria-label="Research interests">
+        {% for interest in profile.research_interests %}<li>{{ interest }}</li>{% endfor %}
+      </ul>
+    </div>
+    {% endif %}
   </div>
 </div>

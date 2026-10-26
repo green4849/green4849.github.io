@@ -1,0 +1,30 @@
+# Images shown beside items on the home page, keyed by the item's stable id.
+# Only use images you own or that are already public on this site (your own photos,
+# your certificates, figures from your papers). Do not copy press photos from news
+# articles; link the article instead (portfolio_links.json does that already).
+#
+# src: path under the site root · width/height: pixel size of the file · alt: what it shows
+# Optional fit: contain (default, for figures/documents) or cover (for photos).
+
+research:
+  korean-asr:
+    src: /images/thumbs/qwen3-asr-figure.webp
+    width: 640
+    height: 347
+    alt: "Bar chart from the paper: Qwen3-ASR 0.6B and 1.7B reach lower character error rates than Whisper medium and large-v3 on KsponSpeech eval_clean and eval_other."
+
+publications:
+  qwen3-asr-evaluation:
+    src: /images/thumbs/qwen3-asr-figure.webp
+    width: 640
+    height: 347
+    alt: "Figure 3 of the paper comparing character error rates of Qwen3-ASR and Whisper models."
+
+awards:
+  data-science-award-2026:
+    src: /images/thumbs/data-science-award-2026.webp
+    width: 360
+    height: 509
+    alt: "Certificate of the Paper Encouragement Award, Korean Association of Data Science, June 19, 2026."
+
+scholarships: {}

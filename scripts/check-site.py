@@ -76,14 +76,15 @@ if cv_path in pages:
         if term not in cv:
             errors.append(f'Missing CV profile field or section: {term}')
 
-awards_path = ROOT / 'awards/index.html'
+# Awards & honors live on the one-page home (/awards/ redirects to /#awards).
+awards_path = ROOT / 'index.html'
 if awards_path in pages:
     awards_text = ' '.join(pages[awards_path].text)
     profile = json.loads(Path('_data/profile.json').read_text())
     for item in profile['awards'] + profile['scholarships']:
         for field in ('title', 'organization', 'detail'):
             if item[field] not in awards_text:
-                errors.append(f'Awards page omitted {field}: {item[field]}')
+                errors.append(f'Home awards section omitted {field}: {item[field]}')
 
 paper_path = ROOT / 'publications/qwen3-asr-evaluation/index.html'
 if paper_path in pages:
@@ -93,6 +94,19 @@ if paper_path in pages:
                  'Paper (PDF)', 'Publication record'):
         if term not in paper_text:
             errors.append(f'Paper summary omitted result or scope qualifier: {term}')
+
+home = pages.get(ROOT / 'index.html')
+if home:
+    for section in ('about', 'research', 'publications', 'awards', 'contact'):
+        if section not in home.ids:
+            errors.append(f'Home page missing section #{section}')
+    for route in ('research', 'publications', 'awards'):
+        redirect = (ROOT / route / 'index.html')
+        if redirect.is_file() and f'/#{route}' not in redirect.read_text():
+            errors.append(f'/{route}/ must redirect to /#{route}')
+    for slug in [r['slug'] for r in json.loads(Path('_data/profile.json').read_text())['research']]:
+        if slug not in home.ids:
+            errors.append(f'Home page missing research anchor #{slug}')
 
 for path, page in pages.items():
     text = ' '.join(page.text)
@@ -119,7 +133,7 @@ for path, page in pages.items():
     for tag, attrs in page.elements:
         if tag == 'img' and ('width' not in attrs or 'height' not in attrs):
             errors.append(f'{path}: image dimensions must reserve layout space')
-for route in ('cv/index.html', 'awards/index.html'):
+for route in ('cv/index.html', 'index.html'):
     path = ROOT / route
     if path not in pages:
         continue

@@ -3,10 +3,8 @@
 Academic website based on [Academic Pages](https://github.com/academicpages/academicpages.github.io).
 
 ## Pages
-- About: `_pages/about.md`
-- Research: `_pages/research.html`
-- Publications: `_pages/publications.html`
-- Awards & honors: `_pages/awards.html` (research awards, competitions, scholarships)
+- Home (one page): `_pages/about.html` — About, Research, Publications, Awards & honors and Contact sections. The navigation links to their anchors (`/#research`, `/#publications`, `/#awards`).
+- `/research/`, `/publications/`, `/awards/` are redirects to those anchors (`_layouts/redirect.html` keeps an old link's `#fragment`).
 - CV: `_pages/cv.html`
 
 Shared profile data: `_data/profile.json`.
@@ -48,3 +46,5 @@ Uses Academic Pages for the page structure, sidebar, navigation, colors, and the
 Academic Pages / Minimal Mistakes: MIT license in `LICENSE`.
 Printable CV and font credits: `cv/THIRD_PARTY.md`.
 Roboto: SIL Open Font License in `assets/fonts/roboto/OFL.txt`.
+Newsreader (headings, name): SIL Open Font License in `assets/fonts/newsreader/OFL.txt`.
+Home-page images are listed in `_data/visuals.yml` by item id. Use only images you own or that are already public on this site; link press coverage instead of copying article photos.

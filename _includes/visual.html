@@ -1,0 +1,5 @@
+{%- comment -%} Renders an entry from _data/visuals.yml: include visual.html v=... class="..." {%- endcomment -%}
+{%- assign v = include.v -%}
+{%- if v -%}
+<img class="{{ include.class }}{% if v.fit == 'cover' %} is-cover{% endif %}" src="{{ v.src | relative_url }}" width="{{ v.width }}" height="{{ v.height }}" alt="{{ v.alt | escape }}" loading="lazy" decoding="async">
+{%- endif -%}

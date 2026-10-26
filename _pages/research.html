@@ -1,19 +1,6 @@
 ---
-title: "Research"
+title: "Redirect"
 permalink: /research/
-excerpt: "Research on Korean speech recognition, audio moment retrieval, and academic-regulation question answering."
+redirect_to: /#research
+sitemap: false
 ---
-<p>Research at AINC Lab, Hanshin University, advised by Prof. Seon Man Kim.</p>
-{% for project in site.data.profile.research %}
-<section id="{{ project.slug }}">
-  <h2>{{ project.title }}</h2>
-  <p class="research-period">{{ project.period }} · {{ project.status }}</p>
-  <p>{{ project.summary }}</p>
-  <ul>{% for point in project.points %}<li>{{ point }}</li>{% endfor %}</ul>
-  {% if project.slug == 'korean-asr' %}
-  <p><a href="{{ '/publications/qwen3-asr-evaluation/' | relative_url }}">Related journal article (accepted / in press)</a></p>
-  {% elsif project.slug == 'academic-regulation-qa' %}
-  <p><a href="{{ '/publications/qa-error-correction-dataset/' | relative_url }}">Related conference poster (2026)</a></p>
-  {% endif %}
-</section>
-{% endfor %}
