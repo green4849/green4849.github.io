@@ -52,12 +52,10 @@ redirect_from:
     <h3 class="home-subhead">{{ year }}</h3>
     <ol class="pub-cards">
     {% for pub in publications %}{% if pub.year == year %}
-      {% assign v = visuals.publications[pub.id] %}
+      {% assign pub_key = pub.url | split: '/' | last %}{% assign v = visuals.publications[pub_key] %}
       <li>
-        <article class="card pub-card">
-          <a class="pub-card__thumb" href="{{ pub.url | relative_url }}" tabindex="-1" aria-hidden="true">
-            {% if v %}{% include visual.html v=v class="visual" %}{% else %}<span class="pub-card__tile">{% case pub.type %}{% when 'journal' %}Journal{% when 'poster' %}Poster{% else %}Conference{% endcase %}</span>{% endif %}
-          </a>
+        <article class="card pub-card{% if v %} has-visual{% endif %}">
+          {% if v %}<a class="pub-card__thumb" href="{{ pub.url | relative_url }}" tabindex="-1" aria-hidden="true">{% include visual.html v=v class="visual" %}</a>{% endif %}
           <div>
             <h4 class="archive__item-title"><a href="{{ pub.url | relative_url }}" rel="permalink">{{ pub.title }}</a></h4>
             <p>{% for author in pub.authors %}{% if author == profile.name %}<span class="publication-self">{{ author }}</span>{% else %}{{ author }}{% endif %}{% unless forloop.last %}, {% endunless %}{% endfor %}</p>
