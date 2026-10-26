@@ -1,0 +1,107 @@
+---
+title: "About me"
+permalink: /
+excerpt: "So Yeong Park — Korean speech recognition, audio-language understanding, and reliable evaluation."
+redirect_from:
+  - /about/
+---
+{% assign profile = site.data.profile %}
+{% comment %}
+  One-page home: About, Research, Publications and Awards share this page and the
+  navigation links to their anchors. /research/, /publications/ and /awards/ redirect here.
+{% endcomment %}
+<section id="about" class="home-section home-section--intro">
+  <p>I am an undergraduate researcher at {{ profile.lab.name }}, {{ profile.lab.institution }}, advised by {{ profile.lab.advisor }}.</p>
+  <p>{{ profile.research_summary }}</p>
+  <p>I am pursuing a bachelor's degree in the {{ profile.education.school }}, with a double major in AI-Integrated Disability Life Care. I expect to graduate in the first half of 2027. See my <a href="{{ '/cv/' | relative_url }}">CV</a> for the full record.</p>
+
+  <h2>Research interests</h2>
+  <ul>
+  {% for interest in profile.research_interests %}
+    <li>{{ interest }}</li>
+  {% endfor %}
+  </ul>
+</section>
+
+<section id="research" class="home-section">
+  <h2>Research</h2>
+  <hr>
+  <p>Research at AINC Lab, Hanshin University, advised by Prof. Seon Man Kim.</p>
+  {% for project in profile.research %}
+  <article id="{{ project.slug }}" class="research-project">
+    <h3>{{ project.title }}</h3>
+    <p class="research-period">{{ project.period }} · {{ project.status }}</p>
+    <p>{{ project.summary }}</p>
+    <ul>{% for point in project.points %}<li>{{ point }}</li>{% endfor %}</ul>
+    {% if project.slug == 'korean-asr' %}
+    <p><a href="{{ '/publications/qwen3-asr-evaluation/' | relative_url }}">Related journal article (accepted / in press)</a></p>
+    {% elsif project.slug == 'academic-regulation-qa' %}
+    <p><a href="{{ '/publications/qa-error-correction-dataset/' | relative_url }}">Related conference poster (2026)</a></p>
+    {% endif %}
+  </article>
+  {% endfor %}
+</section>
+
+<section id="publications" class="home-section">
+  <h2>Publications</h2>
+  <hr>
+  {% assign publications = site.publications | sort: 'sort_order' | reverse %}
+  {% for category in site.publication_category %}
+  <div id="{{ category[0] }}" class="home-group">
+    <h3 class="home-subhead">{{ category[1].title }}</h3>
+    <ol class="publication-list">
+    {% for pub in publications %}{% if pub.type == category[0] %}{% include publication-entry.html pub=pub heading="h4" %}{% endif %}{% endfor %}
+    </ol>
+  </div>
+  {% endfor %}
+</section>
+
+<section id="awards" class="home-section">
+  <h2>Awards &amp; honors</h2>
+  <hr>
+  {% assign categories = 'Research,Competition' | split: ',' %}
+  {% for category in categories %}
+  <div id="{% if category == 'Research' %}research-awards{% else %}competitions{% endif %}" class="home-group">
+    <h3 class="home-subhead">{% if category == 'Research' %}Research awards{% else %}Competitions{% endif %}</h3>
+    <ul class="publication-list">
+    {% for award in profile.awards %}{% if award.category == category %}
+      {% assign related = false %}
+      {% for entry in site.data.award_publications %}
+        {% if entry.award_id == award.id %}
+          {% assign related = entry %}{% break %}
+        {% endif %}
+      {% endfor %}
+      <li{% if related %} id="{{ related.anchor }}"{% endif %}>
+        <article class="publication-entry">
+          <h4 class="archive__item-title">{% include portfolio-link.html category="awards" item=award %}</h4>
+          <p>{{ award.organization }} · {{ award.year }}</p>
+          <p>{{ award.detail }}{% capture coverage %}{% include portfolio-link.html category="awards" item=award mode="context" %}{% endcapture %}{% if coverage != empty %} · {{ coverage }}{% endif %}</p>
+          {% if related %}<p><a href="{{ related.publication | relative_url }}">Related publication</a></p>{% endif %}
+        </article>
+      </li>
+    {% endif %}{% endfor %}
+    </ul>
+  </div>
+  {% endfor %}
+
+  <div id="scholarships" class="home-group">
+    <h3 class="home-subhead">Scholarships</h3>
+    <ul class="publication-list">
+    {% for scholarship in profile.scholarships %}
+      <li>
+        <article class="publication-entry">
+          <h4 class="archive__item-title">{% include portfolio-link.html category="scholarships" item=scholarship %}</h4>
+          <p>{{ scholarship.organization }} · {{ scholarship.year }}</p>
+          <p>{{ scholarship.detail }}</p>
+        </article>
+      </li>
+    {% endfor %}
+    </ul>
+  </div>
+</section>
+
+<section id="contact" class="home-section">
+  <h2>Contact</h2>
+  <hr>
+  <p><a href="mailto:{{ profile.email }}">{{ profile.email }}</a></p>
+</section>

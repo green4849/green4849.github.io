@@ -3,10 +3,8 @@
 Academic website based on [Academic Pages](https://github.com/academicpages/academicpages.github.io).
 
 ## Pages
-- About: `_pages/about.md`
-- Research: `_pages/research.html`
-- Publications: `_pages/publications.html`
-- Awards & honors: `_pages/awards.html` (research awards, competitions, scholarships)
+- Home (one page): `_pages/about.html` — About, Research, Publications, Awards & honors and Contact sections. The navigation links to their anchors (`/#research`, `/#publications`, `/#awards`).
+- `/research/`, `/publications/`, `/awards/` are redirects to those anchors (`_layouts/redirect.html` keeps an old link's `#fragment`).
 - CV: `_pages/cv.html`
 
 Shared profile data: `_data/profile.json`.

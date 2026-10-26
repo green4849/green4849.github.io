@@ -42,7 +42,7 @@ redirect_from:
     Research design, experiment implementation, results analysis, and paper writing.
   </li></ul>
   {% for project in profile.research %}
-  <h3><a href="{{ '/research/' | relative_url }}#{{ project.slug }}">{{ project.title }}</a></h3>
+  <h3><a href="{{ '/' | relative_url }}#{{ project.slug }}">{{ project.title }}</a></h3>
   <p class="research-period">{{ project.period }}</p>
   <ul>{% for point in project.points %}<li>{{ point }}</li>{% endfor %}</ul>
   {% endfor %}

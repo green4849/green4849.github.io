@@ -31,3 +31,15 @@ Text links use #276b80 on white; dark links use #8ad2e5 on #25292d. Plain inline
 Roboto is served as WOFF2 (222,204 bytes vs 488,584-byte TTF); source supplied portrait is resized/encoded with preserved aspect ratio, responsive 160/320/480px WebP and JPEG fallback. Share preview uses the supplied portrait and existing public identity. Images regenerate from `_data/media.json` and profile data in every build; original sources remain intact.
 
 Build/data/link/metadata checks are separate from visual checks. The app browser control timed out twice during this pass, so final desktop/mobile browser appearance has not been visually verified.
+
+## Motion and one-page pass — 2026-10-26
+
+Reference: https://justin4ai.github.io/ (inspected source; it uses no JavaScript animation).
+
+- Removed the Academic Pages staggered `intro` fade-ins (masthead, navigation, main, hero, footer). Content renders immediately on every load.
+- `$global-transition` now lists colour properties instead of `all`, and only `a, button, input, .btn` receive it; text, images and headings no longer transition.
+- Home merges About, Research, Publications and Awards into one page; navigation uses anchors with `scroll-behavior: smooth` (disabled under `prefers-reduced-motion`). A small scroll handler in `_main.js` marks the section in view with `aria-current`.
+- Masthead is translucent with `backdrop-filter: saturate(180%) blur(12px)` where supported; otherwise the opaque background remains.
+- Publication, award and scholarship entries get a light hover/focus surface (6% link-colour tint, 1px lift, soft shadow). Print styles reset it.
+
+Visual review in a browser is still pending: this pass was validated by CI build and `check-site.py`, not by screenshots.
