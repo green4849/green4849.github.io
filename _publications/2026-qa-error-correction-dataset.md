@@ -14,7 +14,6 @@ citation_date: "Jun 19, 2026"
 citation_note: "Paper Encouragement Award"
 sort_order: 50
 permalink: "/publications/qa-error-correction-dataset/"
-layout: "publication"
 excerpt: "Constructed synthetic training data for error review and correction in academic-regulation question answering."
 resources:
   - label: "Paper (DOCX)"

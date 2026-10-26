@@ -13,7 +13,6 @@ citation_date: "Aug 2025 · Busan"
 citation_note: ""
 sort_order: 10
 permalink: "/publications/quadruped-footstep-denoising/"
-layout: "publication"
 excerpt: "Conference work on low-latency denoising of self-generated footstep noise in quadruped robots for remote acoustic situational awareness."
 ---
 

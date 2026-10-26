@@ -13,7 +13,6 @@ citation_date: "Jun 13, 2026"
 citation_note: ""
 sort_order: 30
 permalink: "/publications/multilingual-asr-korean/"
-layout: "publication"
 excerpt: "Studied inference parameter settings of a public multilingual ASR model for Korean speech recognition."
 ---
 

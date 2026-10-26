@@ -13,7 +13,6 @@ citation_date: "2026"
 citation_note: ""
 sort_order: 40
 permalink: "/publications/qwen3-asr-inference/"
-layout: "publication"
 excerpt: "Studied inference parameter settings for Qwen3-ASR across multiple Korean speech corpora."
 ---
 

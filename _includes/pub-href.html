@@ -1,0 +1,14 @@
+{%- comment -%}
+  The one place that decides where a publication title links (no detail pages):
+  DOI → record_url (journal/proceedings page) → url → first "Paper" resource → nothing.
+  Usage: {% capture href %}{% include pub-href.html pub=pub %}{% endcapture %}
+{%- endcomment -%}
+{%- assign p = include.pub -%}
+{%- assign href = '' -%}
+{%- if p.doi -%}{%- assign href = 'https://doi.org/' | append: p.doi -%}
+{%- elsif p.record_url -%}{%- assign href = p.record_url -%}
+{%- elsif p.url_external -%}{%- assign href = p.url_external -%}
+{%- else -%}
+  {%- for r in p.resources -%}{%- assign first = r.label | slice: 0, 5 -%}{%- if first == 'Paper' -%}{%- assign href = r.url -%}{%- break -%}{%- endif -%}{%- endfor -%}
+{%- endif -%}
+{%- if href != '' -%}{%- unless href contains '://' -%}{%- assign href = href | relative_url -%}{%- endunless -%}{{ href }}{%- endif -%}

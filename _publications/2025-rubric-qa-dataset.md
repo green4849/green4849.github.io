@@ -13,7 +13,6 @@ citation_date: "Nov 15, 2025"
 citation_note: "Outstanding Paper Award"
 sort_order: 20
 permalink: "/publications/rubric-qa-dataset/"
-layout: "publication"
 excerpt: "Designed and constructed a rubric-based training dataset for university academic regulations."
 ---
 

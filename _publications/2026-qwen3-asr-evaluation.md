@@ -16,7 +16,6 @@ doi: "10.7776/ASK.2026.45.5.582"
 record_url: "https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART003386913"
 sort_order: 60
 permalink: "/publications/qwen3-asr-evaluation/"
-layout: "publication"
 excerpt: "Evaluated how model size and inference settings affect recognition accuracy across Korean speech datasets."
 resources:
   - label: "Paper (PDF)"
