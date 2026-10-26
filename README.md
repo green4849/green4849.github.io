@@ -46,3 +46,5 @@ Uses Academic Pages for the page structure, sidebar, navigation, colors, and the
 Academic Pages / Minimal Mistakes: MIT license in `LICENSE`.
 Printable CV and font credits: `cv/THIRD_PARTY.md`.
 Roboto: SIL Open Font License in `assets/fonts/roboto/OFL.txt`.
+Newsreader (headings, name): SIL Open Font License in `assets/fonts/newsreader/OFL.txt`.
+Home-page images are listed in `_data/visuals.yml` by item id. Use only images you own or that are already public on this site; link press coverage instead of copying article photos.

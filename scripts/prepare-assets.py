@@ -9,7 +9,7 @@ source = ROOT / 'assets/js/_main.js'
 paths = []
 for folder in ('_includes', '_layouts', '_sass', '_data', 'assets/css', 'images', 'assets/publications', 'assets/documents'):
     paths.extend(p for p in (ROOT / folder).rglob('*') if p.is_file() and p.name != 'build.json')
-paths.extend([source, ROOT / 'assets/fonts/roboto/Roboto-Variable.woff2'])
+paths.extend([source, ROOT / 'assets/fonts/roboto/Roboto-Variable.woff2', ROOT / 'assets/fonts/newsreader/Newsreader-Variable.woff2'])
 digest = hashlib.sha256()
 for path in sorted(set(paths)):
     digest.update(str(path.relative_to(ROOT)).encode())
