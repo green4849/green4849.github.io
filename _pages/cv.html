@@ -57,7 +57,7 @@ redirect_from:
   <ol class="cv-publication-list">
   {% for pub in publications %}{% if pub.type == category %}
     <li>{% for author in pub.authors %}{% if author == site.data.profile.name %}<span class="publication-self">{{ author }}</span>{% else %}{{ author }}{% endif %}{% unless forloop.last %}, {% endunless %}{% endfor %}.
-      <a href="{{ pub.url | relative_url }}">{{ pub.title }}</a>.
+      {% include pub-title.html pub=pub %}.
       <em>{{ pub.venue }}</em>, {{ pub.citation_date }}.<br>
       <span class="publication-note">{{ pub.role }}{% if pub.citation_note != empty %} · {{ pub.citation_note }}{% endif %}.</span>
     </li>

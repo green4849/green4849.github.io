@@ -1,0 +1,2 @@
+{%- capture href -%}{% include pub-href.html pub=include.pub %}{%- endcapture -%}
+{%- if href != '' -%}<a href="{{ href }}" target="_blank" rel="noopener noreferrer">{{ include.pub.title }}</a>{%- else -%}{{ include.pub.title }}{%- endif -%}

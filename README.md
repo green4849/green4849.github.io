@@ -30,7 +30,8 @@ The shared command regenerates portrait sizes/social preview, copies the browser
 ## Updating content
 - Copy a file in `_publications/` to add an entry; preserve its status and presentation type.
 - `sort_order` controls ordering without inventing an exact publication date.
-- Use optional `resources` entries (`label`, `url`) for the plain Paper / Code / Poster / Slides link row. Include only available artifacts; local publication assets live in `assets/publications/`. Keep detail bodies brief: one source figure, a short overview, and relevant links.
+- Use optional `resources` entries (`label`, `url`) for the plain Paper / Code / Poster / Slides link row. Include only available artifacts; local publication assets live in `assets/publications/`. The row appears under the entry on the home page.
+- Publications have no detail pages. Every title (home, CV, research cards) links through `_includes/pub-href.html`: `doi` → `record_url` → `url_external` (journal or proceedings page) → first resource whose label starts with "Paper" → no link. Add `record_url` or `url_external` to an entry to make its title clickable.
 - `citation_date` contains the date shown in references; `citation_note` contains awards or acceptance status. Keep unknown dates at year precision.
 - Introduction, research interests, CV identity, and sidebar affiliation draw from `_data/profile.json`.
 - Keep item and publication `id` values stable when changing titles. Link records use `item_id`; award/publication relationships use `award_id`. Legacy `match` fields are historical notes, not lookup keys.

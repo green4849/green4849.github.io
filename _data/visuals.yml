@@ -8,10 +8,11 @@
 
 research:
   korean-asr:
-    src: /images/thumbs/qwen3-asr-figure.webp
-    width: 640
-    height: 347
-    alt: "Bar chart from the paper: Qwen3-ASR 0.6B and 1.7B reach lower character error rates than Whisper medium and large-v3 on KsponSpeech eval_clean and eval_other."
+    src: /images/thumbs/qwen3-asr-architecture.webp
+    width: 960
+    height: 556
+    alt: "Fig. 1 of the paper: speech waveform into the AuT speech encoder and projector, then the Qwen3 LLM decoder predicting transcription tokens autoregressively, with inference-time decoding controls."
+
 
 publications:
   qwen3-asr-evaluation:

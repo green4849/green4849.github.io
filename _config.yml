@@ -64,7 +64,7 @@ kramdown:
   hard_wrap: false
 collections:
   publications:
-    output: true
+    output: false  # no detail pages; titles link to the journal/record (see _includes/pub-href.html)
     permalink: /publications/:path/
 defaults:
   - scope:
@@ -72,12 +72,6 @@ defaults:
       type: pages
     values:
       layout: archive
-      author_profile: true
-  - scope:
-      path: ""
-      type: publications
-    values:
-      layout: publication
       author_profile: true
 sass:
   sass_dir: _sass

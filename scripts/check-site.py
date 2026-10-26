@@ -86,15 +86,6 @@ if awards_path in pages:
             if item[field] not in awards_text:
                 errors.append(f'Home awards section omitted {field}: {item[field]}')
 
-paper_path = ROOT / 'publications/qwen3-asr-evaluation/index.html'
-if paper_path in pages:
-    paper_text = ' '.join(pages[paper_path].text)
-    for term in ('nine Korean speech corpora', 'ten evaluation sets', 'without fine-tuning',
-                 'eval_clean and eval_other', 'each model uses its best tested decoding setting on these two sets',
-                 'Paper (PDF)', 'Publication record'):
-        if term not in paper_text:
-            errors.append(f'Paper summary omitted result or scope qualifier: {term}')
-
 home = pages.get(ROOT / 'index.html')
 if home:
     for section in ('about', 'research', 'publications', 'awards', 'contact'):
@@ -107,6 +98,17 @@ if home:
     for slug in [r['slug'] for r in json.loads(Path('_data/profile.json').read_text())['research']]:
         if slug not in home.ids:
             errors.append(f'Home page missing research anchor #{slug}')
+
+# Publications have no detail pages: titles link straight to the journal/record.
+for path, page in pages.items():
+    for link in page.links:
+        parts = urlsplit(urljoin(ORIGIN + '/', link)).path.strip('/').split('/')
+        if len(parts) == 2 and parts[0] == 'publications' and parts[1]:
+            errors.append(f'{path}: links to removed publication detail page {link}')
+if any((ROOT / 'publications').glob('*/index.html')):
+    errors.append('Publication detail pages should not be generated')
+if home and 'https://doi.org/10.7776/ASK.2026.45.5.582' not in home.links:
+    errors.append('Journal article title must link to its DOI')
 
 for path, page in pages.items():
     text = ' '.join(page.text)
