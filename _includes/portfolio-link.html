@@ -4,7 +4,13 @@
     {%- assign matched_link = entry -%}{%- break -%}
   {%- endif -%}
 {%- endfor -%}
-{%- if include.mode == 'context' -%}
+{%- if include.mode == 'meta' -%}
+  {%- comment -%} Any link, shown as a separate text link so titles stay one colour. {%- endcomment -%}
+  {%- if matched_link.url and matched_link.placement != 'none' -%}
+    {%- assign meta_label = matched_link.link_label | default: 'Article' -%}
+    <a href="{{ matched_link.url | escape }}" target="_blank" rel="noopener noreferrer">{{ meta_label | escape }}</a>
+  {%- endif -%}
+{%- elsif include.mode == 'context' -%}
   {%- if matched_link.url and matched_link.placement == 'context' -%}
     <a href="{{ matched_link.url | escape }}" target="_blank" rel="noopener noreferrer">{{ matched_link.link_label | escape }}</a>
   {%- endif -%}

@@ -3,7 +3,7 @@
     {
       "number": "01",
       "period": "2026",
-      "status": "Journal accepted",
+      "status": "Journal article",
       "title": "Evaluating Qwen3-ASR for Korean Speech Recognition",
       "summary": "Evaluated how model size and inference settings affect recognition accuracy across Korean speech datasets.",
       "points": [
@@ -21,7 +21,7 @@
     },
     {
       "number": "02",
-      "period": "2026 — Present",
+      "period": "2026 – Present",
       "status": "Ongoing",
       "title": "DCASE 2026 Task 6 · Audio Moment Retrieval",
       "summary": "Studying how to locate audio segments that match natural-language queries.",
@@ -39,7 +39,7 @@
     },
     {
       "number": "03",
-      "period": "2025 — 2026",
+      "period": "2025 – 2026",
       "status": "Conference awards",
       "title": "Academic-Regulation QA Data & Error-Correction Training",
       "summary": "Built and evaluated training data for question answering grounded in university academic regulations.",
@@ -117,7 +117,7 @@
       "id": "academic-excellence-scholarship"
     },
     {
-      "year": "Jul 2025 — Graduation",
+      "year": "Jul 2025 – Graduation",
       "title": "ILJU Academy and Culture Foundation",
       "detail": "Selected for the 33rd cohort of scholars.",
       "organization": "Taekwang Group",
@@ -127,7 +127,7 @@
   ],
   "activities": [
     {
-      "period": "Jun 2026 — Present",
+      "period": "Jun 2026 – Present",
       "title": "AIUX Lab Leader",
       "text": "Organize regular activities and research exchange for an undergraduate research community.",
       "label": "Leadership",

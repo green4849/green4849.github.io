@@ -162,6 +162,12 @@ html[data-theme="dark"] .theme-toggle .icon--sun { display: block; }
 .cv-items ul { margin-top: var(--space-1); }
 .archive .research-period { margin: 0 0 var(--space-2); font-size: 0.875rem; }
 .archive .research-period em { font-style: normal; }
+.archive .cv-projects { margin-top: var(--space-3); }
+.archive .cv-project { margin-top: var(--space-3); }
+.archive .cv-project__title { margin: 0 0 var(--space-1); }
+.archive .cv-project__title .research-period { font-size: 0.875rem; font-weight: 400; color: var(--global-text-color-light); }
+.archive .cv-project ul { margin: 0; }
+.cv-downloads__alt { white-space: nowrap; }
 .publication-description { margin-top: var(--space-6); }
 .publication-description table { font-family: inherit; font-size: 0.875rem; }
 .publication-meta .publication-title-ko { margin-bottom: var(--space-3); font-size: 0.875rem; }
@@ -201,6 +207,8 @@ section[id], article[id], .home-group[id], li[id], #main { scroll-margin-top: ca
 .archive .research-project__link { margin-top: var(--space-3); }
 .archive .pub-card__resources { margin-top: 0.375rem; font-size: 0.8125rem; }
 .visual { display: block; width: 100%; height: auto; margin: 0; background: #fff; border: 1px solid var(--global-border-color); border-radius: 10px; }
+/* White figures are toned down so they do not glare inside dark cards. */
+html[data-theme="dark"] .visual { filter: brightness(0.86); border-color: transparent; }
 
 .archive .pub-cards { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-3); }
 .archive .pub-cards > li { margin: 0; }
@@ -211,6 +219,9 @@ section[id], article[id], .home-group[id], li[id], #main { scroll-margin-top: ca
 .archive .pub-card .archive__item-title { margin: 0 0 0.25rem; font-size: 1rem; font-weight: 600; line-height: 1.4; }
 .archive .pub-card .archive__item-title a { color: var(--global-text-color); text-decoration: none; }
 .archive .pub-card .archive__item-title a:hover { color: var(--global-link-color); }
+/* Title > authors > venue/date > links: authors sit one step below the title. */
+.archive .pub-card .pub-card__authors { margin-bottom: 0.125rem; font-size: 0.875rem; color: var(--global-text-color-light); }
+.archive .pub-card .pub-card__authors .publication-self { color: var(--global-text-color); font-weight: 500; text-decoration: none; }
 .pub-card__thumb { display: block; aspect-ratio: 4 / 3; overflow: hidden; border-radius: 10px; text-decoration: none !important; }
 .pub-card__thumb .visual { width: 100%; height: 100%; object-fit: contain; padding: 4px; }
 
@@ -238,7 +249,11 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--global-link-col
   #main > .sidebar { position: static; max-height: none; overflow: visible; }
   .author-profile { display: grid; grid-template-columns: 120px minmax(0, 1fr); align-items: start; gap: var(--space-6); }
   .author__avatar { width: 120px; margin: 0; }
-  .author__content { padding-top: 0; }
+  .author__content { display: contents; }
+  .author__avatar { grid-row: 1 / span 3; }
+  .author-profile { row-gap: 0; }
+  .sidebar .author__name, .sidebar .author__bio, .profile-links { grid-column: 2; }
+  .interest-card { grid-column: 1 / -1; margin-top: var(--space-6); }
   .research-project.has-visual { grid-template-columns: minmax(0, 1fr); }
   .research-project__visual { max-width: 480px; }
   .site-nav { grid-template-columns: 1fr auto auto; column-gap: var(--space-2); }
