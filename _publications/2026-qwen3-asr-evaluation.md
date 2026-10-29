@@ -7,11 +7,11 @@ title: "Evaluation and inference parameter analysis of Qwen3-ASR on multiple Kor
 title_ko: "다중 한국어 음성 코퍼스에서의 Qwen3-ASR 평가 및 추론 파라미터 분석"
 venue: "The Journal of the Acoustical Society of Korea, 45(5), 582–590"
 role: "First author"
-note: "Accepted Aug 25, 2026"
+note: ""
 authors: ["So Yeong Park","Seon Man Kim"]
-display_date: "Accepted Aug 25, 2026"
+display_date: "2026"
 citation_date: "2026"
-citation_note: "Accepted Aug 25, 2026"
+citation_note: ""
 doi: "10.7776/ASK.2026.45.5.582"
 record_url: "https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART003386913"
 sort_order: 60
