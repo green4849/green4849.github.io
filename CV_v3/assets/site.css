@@ -39,10 +39,12 @@ a { color: inherit; }
 
 .hero {
   color: var(--cream);
+  /* luminosity keeps the image's light and shadow and takes its color from the background color */
   background:
-    linear-gradient(90deg, rgba(10, 30, 22, .74), rgba(10, 30, 22, .3)),
+    linear-gradient(90deg, rgba(24, 20, 18, .76), rgba(24, 20, 18, .32)),
     url(wash.jpg) center / cover,
-    #1b3b2e;
+    #67574b;
+  background-blend-mode: normal, luminosity;
   padding: 52px 0 46px;
 }
 .hero.short { padding-bottom: 30px; }
@@ -74,6 +76,7 @@ h1 span {
   max-width: 640px;
   margin: 40px 0 14px;
   text-shadow: 0 1px 14px rgba(5, 20, 14, .45);
+  text-wrap: balance;
 }
 .intro .question-ko {
   font: 15px/1.7 "Noto Serif KR", serif;
@@ -81,6 +84,7 @@ h1 span {
   max-width: 640px;
   margin-bottom: 0;
   text-shadow: 0 1px 10px rgba(5, 20, 14, .45);
+  word-break: keep-all;
 }
 
 .hero .frame { position: relative; }
@@ -240,7 +244,8 @@ a.title { text-decoration: underline; text-underline-offset: 3px; }
 
 .wash {
   height: 150px;
-  background: url(wash.jpg) center 70% / cover, #1b3b2e;
+  background: url(wash.jpg) center 70% / cover, #67574b;
+  background-blend-mode: luminosity;
 }
 
 @media (max-width: 760px) {
