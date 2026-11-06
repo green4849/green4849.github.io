@@ -76,7 +76,8 @@
       if (link) link.setAttribute('aria-current', link === aboutLink ? 'page' : 'location');
     };
     const update = () => {
-      const line = window.innerHeight * 0.35;
+      // Just below the masthead: a section counts as current once its heading reaches the top quarter.
+      const line = (document.querySelector('.masthead')?.offsetHeight || 0) + window.innerHeight * 0.2;
       let active = aboutLink;
       sections.forEach((section, i) => { if (section.getBoundingClientRect().top <= line) active = sectionLinks[i]; });
       if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2) active = sectionLinks[sectionLinks.length - 1];

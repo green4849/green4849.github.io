@@ -55,7 +55,7 @@ if cv_path in pages:
     cv = ' '.join(pages[cv_path].text)
     profile = json.loads(Path('_data/profile.json').read_text())
     education = profile['education']
-    for term in (education['gpa'], f"{education['credits']} credits", education['period'], '9,958', '0.9897', 'ground-truth review signals', 'Accepted', 'Third author'):
+    for term in (education['gpa'], f"{education['credits']} credits", education['period'], '9,958', '0.9897', 'ground-truth review signals', '45(5), 582–590', 'Third author'):
         if term not in cv:
             errors.append(f'Missing CV fact or qualifier: {term}')
     for source in Path('_publications').glob('*.md'):

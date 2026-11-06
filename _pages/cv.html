@@ -12,10 +12,10 @@ redirect_from:
   {{ profile.lab.role }}, {{ profile.lab.name }}, {{ profile.lab.institution }}<br>
   <a href="mailto:{{ profile.email }}">{{ profile.email }}</a> · <a href="https://github.com/{{ site.author.github }}">GitHub</a></p>
 </div>
-<p class="cv-downloads">Download CV (PDF):
-  <a href="{{ '/assets/Park_So_Yeong_CV_EN.pdf' | relative_url }}" download>English</a> /
-  <a href="{{ '/assets/Park_So_Yeong_CV.pdf' | relative_url }}" download lang="ko">한국어</a>.
-  <a href="{{ '/cv/ko/' | relative_url }}" lang="ko">한국어 CV 보기</a>
+<p class="cv-downloads">CV (PDF):
+  <a href="{{ '/assets/Park_So_Yeong_CV_EN.pdf' | relative_url }}" download>English</a> ·
+  <a href="{{ '/assets/Park_So_Yeong_CV.pdf' | relative_url }}" download lang="ko">한국어</a>
+  <span class="cv-downloads__alt">· <a href="{{ '/cv/ko/' | relative_url }}" lang="ko">한국어 웹 버전</a></span>
 </p>
 
 <section id="research-interests">
@@ -40,12 +40,15 @@ redirect_from:
     {{ profile.lab.institution }} · {{ profile.lab.period }}<br>
     Advisor: {{ profile.lab.advisor }}<br>
     Research design, experiment implementation, results analysis, and paper writing.
+    <div class="cv-projects">
+    {% for project in profile.research %}
+      <div class="cv-project">
+        <p class="cv-project__title"><strong>{{ project.title }}</strong> <span class="research-period">· {{ project.period }}</span></p>
+        <ul>{% for point in project.points %}<li>{{ point }}</li>{% endfor %}</ul>
+      </div>
+    {% endfor %}
+    </div>
   </li></ul>
-  {% for project in profile.research %}
-  <h3><a href="{{ '/' | relative_url }}#{{ project.slug }}">{{ project.title }}</a></h3>
-  <p class="research-period">{{ project.period }}</p>
-  <ul>{% for point in project.points %}<li>{{ point }}</li>{% endfor %}</ul>
-  {% endfor %}
 </section>
 
 <section id="publications">
@@ -70,7 +73,7 @@ redirect_from:
   <h2>Awards & honors</h2>
   <ul class="cv-items">
   {% for award in profile.awards %}
-    <li><strong>{% include portfolio-link.html category="awards" item=award %}</strong>, {{ award.organization }} ({{ award.year }}).<br>{{ award.detail }}{% capture coverage %}{% include portfolio-link.html category="awards" item=award mode="context" %}{% endcapture %}{% if coverage != empty %} · {{ coverage }}{% endif %}</li>
+    <li><strong>{{ award.title | escape }}</strong>, {{ award.organization }} ({{ award.year }}).<br>{{ award.detail }}{% capture coverage %}{% include portfolio-link.html category="awards" item=award mode="meta" %}{% endcapture %}{% if coverage != empty %} · {{ coverage }}{% endif %}</li>
   {% endfor %}
   </ul>
 </section>
@@ -79,7 +82,7 @@ redirect_from:
   <h2>Scholarships</h2>
   <ul class="cv-items">
   {% for item in profile.scholarships %}
-    <li><strong>{% include portfolio-link.html category="scholarships" item=item %}</strong>, {{ item.organization }} ({{ item.year }}).<br>{{ item.detail }}</li>
+    <li><strong>{{ item.title | escape }}</strong>, {{ item.organization }} ({{ item.year }}).<br>{{ item.detail }}{% capture link %}{% include portfolio-link.html category="scholarships" item=item mode="meta" %}{% endcapture %}{% if link != empty %} · {{ link }}{% endif %}</li>
   {% endfor %}
   </ul>
 </section>
@@ -88,7 +91,7 @@ redirect_from:
   <h2>Teaching experience</h2>
   <ul class="cv-items">
   {% for item in profile.activities %}{% if item.label == 'Teaching' %}
-    <li><strong>{% include portfolio-link.html category="activities" item=item %}</strong> ({{ item.period }}).<br>{{ item.text }}</li>
+    <li><strong>{{ item.title | escape }}</strong> ({{ item.period }}).<br>{{ item.text }}{% capture link %}{% include portfolio-link.html category="activities" item=item mode="meta" %}{% endcapture %}{% if link != empty %} · {{ link }}{% endif %}</li>
   {% endif %}{% endfor %}
   </ul>
 </section>
@@ -97,7 +100,7 @@ redirect_from:
   <h2>Leadership & service</h2>
   <ul class="cv-items">
   {% for item in profile.activities %}{% if item.label == 'Leadership' or item.label == 'Service' %}
-    <li><strong>{% include portfolio-link.html category="activities" item=item %}</strong> ({{ item.period }}).<br>{{ item.text }}</li>
+    <li><strong>{{ item.title | escape }}</strong> ({{ item.period }}).<br>{{ item.text }}{% capture link %}{% include portfolio-link.html category="activities" item=item mode="meta" %}{% endcapture %}{% if link != empty %} · {{ link }}{% endif %}</li>
   {% endif %}{% endfor %}
   </ul>
 </section>
@@ -106,7 +109,7 @@ redirect_from:
   <h2>Selected activities</h2>
   <ul class="cv-items">
   {% for item in profile.activities %}{% if item.label == 'Selected activity' %}
-    <li><strong>{% include portfolio-link.html category="activities" item=item %}</strong> ({{ item.period }}).<br>{{ item.text }}</li>
+    <li><strong>{{ item.title | escape }}</strong> ({{ item.period }}).<br>{{ item.text }}{% capture link %}{% include portfolio-link.html category="activities" item=item mode="meta" %}{% endcapture %}{% if link != empty %} · {{ link }}{% endif %}</li>
   {% endif %}{% endfor %}
   </ul>
 </section>
