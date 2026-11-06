@@ -205,7 +205,7 @@ ul { list-style: none; margin: 0; padding: 0; }
   line-height: 1.45;
 }
 .title { font-weight: 500; text-decoration: none; }
-a.title:hover { text-decoration: underline; text-underline-offset: 3px; }
+a.title { text-decoration: underline; text-underline-offset: 3px; }
 .authors { color: #565a53; font-size: 15px; margin-top: 1px; }
 .authors b { color: var(--ink); font-weight: 500; }
 .venue { font-size: 15px; margin-top: 1px; }
@@ -231,6 +231,10 @@ a.title:hover { text-decoration: underline; text-underline-offset: 3px; }
   padding-top: 9px;
   border-top: 1px solid var(--line);
 }
+
+/* research entries span several lines, so they need more separation than single-line rows */
+#research .rows > li { padding: 7px 0; }
+#research .fig { margin-bottom: 6px; }
 
 .empty { color: var(--gray); margin: 40px 0 0; }
 
